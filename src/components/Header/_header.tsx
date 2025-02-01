@@ -49,7 +49,7 @@ export const ButtonWrapper = styled.div`
   align-items: center;
 
   > div {
-    transition: 0.3s;
+    transition: 0.2s;
 
     &:hover {
       padding-bottom: 8px;

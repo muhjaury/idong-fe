@@ -12,16 +12,19 @@ function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleStickyScroll = () => {
       if (window.scrollY > 80) {
         setScrolled(true);
       } else {
         setScrolled(false);
       }
-    });
-  }, []);
+    };
+    window.addEventListener("scroll", handleStickyScroll);
 
-  console.log(scrolled);
+    return () => {
+      window.removeEventListener("scroll", handleStickyScroll);
+    };
+  }, []);
 
   return (
     <Wrapper scrolled={scrolled}>
