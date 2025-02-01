@@ -6,8 +6,11 @@ import CoreLayout from "@/layout/CoreLayout";
 function Dashboard() {
   return (
     <CoreLayout>
+      <Section>
+        <p>Section 1</p>
+      </Section>
       <Section type="secondary">
-        <p>Paragraph</p>
+        <p>Section 2</p>
         <Button>Button</Button>
       </Section>
     </CoreLayout>

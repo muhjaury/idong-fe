@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { Button } from "..";
 import {
   ButtonWrapper,
@@ -8,8 +9,22 @@ import {
 } from "./_header";
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    });
+  }, []);
+
+  console.log(scrolled);
+
   return (
-    <Wrapper>
+    <Wrapper scrolled={scrolled}>
       <WrapperLeft></WrapperLeft>
       <WrapperRight>
         <Nav>Beranda</Nav>

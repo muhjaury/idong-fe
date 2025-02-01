@@ -3,4 +3,5 @@ export const color = {
   a2: "#1F509A",
   a3: "#0A3981",
   a4: "#E38E49",
+  a5: "#09122c",
 };

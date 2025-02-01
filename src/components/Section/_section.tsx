@@ -1,11 +1,11 @@
 import { color } from "@/app/constant/color";
 import styled from "styled-components";
 
-interface Int_Wrapper {
+interface IF_Wrapper {
   type?: string;
 }
 
-export const Wrapper = styled.div<Int_Wrapper>`
+export const Wrapper = styled.div<IF_Wrapper>`
   padding: 16px;
   width: 100%;
   min-height: 320px;
