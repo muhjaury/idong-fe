@@ -1,9 +1,16 @@
 "use client";
 
-import { Wrapper } from "./_coreLayout";
+import { Footer, Header } from "@/components";
+import { Content, Wrapper } from "./_coreLayout";
 
 function CoreLayout(props: any) {
-  return <Wrapper></Wrapper>;
+  return (
+    <Wrapper>
+      <Header />
+      <Content>{props.children}</Content>
+      <Footer />
+    </Wrapper>
+  );
 }
 
 export default CoreLayout;

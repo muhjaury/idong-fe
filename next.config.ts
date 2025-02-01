@@ -1,9 +1,13 @@
 /** @type {import('next').NextConfig} */
+
+const ASSET_PREFIX = process.env.NEXT_PUBLIC_PREFIX;
+
 const nextConfig = {
-  output: "standalone",
-  webpack: (config:any) => {
+  output: "export",
+  assetPrefix: ASSET_PREFIX,
+  webpack: (config: any) => {
     const fileLoaderRule = config.module.rules?.find(
-      (rule:any) =>
+      (rule: any) =>
         rule.test?.test?.(".svg") &&
         rule.test?.test?.(".jpg") &&
         rule.test?.test?.(".jpeg") &&

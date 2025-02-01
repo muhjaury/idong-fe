@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "env-cmd -e build:prod next build",
+    "build:dev": "env-cmd -e build:dev next build",
+    "build:prod": "env-cmd -e build:prod next build",
     "start": "next start",
     "start:dev": "next dev",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "15.1.6",
+    "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.77.8",
