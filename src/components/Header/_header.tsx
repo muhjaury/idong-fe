@@ -2,7 +2,7 @@ import { color } from "@/app/constant/color";
 import styled from "styled-components";
 
 interface IF_Wrapper {
-  scrolled?: boolean;
+  scrolled?: string;
 }
 
 export const Wrapper = styled.div<IF_Wrapper>`
@@ -10,7 +10,8 @@ export const Wrapper = styled.div<IF_Wrapper>`
   top: 0;
   padding: 16px 80px;
   min-height: 80px;
-  background: ${({ scrolled }) => (scrolled ? color.a5 : "transparent")};
+  background: ${({ scrolled }) =>
+    scrolled === "true" ? color.a5 : "transparent"};
   display: flex;
   justify-content: space-between;
   align-items: center;

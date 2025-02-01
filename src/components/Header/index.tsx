@@ -9,14 +9,14 @@ import {
 } from "./_header";
 
 function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState("false");
 
   useEffect(() => {
     const handleStickyScroll = () => {
       if (window.scrollY > 80) {
-        setScrolled(true);
+        setScrolled("true");
       } else {
-        setScrolled(false);
+        setScrolled("false");
       }
     };
     window.addEventListener("scroll", handleStickyScroll);
