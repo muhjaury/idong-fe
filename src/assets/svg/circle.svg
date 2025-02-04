@@ -1,0 +1,7 @@
+<svg height="800" width="800" xmlns="http://www.w3.org/2000/svg">
+    <circle r="360" cx="400" cy="400" fill="transparent" stroke="#f1f1f1" stroke-width="1" />
+    <circle r="300" cx="400" cy="400" fill="transparent" stroke="#f1f1f1" stroke-width="1" />
+    <circle r="240" cx="400" cy="400" fill="transparent" stroke="#f1f1f1" stroke-width="1" />
+    <circle r="180" cx="400" cy="400" fill="transparent" stroke="#f1f1f1" stroke-width="1" />
+    <circle r="120" cx="400" cy="400" fill="transparent" stroke="#f1f1f1" stroke-width="1" />
+</svg>

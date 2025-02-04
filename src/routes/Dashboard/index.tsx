@@ -1,17 +1,21 @@
 "use client";
 
-import { Button, Section } from "@/components";
+import { Button, Content, Section, SvgPreviewer } from "@/components";
 import CoreLayout from "@/layout/CoreLayout";
+import CIRCLE from "./../../assets/svg/circle.svg";
 
 function Dashboard() {
   return (
     <CoreLayout>
       <Section>
-        <p>Section 1</p>
+        <SvgPreviewer src={CIRCLE} alt="circle" top="-32px" right="-200px" />
+        <SvgPreviewer src={CIRCLE} alt="circle" top="80px" right="0" />
       </Section>
       <Section type="secondary">
-        <p>Section 2</p>
-        <Button>Button</Button>
+        <SvgPreviewer src={CIRCLE} alt="circle" top="200" right="0" />
+        <Content>
+          <Button>Button</Button>
+        </Content>
       </Section>
     </CoreLayout>
   );

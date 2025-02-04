@@ -7,9 +7,10 @@ interface IF_Wrapper {
 
 export const Wrapper = styled.div<IF_Wrapper>`
   position: sticky;
+  z-index: 5;
   top: 0;
-  padding: 16px 80px;
-  min-height: 80px;
+  padding: 32px 80px;
+  height: 100px;
   background: ${({ scrolled }) =>
     scrolled === "true" ? color.a5 : "transparent"};
   display: flex;

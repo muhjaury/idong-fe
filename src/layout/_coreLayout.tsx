@@ -7,5 +7,5 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  min-height: calc(100vh - 80px - 80px);
+  min-height: calc(100vh - 100px - 160px);
 `;
