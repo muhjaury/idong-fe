@@ -11,7 +11,7 @@ export const Wrapper = styled.div<IF_Wrapper>`
   padding: 32px 80px;
   height: 100px;
   background: ${({ scrolled }) =>
-    scrolled === "true" ? "rgba(9, 18, 44, 0.8)" : "transparent"};
+    scrolled === "true" ? "rgba(7, 14, 33, 0.8)" : "transparent"};
   display: flex;
   justify-content: space-between;
   align-items: center;
