@@ -1,4 +1,3 @@
-import { color } from "@/app/constant/color";
 import styled from "styled-components";
 
 interface IF_Wrapper {
@@ -12,7 +11,7 @@ export const Wrapper = styled.div<IF_Wrapper>`
   padding: 32px 80px;
   height: 100px;
   background: ${({ scrolled }) =>
-    scrolled === "true" ? color.a5 : "transparent"};
+    scrolled === "true" ? "rgba(9, 18, 44, 0.8)" : "transparent"};
   display: flex;
   justify-content: space-between;
   align-items: center;
