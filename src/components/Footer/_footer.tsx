@@ -6,31 +6,54 @@ interface Int_Logo {
 }
 
 export const WrapperTop = styled.div`
-  padding: 32px 120px;
+  height: 1005;
+  width: 100%;
+  padding: 32px 16px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 32px;
+  align-items: start;
   justify-content: space-between;
   background: ${color.a3};
   color: ${color.a1};
-  width: 100%;
-  height: 240px;
+
+  @media all and (min-width: 1024px) {
+    height: 220px;
+    padding: 32px 120px;
+    flex-direction: row;
+  }
 `;
 
 export const WrapperBottom = styled.div`
-  padding: 32px 120px;
+  width: 100%;
+  height: 64px;
+  padding: 16px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
   background: ${color.a4};
   color: ${color.a1};
-  width: 100%;
-  height: 40px;
   font-weight: 600;
+  font-size: 12px;
+
+  @media all and (min-width: 1024px) {
+    padding: 0 120px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+  }
 `;
 
 export const Logo = styled.img<Int_Logo>`
-  height: 160px;
-  width: 120px;
+  display: none;
+
+  @media all and (min-width: 1024px) {
+    display: block;
+    height: 160px;
+    width: 120px;
+  }
 `;
 
 export const WrapperColumn = styled.div`
@@ -41,6 +64,12 @@ export const WrapperColumn = styled.div`
 
 export const Title = styled.div`
   font-weight: 600;
+`;
+
+export const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 `;
 
 export const Description = styled.div``;

@@ -1,7 +1,9 @@
 import { Content } from "..";
+import SOPPENG from "./../../assets/img/soppeng.png";
 import {
   Copyright,
   Description,
+  DescriptionWrapper,
   Logo,
   Navigation,
   Title,
@@ -9,7 +11,6 @@ import {
   WrapperColumn,
   WrapperTop,
 } from "./_footer";
-import SOPPENG from "./../../assets/img/soppeng.png";
 
 function Footer() {
   return (
@@ -19,22 +20,22 @@ function Footer() {
         <Content>
           <WrapperColumn>
             <Title>SMKS Karya Teknik Watangsoppeng</Title>
-            <div>
+            <DescriptionWrapper>
               <Description>Lokasi</Description>
               <Description>Nomor Telephone</Description>
               <Description>Email</Description>
               <Description>Instagram</Description>
               <Description>Facebook</Description>
-            </div>
+            </DescriptionWrapper>
           </WrapperColumn>
         </Content>
         <Content>
           <WrapperColumn>
             <Title>Tautan Penting</Title>
-            <div>
+            <DescriptionWrapper>
               <Navigation>Kemendikbud</Navigation>
               <Navigation>PPDB</Navigation>
-            </div>
+            </DescriptionWrapper>
           </WrapperColumn>
         </Content>
       </WrapperTop>

@@ -14,5 +14,5 @@ export const Wrapper = styled.div<Int_Wrapper>`
 `;
 
 export const Content = styled.div`
-  min-height: calc(100vh - 100px - 160px);
+  min-height: calc(100vh - 100px - 220px - 64px);
 `;

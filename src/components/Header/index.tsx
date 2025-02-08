@@ -34,7 +34,7 @@ function Header() {
         <Nav>Tentang Kami</Nav>
         <Nav>Program</Nav>
         <ButtonWrapper>
-          <Button>Hubungi Kami</Button>
+          <Button>Login</Button>
         </ButtonWrapper>
       </WrapperRight>
     </Wrapper>
