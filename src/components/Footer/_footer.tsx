@@ -11,6 +11,7 @@ export const WrapperTop = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${color.a3};
+  color: ${color.a1};
   width: 100%;
   height: 240px;
 `;
@@ -21,6 +22,7 @@ export const WrapperBottom = styled.div`
   align-items: center;
   justify-content: space-between;
   background: ${color.a4};
+  color: ${color.a1};
   width: 100%;
   height: 40px;
   font-weight: 600;
