@@ -2,11 +2,15 @@ import { useEffect, useState } from "react";
 import { Button } from "..";
 import {
   ButtonWrapper,
+  Logo,
+  Menu,
   Nav,
   Wrapper,
   WrapperLeft,
   WrapperRight,
 } from "./_header";
+import SOPPENG from "./../../assets/img/soppeng.png";
+import MENU from "./../../assets/svg/menu.svg";
 
 function Header() {
   const [scrolled, setScrolled] = useState("false");
@@ -28,14 +32,19 @@ function Header() {
 
   return (
     <Wrapper scrolled={scrolled}>
-      <WrapperLeft></WrapperLeft>
+      <WrapperLeft>
+        <Logo src={SOPPENG} />
+      </WrapperLeft>
       <WrapperRight>
         <Nav>Beranda</Nav>
-        <Nav>Tentang Kami</Nav>
-        <Nav>Program</Nav>
+        <Nav>Profil</Nav>
+        <Nav>Informasi</Nav>
+        <Nav>Kesiswaan</Nav>
+        <Nav>Jurusan</Nav>
         <ButtonWrapper>
           <Button>Login</Button>
         </ButtonWrapper>
+        <Menu src={MENU} />
       </WrapperRight>
     </Wrapper>
   );
