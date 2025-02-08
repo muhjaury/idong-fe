@@ -9,10 +9,10 @@ export const Wrapper = styled.div<IF_Wrapper>`
   position: sticky;
   z-index: 5;
   top: 0;
-  padding: 32px 80px;
+  padding: 32px 120px;
   height: 100px;
   background: ${({ scrolled }) =>
-    scrolled === "true" ? "rgba(7, 14, 33, 0.8)" : `${color.a2}`};
+    scrolled === "true" ? "rgba(26, 32, 38, 0.8)" : `${color.a2}`};
   display: flex;
   justify-content: space-between;
   align-items: center;

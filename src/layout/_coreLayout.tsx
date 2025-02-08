@@ -10,7 +10,7 @@ export const Wrapper = styled.div<Int_Wrapper>`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: ${color.a5};
+  background: ${color.a3};
 `;
 
 export const Content = styled.div`

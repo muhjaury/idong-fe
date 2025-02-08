@@ -9,16 +9,16 @@ function Dashboard() {
   return (
     <CoreLayout>
       <Section>
-        <SvgPreviewer
+        {/* <SvgPreviewer
           src={CIRCLE_BLUE}
           alt="circle"
           top="-32px"
           right="-200px"
         />
-        <SvgPreviewer src={CIRCLE_BLUE} alt="circle" top="80px" right="0" />
+        <SvgPreviewer src={CIRCLE_BLUE} alt="circle" top="80px" right="0" /> */}
       </Section>
       <Section type="secondary">
-        <SvgPreviewer src={CIRCLE} alt="circle" top="200" right="0" />
+        {/* <SvgPreviewer src={CIRCLE} alt="circle" top="200" right="0" /> */}
         <Content>
           <Button>Button</Button>
         </Content>
