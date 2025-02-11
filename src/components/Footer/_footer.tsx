@@ -1,7 +1,7 @@
 import { color } from "@/constant/color";
 import styled from "styled-components";
 
-interface Int_Logo {
+interface IF_Logo {
   src: any;
 }
 
@@ -46,7 +46,7 @@ export const WrapperBottom = styled.div`
   }
 `;
 
-export const Logo = styled.img<Int_Logo>`
+export const Logo = styled.img<IF_Logo>`
   display: none;
 
   @media all and (min-width: 1024px) {

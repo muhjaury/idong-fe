@@ -21,9 +21,11 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@types/aos": "^3.0.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "aos": "^2.3.4",
     "env-cmd": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
