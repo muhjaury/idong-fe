@@ -1,11 +1,9 @@
+"use client";
+
 import { Dashboard } from "@/routes";
 
 function Home() {
-  return (
-    <>
-      <Dashboard />
-    </>
-  );
+  return <Dashboard />;
 }
 
 export default Home;

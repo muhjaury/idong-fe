@@ -1,3 +1,4 @@
+import WidgetProvider from "@/context";
 import "./global.scss";
 
 export const metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <WidgetProvider>
+        <body>{children}</body>
+      </WidgetProvider>
     </html>
   );
 }

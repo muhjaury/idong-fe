@@ -1,7 +1,19 @@
-import { Wrapper } from "./_loading";
+import { Load, LoadingWrapper, Wrapper } from "./_loading";
 
 function Loading() {
-  return <Wrapper />;
+  return (
+    <LoadingWrapper>
+      <Load />
+    </LoadingWrapper>
+  );
 }
 
-export default Loading;
+function LoadingContent() {
+  return (
+    <Wrapper>
+      <Load />
+    </Wrapper>
+  );
+}
+
+export { Loading, LoadingContent };

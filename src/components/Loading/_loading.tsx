@@ -7,6 +7,26 @@ to {
 }`;
 
 export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+`;
+
+export const LoadingWrapper = styled.div`
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 32, 38, 0.8);
+`;
+
+export const Load = styled.div`
   height: 40px;
   width: 40px;
   border-image: linear-gradient(to right, ${color.a1} 0%, ${color.a2} 100%) 1;

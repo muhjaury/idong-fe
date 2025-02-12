@@ -19,11 +19,15 @@ import {
 import SOPPENG from "./../../assets/img/soppeng.png";
 import MENU from "./../../assets/svg/menu.svg";
 import CLOSE from "./../../assets/img/cancel.png";
+import { useRouter } from "next/navigation";
+import { urls } from "@/constant/path";
 
 function Header() {
   const [scrolled, setScrolled] = useState<string>("N");
   const [hover, setHover] = useState<string[]>(["N", "N", "N", "N", "N"]);
   const [sideBar, setSideBar] = useState<string>("N");
+
+  const router = useRouter();
 
   const handleOnHover = (index: number) => {
     const data = hover;
@@ -146,7 +150,7 @@ function Header() {
           <Nav>Jurusan</Nav>
         </NavWrapper>
         <ButtonWrapper>
-          <Button>Login</Button>
+          <Button onClick={() => router.push(urls.LOGIN)}>Login</Button>
         </ButtonWrapper>
         <Menu src={MENU} onClick={() => setSideBar("Y")} />
       </WrapperRight>

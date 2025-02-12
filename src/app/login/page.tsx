@@ -1,3 +1,5 @@
+"use client";
+
 import { Login } from "@/routes";
 
 function LoginApp() {

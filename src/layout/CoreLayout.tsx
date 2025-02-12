@@ -1,25 +1,27 @@
-"use client";
-
-import { Footer, Header, Loading } from "@/components";
+import { Footer, Header, Loading, LoadingContent } from "@/components";
+import { useWidget } from "@/context";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
 import { Content, Wrapper } from "./_coreLayout";
 
 function CoreLayout(props: any) {
-  const [loading, setLoading] = useState("Y");
+  const [initLoading, setInitLoading] = useState<string>("Y");
+
+  const { loading } = useWidget();
 
   useEffect(() => {
-    setTimeout(() => setLoading("N"), 1500);
+    setTimeout(() => setInitLoading("N"), 1500);
     AOS.init({ duration: 1000 });
   }, []);
 
   return (
-    <Wrapper loading={loading}>
-      {loading === "Y" ? (
-        <Loading />
+    <Wrapper loading={initLoading}>
+      {initLoading === "Y" ? (
+        <LoadingContent />
       ) : (
         <>
+          {loading && <Loading />}
           <Header />
           <Content>{props.children}</Content>
           <Footer />
