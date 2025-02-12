@@ -7,6 +7,7 @@ to {
 }`;
 
 export const Wrapper = styled.div`
+  background: ${color.a3};
   display: flex;
   align-items: center;
   justify-content: center;
