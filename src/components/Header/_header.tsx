@@ -157,12 +157,27 @@ to {
 }
 `;
 
+export const SideBarWrapper = styled.div<IF_NavWrapper>`
+  display: ${({ display }) => (display === "Y" ? "block" : "none")};
+  background: rgba(26, 32, 38, 0.8);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  @media all and (min-width: 1024px) {
+    display: none;
+  }
+`;
+
 export const SideBar = styled.div<IF_NavWrapper>`
   display: flex;
   flex-direction: column;
   gap: 32px;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   bottom: 0;
@@ -197,9 +212,27 @@ export const SideBarHeader = styled.div`
 export const SideBarContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  align-items: center;
+  gap: 24px;
+  align-items: start;
   justify-content: center;
+`;
+
+export const SideBarItemWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const SideBarItem = styled.span`
+  color: ${color.a1};
+  font-size: 16px;
+  font-weight: 600;
+`;
+
+export const SideBarDropdown = styled.img<IF_Img>`
+  height: 16px;
+  width: 16px;
 `;
 
 export const Close = styled.img<IF_Img>``;

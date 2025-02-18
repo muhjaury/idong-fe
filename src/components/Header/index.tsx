@@ -11,7 +11,12 @@ import {
   NavDropdownWrapper,
   NavWrapper,
   SideBar,
+  SideBarContent,
+  SideBarDropdown,
   SideBarHeader,
+  SideBarItem,
+  SideBarItemWrapper,
+  SideBarWrapper,
   Wrapper,
   WrapperLeft,
   WrapperRight,
@@ -19,6 +24,7 @@ import {
 import SOPPENG from "./../../assets/img/soppeng.png";
 import MENU from "./../../assets/svg/menu.svg";
 import CLOSE from "./../../assets/img/cancel.png";
+import DOWN from "./../../assets/img/down.png";
 import { useRouter } from "next/navigation";
 import { urls } from "@/constant/path";
 
@@ -58,49 +64,29 @@ function Header() {
 
   return (
     <Wrapper scrolled={scrolled}>
-      <SideBar display={sideBar}>
-        <SideBarHeader>
-          <Close src={CLOSE} onClick={() => setSideBar("N")} />
-        </SideBarHeader>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-        <div>Tes</div>
-      </SideBar>
+      <SideBarWrapper display={sideBar}>
+        <SideBar display={sideBar}>
+          <SideBarHeader>
+            <Close src={CLOSE} onClick={() => setSideBar("N")} />
+          </SideBarHeader>
+          <SideBarContent>
+            <SideBarItemWrapper>
+              <SideBarItem>Profil</SideBarItem>
+              <SideBarDropdown alt="down" src={DOWN} />
+            </SideBarItemWrapper>
+            <SideBarItemWrapper>
+              <SideBarItem>Informasi</SideBarItem>
+              <SideBarDropdown alt="down" src={DOWN} />
+            </SideBarItemWrapper>
+            <SideBarItemWrapper>
+              <SideBarItem>Kesiswaan</SideBarItem>
+            </SideBarItemWrapper>
+            <SideBarItemWrapper>
+              <SideBarItem>Jurusan</SideBarItem>
+            </SideBarItemWrapper>
+          </SideBarContent>
+        </SideBar>
+      </SideBarWrapper>
       <WrapperLeft>
         <Logo src={SOPPENG} />
       </WrapperLeft>
