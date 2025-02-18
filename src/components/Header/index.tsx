@@ -12,6 +12,7 @@ import {
   NavWrapper,
   SideBar,
   SideBarContent,
+  SideBarDropWrapper,
   SideBarDropdown,
   SideBarHeader,
   SideBarItem,
@@ -32,6 +33,8 @@ function Header() {
   const [scrolled, setScrolled] = useState<string>("N");
   const [hover, setHover] = useState<string[]>(["N", "N", "N", "N", "N"]);
   const [sideBar, setSideBar] = useState<string>("N");
+  const [sideDrop1, setSideDrop1] = useState<string>("N");
+  const [sideDrop2, setSideDrop2] = useState<string>("N");
 
   const router = useRouter();
 
@@ -72,12 +75,32 @@ function Header() {
           <SideBarContent>
             <SideBarItemWrapper>
               <SideBarItem>Profil</SideBarItem>
-              <SideBarDropdown alt="down" src={DOWN} />
+              <SideBarDropdown
+                alt="down"
+                src={DOWN}
+                onClick={() => setSideDrop1(sideDrop1 === "Y" ? "N" : "Y")}
+                display={sideDrop1}
+              />
             </SideBarItemWrapper>
+            <SideBarDropWrapper display={sideDrop1}>
+              <SideBarItem>Menu 1</SideBarItem>
+              <SideBarItem>Menu 2</SideBarItem>
+              <SideBarItem>Menu 3</SideBarItem>
+            </SideBarDropWrapper>
             <SideBarItemWrapper>
               <SideBarItem>Informasi</SideBarItem>
-              <SideBarDropdown alt="down" src={DOWN} />
+              <SideBarDropdown
+                alt="down"
+                src={DOWN}
+                onClick={() => setSideDrop2(sideDrop2 === "Y" ? "N" : "Y")}
+                display={sideDrop2}
+              />
             </SideBarItemWrapper>
+            <SideBarDropWrapper display={sideDrop2}>
+              <SideBarItem>Menu 1</SideBarItem>
+              <SideBarItem>Menu 2</SideBarItem>
+              <SideBarItem>Menu 3</SideBarItem>
+            </SideBarDropWrapper>
             <SideBarItemWrapper>
               <SideBarItem>Kesiswaan</SideBarItem>
             </SideBarItemWrapper>

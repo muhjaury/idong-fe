@@ -7,6 +7,7 @@ interface IF_Wrapper {
 
 interface IF_Img {
   src?: any;
+  display?: string;
 }
 
 interface IF_NavWrapper {
@@ -233,6 +234,23 @@ export const SideBarItem = styled.span`
 export const SideBarDropdown = styled.img<IF_Img>`
   height: 16px;
   width: 16px;
+  transform: ${({ display }) =>
+    display === "Y" ? "rotate(180deg)" : "rotate(0)"};
+  transition: 0.2s;
+`;
+
+export const SideBarDropWrapper = styled.div<IF_NavWrapper>`
+  display: ${({ display }) => (display === "Y" ? "flex" : "none")};
+  flex-direction: column;
+  width: 100%;
+  padding-left: 24px;
+  gap: 24px;
+  align-items: start;
+  justify-content: center;
+
+  @media all and (min-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const Close = styled.img<IF_Img>``;
