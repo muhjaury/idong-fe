@@ -1,29 +1,17 @@
 "use client";
 
-import { Button, Content, Section, SvgPreviewer } from "@/components";
-import CoreLayout from "@/layout/CoreLayout";
-import CIRCLE_BLUE from "./../../assets/svg/circle-blue.svg";
-import CIRCLE from "./../../assets/svg/circle.svg";
+import { Button, Content, Section } from "@/components";
+import UserLayout from "@/layout/UserLayout";
 
 function Dashboard() {
   return (
-    <CoreLayout>
-      <Section>
-        {/* <SvgPreviewer
-          src={CIRCLE_BLUE}
-          alt="circle"
-          top="-32px"
-          right="-200px"
-        />
-        <SvgPreviewer src={CIRCLE_BLUE} alt="circle" top="80px" right="0" /> */}
-      </Section>
+    <UserLayout>
       <Section type="secondary">
-        {/* <SvgPreviewer src={CIRCLE} alt="circle" top="200" right="0" /> */}
         <Content>
           <Button>Button</Button>
         </Content>
       </Section>
-    </CoreLayout>
+    </UserLayout>
   );
 }
 

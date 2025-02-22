@@ -1,9 +1,9 @@
 "use client";
 
-import { Dashboard } from "@/routes";
+import { Home } from "@/routes";
 
-function Home() {
-  return <Dashboard />;
+function HomeApp() {
+  return <Home />;
 }
 
-export default Home;
+export default HomeApp;

@@ -1,1 +1,1 @@
-export const urls = { LOGIN: "login" };
+export const urls = { HOME: "/", LOGIN: "login" };

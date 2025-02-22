@@ -1,4 +1,5 @@
 import Dashboard from "./Dashboard";
+import Home from "./Home";
 import Login from "./Login";
 
-export { Dashboard, Login };
+export { Dashboard, Home, Login };
