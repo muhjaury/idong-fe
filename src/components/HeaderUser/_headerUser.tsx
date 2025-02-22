@@ -6,11 +6,11 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 100px;
   background: ${color.a3};
 
   @media all and (min-width: 1024px) {
-    padding: 0 120px;
+    padding: 32px 120px;
   }
 `;
 

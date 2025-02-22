@@ -4,14 +4,19 @@ import {
   Content,
   ContentWrapper,
   SideBar,
+  SideBarDropWrapper,
+  SideBarDropdown,
   SideBarItem,
+  SideBarItemWrapper,
   Wrapper,
 } from "./_userLayout";
+import DOWN from "./../assets/img/down.png";
 
 function UserLayout(props: any) {
   const [contentHeight, setContentHeight] = useState<number>(0);
   const [sideBarHeight, setSideBarHeight] = useState<number>(0);
   const [totalHeight, setTotalHeight] = useState<number>(0);
+  const [sideDrop1, setSideDrop1] = useState<string>("N");
 
   const refContent = useRef<HTMLDivElement>(null);
   const refSideBar = useRef<HTMLDivElement>(null);
@@ -38,7 +43,19 @@ function UserLayout(props: any) {
       <ContentWrapper>
         <SideBar ref={refSideBar} height={totalHeight}>
           <SideBarItem>Dashboard</SideBarItem>
-          <SideBarItem>User</SideBarItem>
+          <SideBarItemWrapper>
+            <SideBarItem>User</SideBarItem>
+            <SideBarDropdown
+              alt="down"
+              src={DOWN}
+              onClick={() => setSideDrop1(sideDrop1 === "Y" ? "N" : "Y")}
+              display={sideDrop1}
+            />
+          </SideBarItemWrapper>
+          <SideBarDropWrapper display={sideDrop1}>
+            <SideBarItem>Admin</SideBarItem>
+            <SideBarItem>Guru</SideBarItem>
+          </SideBarDropWrapper>
           <SideBarItem>Profil Sekolah</SideBarItem>
           <SideBarItem>Sejarah Sekolah</SideBarItem>
           <SideBarItem>Sarana & Prasarana</SideBarItem>
