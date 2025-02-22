@@ -26,7 +26,9 @@ function Login() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    router.push(urls.HOME);
+    if (username && password) {
+      router.push(urls.DASHBOARD);
+    }
   };
 
   return (
