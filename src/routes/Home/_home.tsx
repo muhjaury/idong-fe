@@ -6,10 +6,13 @@ export const Video = styled.video`
   z-index: 4;
   left: calc((100% - 300px) / 2);
   width: 300px;
+  height: 169px;
+  background: ${color.a6};
 
   @media all and (min-width: 1024px) {
     left: calc((100% - 880px) / 2);
     width: 880px;
+    height: 495px;
   }
 `;
 
