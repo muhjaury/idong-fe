@@ -1,43 +1,52 @@
 "use client";
 
-import { Button, Content, Section, SvgPreviewer } from "@/components";
+import { Button, Content, Section } from "@/components";
 import CoreLayout from "@/layout/CoreLayout";
-import CIRCLE_BLUE from "./../../assets/svg/circle-blue.svg";
-import CIRCLE from "./../../assets/svg/circle.svg";
+import {
+  Content2Icon,
+  Content2Label,
+  Content2SubWrapper,
+  Content2SubWrapperFlex,
+  Content2Title,
+  Content2Wrapper,
+  Video,
+} from "./_home";
 
 function Home() {
   return (
     <CoreLayout>
       <Section>
-        {/* <SvgPreviewer
-          src={CIRCLE_BLUE}
-          alt="circle"
-          top="-32px"
-          right="-200px"
+        <Video
+          src="/WaitingForTheEnd-LP.mp4"
+          autoPlay
+          preload="none"
+          muted
+          loop
         />
-        <SvgPreviewer src={CIRCLE_BLUE} alt="circle" top="80px" right="0" /> */}
       </Section>
       <Section type="secondary">
-        {/* <SvgPreviewer src={CIRCLE} alt="circle" top="200" right="0" /> */}
-        <Content>
-          <Button>Button</Button>
-        </Content>
+        <Content2Wrapper>
+          <Content2Title>SMK Bisa</Content2Title>
+          <Content2SubWrapper>
+            <Content2SubWrapperFlex>
+              <Content2Icon />
+              <Content2Label>Fasilitas Lengkap</Content2Label>
+            </Content2SubWrapperFlex>
+            <Content2SubWrapperFlex>
+              <Content2Icon />
+              <Content2Label>Pengajar Kompeten</Content2Label>
+            </Content2SubWrapperFlex>
+          </Content2SubWrapper>
+          <Content2SubWrapper>
+            <Content2SubWrapperFlex>
+              <Content2Icon />
+              <Content2Label>Lingkungan Nyaman</Content2Label>
+            </Content2SubWrapperFlex>
+          </Content2SubWrapper>
+        </Content2Wrapper>
       </Section>
-      <Section>
-        {/* <SvgPreviewer
-          src={CIRCLE_BLUE}
-          alt="circle"
-          top="-32px"
-          right="-200px"
-        />
-        <SvgPreviewer src={CIRCLE_BLUE} alt="circle" top="80px" right="0" /> */}
-      </Section>
-      <Section type="secondary">
-        {/* <SvgPreviewer src={CIRCLE} alt="circle" top="200" right="0" /> */}
-        <Content>
-          <Button>Button</Button>
-        </Content>
-      </Section>
+      <Section></Section>
+      <Section type="secondary"></Section>
     </CoreLayout>
   );
 }
