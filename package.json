@@ -15,8 +15,6 @@
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "sass": "^1.77.8",
-    "styled-components": "^6.1.12",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
@@ -29,6 +27,9 @@
     "env-cmd": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
+    "sass": "^1.85.1",
+    "styled-components": "^6.1.15",
+    "swiper": "^11.2.4",
     "typescript": "^5"
   }
 }

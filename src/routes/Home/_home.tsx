@@ -202,3 +202,30 @@ export const MajorDesc = styled.div`
   font-size: 24px;
   color: ${color.a2};
 `;
+
+export const Content5Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 64px;
+`;
+
+export const NewsTitle = styled.div`
+  font-size: 32px;
+  color: ${color.a1};
+  font-weight: 600;
+`;
+
+export const SwiperWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${color.a2};
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+  }
+`;

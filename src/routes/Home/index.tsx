@@ -1,7 +1,11 @@
 "use client";
 
-import { Button, Content, Section } from "@/components";
+import { Section } from "@/components";
 import CoreLayout from "@/layout/CoreLayout";
+import { useRef } from "react";
+import "swiper/css";
+import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Content2Icon,
   Content2Label,
@@ -14,6 +18,7 @@ import {
   Content3Wrapper,
   Content4Title,
   Content4Wrapper,
+  Content5Wrapper,
   HeadMasterDetailWrapper,
   HeadMasterName,
   HeadMasterPhoto,
@@ -23,12 +28,16 @@ import {
   MajorLabel,
   MajorPhoto,
   MajorWrapper,
+  NewsTitle,
+  SwiperWrapper,
   Video,
   WelcomeDescription,
   WelcomeTitle,
 } from "./_home";
 
 function Home() {
+  const swiperRef = useRef<HTMLDivElement>(null);
+
   return (
     <CoreLayout>
       <Section>
@@ -131,7 +140,38 @@ function Home() {
           </MajorWrapper>
         </Content4Wrapper>
       </Section>
-      <Section></Section>
+      <Section>
+        <Content5Wrapper>
+          <NewsTitle>Berita</NewsTitle>
+          <SwiperWrapper>
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={50}
+              slidesPerView={2}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={() => console.log("slide change")}
+              centeredSlides={true}
+              centeredSlidesBounds={true}
+            >
+              <SwiperSlide>
+                <HeadMasterPhoto />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HeadMasterPhoto />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HeadMasterPhoto />
+              </SwiperSlide>
+              <SwiperSlide>
+                <HeadMasterPhoto />
+              </SwiperSlide>
+            </Swiper>
+          </SwiperWrapper>
+        </Content5Wrapper>
+      </Section>
     </CoreLayout>
   );
 }
