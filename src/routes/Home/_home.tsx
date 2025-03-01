@@ -79,3 +79,62 @@ export const Content2Label = styled.div`
     font-size: 32px;
   }
 `;
+
+export const Content3Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Content3LeftWrapper = styled.div`
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const HeadMasterPhoto = styled.img`
+  height: 300px;
+  width: 250px;
+`;
+
+export const HeadMasterDetailWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+`;
+
+export const HeadMasterName = styled.div`
+  font-size: 24px;
+  color: ${color.a1};
+`;
+
+export const HeadMasterTitle = styled.div`
+  font-size: 24px;
+  color: ${color.a1};
+`;
+
+export const Content3RightWrapper = styled.div`
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const WelcomeTitle = styled.div`
+  font-size: 32px;
+  color: ${color.a1};
+`;
+
+export const WelcomeDescription = styled.div`
+  font-size: 24px;
+  color: ${color.a1};
+`;
