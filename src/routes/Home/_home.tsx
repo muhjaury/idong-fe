@@ -83,18 +83,27 @@ export const Content2Label = styled.div`
 export const Content3Wrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   gap: 40px;
-  align-items: center;
+  align-items: start;
   justify-content: center;
+
+  @media all and (min-width: 1024px) {
+    flex-direction: row;
+  }
 `;
 
 export const Content3LeftWrapper = styled.div`
-  width: 30%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 16px;
   align-items: center;
   justify-content: center;
+
+  @media all and (min-width: 1024px) {
+    width: 30%;
+  }
 `;
 
 export const HeadMasterPhoto = styled.img`
@@ -121,20 +130,75 @@ export const HeadMasterTitle = styled.div`
 `;
 
 export const Content3RightWrapper = styled.div`
-  width: 70%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   align-items: center;
   justify-content: center;
+
+  @media all and (min-width: 1024px) {
+    width: 70%;
+  }
 `;
 
 export const WelcomeTitle = styled.div`
   font-size: 32px;
   color: ${color.a1};
+  font-weight: 600;
 `;
 
 export const WelcomeDescription = styled.div`
   font-size: 24px;
   color: ${color.a1};
+`;
+
+export const Content4Title = styled.div`
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 48px;
+`;
+
+export const Content4Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+`;
+
+export const MajorWrapper = styled.div`
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media all and (min-width: 1024px) {
+    width: calc(90% / 2);
+  }
+`;
+
+export const MajorPhoto = styled.img`
+  height: 48px;
+  width: 72px;
+`;
+
+export const MajorDescWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+export const MajorLabel = styled.div`
+  font-size: 28px;
+  color: ${color.a2};
+  font-weight: 600;
+`;
+
+export const MajorDesc = styled.div`
+  font-size: 24px;
+  color: ${color.a2};
 `;

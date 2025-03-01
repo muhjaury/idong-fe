@@ -12,10 +12,17 @@ import {
   Content3LeftWrapper,
   Content3RightWrapper,
   Content3Wrapper,
+  Content4Title,
+  Content4Wrapper,
   HeadMasterDetailWrapper,
   HeadMasterName,
   HeadMasterPhoto,
   HeadMasterTitle,
+  MajorDesc,
+  MajorDescWrapper,
+  MajorLabel,
+  MajorPhoto,
+  MajorWrapper,
   Video,
   WelcomeDescription,
   WelcomeTitle,
@@ -77,7 +84,53 @@ function Home() {
           </Content3RightWrapper>
         </Content3Wrapper>
       </Section>
-      <Section type="secondary"></Section>
+      <Section type="secondary">
+        <Content4Title>
+          Jurusan Yang Tersedia di SMKS Karya Teknik Watangsoppeng
+        </Content4Title>
+        <Content4Wrapper>
+          <MajorWrapper>
+            <MajorPhoto />
+            <MajorDescWrapper>
+              <MajorLabel>List Item</MajorLabel>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+            </MajorDescWrapper>
+          </MajorWrapper>
+          <MajorWrapper>
+            <MajorPhoto />
+            <MajorDescWrapper>
+              <MajorLabel>List Item</MajorLabel>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+            </MajorDescWrapper>
+          </MajorWrapper>
+          <MajorWrapper>
+            <MajorPhoto />
+            <MajorDescWrapper>
+              <MajorLabel>List Item</MajorLabel>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+            </MajorDescWrapper>
+          </MajorWrapper>
+          <MajorWrapper>
+            <MajorPhoto />
+            <MajorDescWrapper>
+              <MajorLabel>List Item</MajorLabel>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+            </MajorDescWrapper>
+          </MajorWrapper>
+          <MajorWrapper>
+            <MajorPhoto />
+            <MajorDescWrapper>
+              <MajorLabel>List Item</MajorLabel>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
+            </MajorDescWrapper>
+          </MajorWrapper>
+        </Content4Wrapper>
+      </Section>
       <Section></Section>
     </CoreLayout>
   );
