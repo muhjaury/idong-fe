@@ -4,6 +4,7 @@ import DaftarPelanggaran from "./DaftarPelanggaran";
 import Dashboard from "./Dashboard";
 import Galeri from "./Galeri";
 import Home from "./Home";
+import Jurusan from "./Jurusan";
 import KalenderAkademik from "./KalenderAkademik";
 import Login from "./Login";
 import PetaSitusKontak from "./PetaSitusKontak";
@@ -24,6 +25,7 @@ export {
   Dashboard,
   Galeri,
   Home,
+  Jurusan,
   KalenderAkademik,
   Login,
   PetaSitusKontak,
