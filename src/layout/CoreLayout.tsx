@@ -11,8 +11,8 @@ function CoreLayout(props: any) {
   const { loading } = useWidget();
 
   useEffect(() => {
-    setTimeout(() => setInitLoading("N"), 1500);
-    AOS.init({ duration: 1000 });
+    setTimeout(() => setInitLoading("N"), 500);
+    AOS.init({ duration: 300 });
   }, []);
 
   return (

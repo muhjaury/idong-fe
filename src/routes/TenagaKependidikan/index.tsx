@@ -3,22 +3,22 @@ import { Breadcrumb } from "@/constant/breadcrumb";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 
-function Sejarah() {
+function TenagaKependidikan() {
   const [breadcrumb, setBreadcrumb] = useState([
     Breadcrumb.home,
-    Breadcrumb.sejarah,
+    Breadcrumb.tenagaKependidikan,
   ]);
 
   useEffect(() => {
-    setBreadcrumb([Breadcrumb.home, Breadcrumb.sejarah]);
+    setBreadcrumb([Breadcrumb.home, Breadcrumb.tenagaKependidikan]);
   }, []);
 
   return (
     <CoreLayout>
-      <PageTitle title="Sejarah" breadcrumb={breadcrumb} />
+      <PageTitle title="Tenaga Kependidikan" breadcrumb={breadcrumb} />
       <Section type="secondary"></Section>
     </CoreLayout>
   );
 }
 
-export default Sejarah;
+export default TenagaKependidikan;

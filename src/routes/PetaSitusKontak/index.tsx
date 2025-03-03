@@ -3,22 +3,22 @@ import { Breadcrumb } from "@/constant/breadcrumb";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 
-function Sejarah() {
+function PetaSitusKontak() {
   const [breadcrumb, setBreadcrumb] = useState([
     Breadcrumb.home,
-    Breadcrumb.sejarah,
+    Breadcrumb.petaSitusKontak,
   ]);
 
   useEffect(() => {
-    setBreadcrumb([Breadcrumb.home, Breadcrumb.sejarah]);
+    setBreadcrumb([Breadcrumb.home, Breadcrumb.petaSitusKontak]);
   }, []);
 
   return (
     <CoreLayout>
-      <PageTitle title="Sejarah" breadcrumb={breadcrumb} />
+      <PageTitle title="Peta Situs & Kontak" breadcrumb={breadcrumb} />
       <Section type="secondary"></Section>
     </CoreLayout>
   );
 }
 
-export default Sejarah;
+export default PetaSitusKontak;
