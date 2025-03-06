@@ -1,9 +1,9 @@
 import { Button, InputText, Loading, LoadingContent } from "@/components";
-import { urls } from "@/constant/path";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import SOPPENG from "./../../assets/img/soppeng.png";
 import { Card, Logo, Title, Wrapper } from "./_login";
+import { verifyCred } from "./network";
 
 function Login() {
   const [initLoading, setInitLoading] = useState<boolean>(true);
@@ -27,7 +27,8 @@ function Login() {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (username && password) {
-      router.push(urls.DASHBOARD);
+      const func = { router };
+      verifyCred(func, username, password);
     }
   };
 
@@ -42,7 +43,7 @@ function Login() {
           <Title>SMKS Karya Teknik Watansoppeng</Title>
           <Card onSubmit={(e) => handleSubmit(e)}>
             <InputText
-              type="email"
+              type="text"
               placeholder="Username"
               value={username}
               onChange={(e: any) => handleUsername(e.target.value)}

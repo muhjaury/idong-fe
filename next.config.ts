@@ -3,6 +3,7 @@
 const ASSET_PREFIX = process.env.NEXT_PUBLIC_PREFIX;
 
 const nextConfig = {
+  reactStrictMode: true,
   // output: "export",
   assetPrefix: ASSET_PREFIX,
   webpack: (config: any) => {
