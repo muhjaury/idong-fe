@@ -100,7 +100,7 @@ export const Content = styled.div<IF_Height>`
   right: 0;
   bottom: 0;
   left: 300px;
-  padding: 32px;
+  padding: 16px;
   background: ${color.a1};
   color: ${color.a6};
   overflow-y: scroll;

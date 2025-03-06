@@ -65,6 +65,10 @@ function Header() {
     };
   }, []);
 
+  const handleClickMenu = (url: string) => {
+    router.push(url);
+  };
+
   return (
     <Wrapper scrolled={scrolled}>
       <SideBarWrapper display={sideBar}>
@@ -115,7 +119,10 @@ function Header() {
       </WrapperLeft>
       <WrapperRight>
         <NavWrapper>
-          <Nav onMouseEnter={() => handleOnHover(0)}>Beranda</Nav>
+          <Nav onClick={() => handleClickMenu(urls.HOME)}>Beranda</Nav>
+        </NavWrapper>
+        <NavWrapper>
+          <Nav onMouseEnter={() => handleOnHover(0)}>Profil</Nav>
           <NavDropdownWrapper
             display={hover[0]}
             onMouseLeave={() => handleOffHover(0)}
@@ -128,12 +135,6 @@ function Header() {
               <Dropdown>Menu 2</Dropdown>
               <Dropdown>Menu 3</Dropdown>
             </NavDropdown>
-          </NavDropdownWrapper>
-        </NavWrapper>
-        <NavWrapper>
-          <Nav>Profil</Nav>
-          <NavDropdownWrapper>
-            <NavDropdown></NavDropdown>
           </NavDropdownWrapper>
         </NavWrapper>
         <NavWrapper>
@@ -156,7 +157,7 @@ function Header() {
           <Nav>Kesiswaan</Nav>
         </NavWrapper>
         <NavWrapper>
-          <Nav>Jurusan</Nav>
+          <Nav onClick={() => handleClickMenu(urls.JURUSAN)}>Jurusan</Nav>
         </NavWrapper>
         <ButtonWrapper>
           <Button onClick={() => router.push(urls.LOGIN)}>Login</Button>
