@@ -11,7 +11,7 @@ export const verifyCred = (func: any, username: string, password: string) => {
 
   const data = { username: usernameEnc, password: passwordEnc };
 
-  request(VERIFY_API, "POST", data).then((res) => {
+  request(VERIFY_API, "POST", null, data).then((res) => {
     if (res.status.toLowerCase() === "success") {
       router.push(urls.DASHBOARD);
     }
