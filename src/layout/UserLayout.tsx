@@ -1,5 +1,7 @@
-import { Footer, HeaderUser } from "@/components";
+import { Footer, HeaderUser, LoadingContent } from "@/components";
+import { useWidget } from "@/context";
 import { useEffect, useRef, useState } from "react";
+import DOWN from "./../assets/img/down.png";
 import {
   Content,
   ContentWrapper,
@@ -10,20 +12,26 @@ import {
   SideBarItemWrapper,
   Wrapper,
 } from "./_userLayout";
-import DOWN from "./../assets/img/down.png";
 
 function UserLayout(props: any) {
+  const [initLoading, setInitLoading] = useState<string>("Y");
   const [contentHeight, setContentHeight] = useState<number>(0);
   const [sideBarHeight, setSideBarHeight] = useState<number>(0);
   const [totalHeight, setTotalHeight] = useState<number>(0);
-  const [sideDrop1, setSideDrop1] = useState<string>("N");
-  const [sideDrop2, setSideDrop2] = useState<string>("N");
-  const [sideDrop3, setSideDrop3] = useState<string>("N");
-  const [sideDrop4, setSideDrop4] = useState<string>("N");
-  const [sideDrop5, setSideDrop5] = useState<string>("N");
+  const [sideDropUser1, setSideDropUser1] = useState<string>("N");
+  const [sideDropUser2, setSideDropUser2] = useState<string>("N");
+  const [sideDropUser3, setSideDropUser3] = useState<string>("N");
+  const [sideDropUser4, setSideDropUser4] = useState<string>("N");
+  const [sideDropUser5, setSideDropUser5] = useState<string>("N");
+
+  const { setUrlChange } = useWidget();
 
   const refContent = useRef<HTMLDivElement>(null);
   const refSideBar = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setTimeout(() => setInitLoading("N"), 500);
+  }, []);
 
   useEffect(() => {
     if (refContent) {
@@ -41,77 +49,166 @@ function UserLayout(props: any) {
     setTotalHeight(Math.max(contentHeight, sideBarHeight));
   }, [contentHeight, sideBarHeight]);
 
+  const handleClickMenu = (menu: string): void => {
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("page", menu);
+    history.pushState(null, "", "?" + urlParams.toString());
+    setUrlChange(menu);
+  };
+
   return (
     <Wrapper>
-      <HeaderUser />
-      <ContentWrapper>
-        <SideBar ref={refSideBar} height={totalHeight}>
-          <SideBarItem>Dashboard</SideBarItem>
-          <SideBarItemWrapper
-            onClick={() => setSideDrop1(sideDrop1 === "Y" ? "N" : "Y")}
-          >
-            <SideBarItem>User</SideBarItem>
-            <SideBarDropdown alt="down" src={DOWN} display={sideDrop1} />
-          </SideBarItemWrapper>
-          <SideBarDropWrapper display={sideDrop1}>
-            <SideBarItem>Admin</SideBarItem>
-            <SideBarItem>Guru</SideBarItem>
-          </SideBarDropWrapper>
-          <SideBarItemWrapper
-            onClick={() => setSideDrop2(sideDrop2 === "Y" ? "N" : "Y")}
-          >
-            <SideBarItem>Profil</SideBarItem>
-            <SideBarDropdown alt="down" src={DOWN} display={sideDrop2} />
-          </SideBarItemWrapper>
-          <SideBarDropWrapper display={sideDrop2}>
-            <SideBarItem>Profil Sekolah</SideBarItem>
-            <SideBarItem>Tenaga Pendidik</SideBarItem>
-            <SideBarItem>Tenaga Kependidikan</SideBarItem>
-            <SideBarItem>Sarana & Prasarana</SideBarItem>
-            <SideBarItem>Peta Status - Kontak</SideBarItem>
-          </SideBarDropWrapper>
-          <SideBarItemWrapper
-            onClick={() => setSideDrop3(sideDrop3 === "Y" ? "N" : "Y")}
-          >
-            <SideBarItem>Informasi</SideBarItem>
-            <SideBarDropdown alt="down" src={DOWN} display={sideDrop3} />
-          </SideBarItemWrapper>
-          <SideBarDropWrapper display={sideDrop3}>
-            <SideBarItem>Portal Berita</SideBarItem>
-            <SideBarItem>Galeri</SideBarItem>
-            <SideBarItem>Arsip</SideBarItem>
-          </SideBarDropWrapper>
-          <SideBarItemWrapper
-            onClick={() => setSideDrop4(sideDrop4 === "Y" ? "N" : "Y")}
-          >
-            <SideBarItem>Kesiswaan</SideBarItem>
-            <SideBarDropdown alt="down" src={DOWN} display={sideDrop4} />
-          </SideBarItemWrapper>
-          <SideBarDropWrapper display={sideDrop4}>
-            <SideBarItem>Siswa</SideBarItem>
-            <SideBarItem>Daftar Hadir</SideBarItem>
-            <SideBarItem>Tata Tertib</SideBarItem>
-            <SideBarItem>Pelanggaran</SideBarItem>
-          </SideBarDropWrapper>
-          <SideBarItemWrapper
-            onClick={() => setSideDrop5(sideDrop5 === "Y" ? "N" : "Y")}
-          >
-            <SideBarItem>Jurusan</SideBarItem>
-            <SideBarDropdown alt="down" src={DOWN} display={sideDrop5} />
-          </SideBarItemWrapper>
-          <SideBarDropWrapper display={sideDrop5}>
-            <SideBarItem>TKJ</SideBarItem>
-            <SideBarItem>TBSM</SideBarItem>
-            <SideBarItem>DPIB</SideBarItem>
-            <SideBarItem>TRKO</SideBarItem>
-            <SideBarItem>ATPH</SideBarItem>
-          </SideBarDropWrapper>
-        </SideBar>
-        <Content ref={refContent} height={totalHeight}>
-          {props.children}
-        </Content>
-      </ContentWrapper>
-      <Footer displayNavigation={false} />
+      {initLoading === "Y" ? (
+        <LoadingContent />
+      ) : (
+        <>
+          <HeaderUser />
+          <ContentWrapper>
+            <SideBar ref={refSideBar} height={totalHeight}>
+              <SideBarItem onClick={() => handleClickMenu("Dashboard")}>
+                Dashboard
+              </SideBarItem>
+              <SideBarItemWrapper
+                onClick={() =>
+                  setSideDropUser1(sideDropUser1 === "Y" ? "N" : "Y")
+                }
+              >
+                <SideBarItem>User</SideBarItem>
+                <SideBarDropdown
+                  alt="down"
+                  src={DOWN}
+                  display={sideDropUser1}
+                />
+              </SideBarItemWrapper>
+              <SideBarDropWrapper display={sideDropUser1}>
+                <SideBarItem onClick={() => handleClickMenu("Admin")}>
+                  Admin
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("Guru")}>
+                  Guru
+                </SideBarItem>
+              </SideBarDropWrapper>
+              <SideBarItemWrapper
+                onClick={() =>
+                  setSideDropUser2(sideDropUser2 === "Y" ? "N" : "Y")
+                }
+              >
+                <SideBarItem>Profil</SideBarItem>
+                <SideBarDropdown
+                  alt="down"
+                  src={DOWN}
+                  display={sideDropUser2}
+                />
+              </SideBarItemWrapper>
+              <SideBarDropWrapper display={sideDropUser2}>
+                <SideBarItem onClick={() => handleClickMenu("Profil-Sekolah")}>
+                  Profil Sekolah
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("Tenaga-Pendidik")}>
+                  Tenaga Pendidik
+                </SideBarItem>
+                <SideBarItem
+                  onClick={() => handleClickMenu("Tenaga-Kependidikan")}
+                >
+                  Tenaga Kependidikan
+                </SideBarItem>
+                <SideBarItem
+                  onClick={() => handleClickMenu("Sarana-Prasarana")}
+                >
+                  Sarana & Prasarana
+                </SideBarItem>
+                <SideBarItem
+                  onClick={() => handleClickMenu("Peta-Status-Kontak")}
+                >
+                  Peta Status - Kontak
+                </SideBarItem>
+              </SideBarDropWrapper>
+              <SideBarItemWrapper
+                onClick={() =>
+                  setSideDropUser3(sideDropUser3 === "Y" ? "N" : "Y")
+                }
+              >
+                <SideBarItem>Informasi</SideBarItem>
+                <SideBarDropdown
+                  alt="down"
+                  src={DOWN}
+                  display={sideDropUser3}
+                />
+              </SideBarItemWrapper>
+              <SideBarDropWrapper display={sideDropUser3}>
+                <SideBarItem onClick={() => handleClickMenu("Portal-Berita")}>
+                  Portal Berita
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("Galeri")}>
+                  Galeri
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("Arsip")}>
+                  Arsip
+                </SideBarItem>
+              </SideBarDropWrapper>
+              <SideBarItemWrapper
+                onClick={() =>
+                  setSideDropUser4(sideDropUser4 === "Y" ? "N" : "Y")
+                }
+              >
+                <SideBarItem>Kesiswaan</SideBarItem>
+                <SideBarDropdown
+                  alt="down"
+                  src={DOWN}
+                  display={sideDropUser4}
+                />
+              </SideBarItemWrapper>
+              <SideBarDropWrapper display={sideDropUser4}>
+                <SideBarItem onClick={() => handleClickMenu("Siswa")}>
+                  Siswa
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("Daftar-Hadir")}>
+                  Daftar Hadir
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("Tata-Tertib")}>
+                  Tata Tertib
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("Pelanggaran")}>
+                  Pelanggaran
+                </SideBarItem>
+              </SideBarDropWrapper>
+              <SideBarItemWrapper
+                onClick={() =>
+                  setSideDropUser5(sideDropUser5 === "Y" ? "N" : "Y")
+                }
+              >
+                <SideBarItem>Jurusan</SideBarItem>
+                <SideBarDropdown
+                  alt="down"
+                  src={DOWN}
+                  display={sideDropUser5}
+                />
+              </SideBarItemWrapper>
+              <SideBarDropWrapper display={sideDropUser5}>
+                <SideBarItem onClick={() => handleClickMenu("TKJ")}>
+                  TKJ
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("TBSM")}>
+                  TBSM
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("DPIB")}>
+                  DPIB
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("TRKO")}>
+                  TRKO
+                </SideBarItem>
+                <SideBarItem onClick={() => handleClickMenu("ATPH")}>
+                  ATPH
+                </SideBarItem>
+              </SideBarDropWrapper>
+            </SideBar>
+            <Content ref={refContent} height={totalHeight}>
+              {props.children}
+            </Content>
+          </ContentWrapper>
+          <Footer displayNavigation={false} />
+        </>
+      )}
     </Wrapper>
   );
 }

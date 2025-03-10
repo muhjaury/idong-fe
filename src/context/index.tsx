@@ -4,10 +4,13 @@ import { createContext, useContext, useState } from "react";
 
 const useValue = () => {
   const [loading, setLoading] = useState<boolean>(false);
+  const [urlChange, setUrlChange] = useState<string>("");
 
   return {
     loading,
+    urlChange,
     setLoading,
+    setUrlChange,
   };
 };
 

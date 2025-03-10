@@ -67,13 +67,14 @@ export const SideBarItemWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  pointer: cursor;
+  cursor: pointer;
 `;
 
 export const SideBarItem = styled.div`
   font-size: 16x;
   font-weight: 600;
   color: ${color.a1};
+  cursor: pointer;
 `;
 
 export const SideBarDropdown = styled.img<IF_Img>`
