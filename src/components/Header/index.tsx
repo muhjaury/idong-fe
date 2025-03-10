@@ -31,10 +31,12 @@ import { urls } from "@/constant/path";
 
 function Header() {
   const [scrolled, setScrolled] = useState<string>("N");
-  const [hover, setHover] = useState<string[]>(["N", "N", "N", "N", "N"]);
+  const [hover, setHover] = useState<string[]>(["N", "N", "N", "N"]);
   const [sideBar, setSideBar] = useState<string>("N");
   const [sideDrop1, setSideDrop1] = useState<string>("N");
   const [sideDrop2, setSideDrop2] = useState<string>("N");
+  const [sideDrop3, setSideDrop3] = useState<string>("N");
+  const [sideDrop4, setSideDrop4] = useState<string>("N");
 
   const router = useRouter();
 
@@ -78,39 +80,182 @@ function Header() {
           </SideBarHeader>
           <SideBarContent>
             <SideBarItemWrapper>
+              <SideBarItem onClick={() => handleClickMenu(urls.HOME)}>
+                Beranda
+              </SideBarItem>
+            </SideBarItemWrapper>
+            <SideBarItemWrapper
+              onClick={() => setSideDrop1(sideDrop1 === "Y" ? "N" : "Y")}
+            >
               <SideBarItem>Profil</SideBarItem>
-              <SideBarDropdown
-                alt="down"
-                src={DOWN}
-                onClick={() => setSideDrop1(sideDrop1 === "Y" ? "N" : "Y")}
-                display={sideDrop1}
-              />
+              <SideBarDropdown alt="down" src={DOWN} display={sideDrop1} />
             </SideBarItemWrapper>
             <SideBarDropWrapper display={sideDrop1}>
-              <SideBarItem>Menu 1</SideBarItem>
-              <SideBarItem>Menu 2</SideBarItem>
-              <SideBarItem>Menu 3</SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.SEJARAH);
+                }}
+              >
+                Sejarah
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.VISI_MISI);
+                }}
+              >
+                Visi - Misi
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.STRUKTUR_ORGANISASI);
+                }}
+              >
+                Struktur Organisasi
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.TENAGA_PENDIDIK);
+                }}
+              >
+                Tenaga Pendidik
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.TENAGA_KEPENDIDIKAN);
+                }}
+              >
+                Tenaga Kependidikan
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.KALENDER_AKADEMIK);
+                }}
+              >
+                Kalender Akademik
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.SARANA_PRASARANA);
+                }}
+              >
+                Sarana & Prasarana
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.PETA_SITUS_KONTAK);
+                }}
+              >
+                Peta Situs & Kontak
+              </SideBarItem>
             </SideBarDropWrapper>
-            <SideBarItemWrapper>
+            <SideBarItemWrapper
+              onClick={() => setSideDrop2(sideDrop2 === "Y" ? "N" : "Y")}
+            >
               <SideBarItem>Informasi</SideBarItem>
-              <SideBarDropdown
-                alt="down"
-                src={DOWN}
-                onClick={() => setSideDrop2(sideDrop2 === "Y" ? "N" : "Y")}
-                display={sideDrop2}
-              />
+              <SideBarDropdown alt="down" src={DOWN} display={sideDrop2} />
             </SideBarItemWrapper>
             <SideBarDropWrapper display={sideDrop2}>
-              <SideBarItem>Menu 1</SideBarItem>
-              <SideBarItem>Menu 2</SideBarItem>
-              <SideBarItem>Menu 3</SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.PORTAL_BERITA);
+                }}
+              >
+                Portal Berita
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.GALERI);
+                }}
+              >
+                Galeri
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.ARSIP);
+                }}
+              >
+                Arsip
+              </SideBarItem>
             </SideBarDropWrapper>
-            <SideBarItemWrapper>
+            <SideBarItemWrapper
+              onClick={() => setSideDrop3(sideDrop3 === "Y" ? "N" : "Y")}
+            >
               <SideBarItem>Kesiswaan</SideBarItem>
+              <SideBarDropdown alt="down" src={DOWN} display={sideDrop3} />
             </SideBarItemWrapper>
-            <SideBarItemWrapper>
+            <SideBarDropWrapper display={sideDrop3}>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.SISWA);
+                }}
+              >
+                Siswa
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.DAFTAR_HADIR);
+                }}
+              >
+                Daftar Hadir
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.TATA_TERTIB);
+                }}
+              >
+                Tata Tertib
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.DAFTAR_PELANGGARAN);
+                }}
+              >
+                Daftar Pelanggaran
+              </SideBarItem>
+            </SideBarDropWrapper>
+            <SideBarItemWrapper
+              onClick={() => setSideDrop4(sideDrop4 === "Y" ? "N" : "Y")}
+            >
               <SideBarItem>Jurusan</SideBarItem>
+              <SideBarDropdown alt="down" src={DOWN} display={sideDrop4} />
             </SideBarItemWrapper>
+            <SideBarDropWrapper display={sideDrop4}>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                TKJ
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                TBSM
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                DPIB
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                TRKO
+              </SideBarItem>
+              <SideBarItem
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                ATPH
+              </SideBarItem>
+            </SideBarDropWrapper>
           </SideBarContent>
         </SideBar>
       </SideBarWrapper>
@@ -131,14 +276,101 @@ function Header() {
               display={hover[0]}
               onMouseLeave={() => handleOffHover(0)}
             >
-              <Dropdown>Menu 1</Dropdown>
-              <Dropdown>Menu 2</Dropdown>
-              <Dropdown>Menu 3</Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.SEJARAH);
+                }}
+              >
+                Sejarah
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.VISI_MISI);
+                }}
+              >
+                Visi - Misi
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.STRUKTUR_ORGANISASI);
+                }}
+              >
+                Struktur Organisasi
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.TENAGA_PENDIDIK);
+                }}
+              >
+                Tenaga Pendidik
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.TENAGA_KEPENDIDIKAN);
+                }}
+              >
+                Tenaga Kependidikan
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.KALENDER_AKADEMIK);
+                }}
+              >
+                Kalender Akademik
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.SARANA_PRASARANA);
+                }}
+              >
+                Sarana & Prasarana
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.PETA_SITUS_KONTAK);
+                }}
+              >
+                Peta Situs & Kontak
+              </Dropdown>
             </NavDropdown>
           </NavDropdownWrapper>
         </NavWrapper>
         <NavWrapper>
-          <Nav onMouseEnter={() => handleOnHover(2)}>Informasi</Nav>
+          <Nav onMouseEnter={() => handleOnHover(1)}>Informasi</Nav>
+          <NavDropdownWrapper
+            display={hover[1]}
+            onMouseLeave={() => handleOffHover(1)}
+          >
+            <NavDropdown
+              display={hover[1]}
+              onMouseLeave={() => handleOffHover(1)}
+            >
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.PORTAL_BERITA);
+                }}
+              >
+                Portal Berita
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.GALERI);
+                }}
+              >
+                Galeri
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.ARSIP);
+                }}
+              >
+                Arsip
+              </Dropdown>
+            </NavDropdown>
+          </NavDropdownWrapper>
+        </NavWrapper>
+        <NavWrapper>
+          <Nav onMouseEnter={() => handleOnHover(2)}>Kesiswaan</Nav>
           <NavDropdownWrapper
             display={hover[2]}
             onMouseLeave={() => handleOffHover(2)}
@@ -147,17 +379,84 @@ function Header() {
               display={hover[2]}
               onMouseLeave={() => handleOffHover(2)}
             >
-              <Dropdown>Menu 1</Dropdown>
-              <Dropdown>Menu 2</Dropdown>
-              <Dropdown>Menu 3</Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.SISWA);
+                }}
+              >
+                Siswa
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.DAFTAR_HADIR);
+                }}
+              >
+                Daftar Hadir
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.TATA_TERTIB);
+                }}
+              >
+                Tata Tertib
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.DAFTAR_PELANGGARAN);
+                }}
+              >
+                Daftar Pelanggaran
+              </Dropdown>
             </NavDropdown>
           </NavDropdownWrapper>
         </NavWrapper>
         <NavWrapper>
-          <Nav>Kesiswaan</Nav>
-        </NavWrapper>
-        <NavWrapper>
-          <Nav onClick={() => handleClickMenu(urls.JURUSAN)}>Jurusan</Nav>
+          <Nav onMouseEnter={() => handleOnHover(3)}>Jurusan</Nav>
+          <NavDropdownWrapper
+            display={hover[3]}
+            onMouseLeave={() => handleOffHover(3)}
+          >
+            <NavDropdown
+              display={hover[3]}
+              onMouseLeave={() => handleOffHover(3)}
+            >
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                TKJ
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                TBSM
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                DPIB
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                TRKO
+              </Dropdown>
+              <Dropdown
+                onClick={() => {
+                  handleClickMenu(urls.JURUSAN);
+                }}
+              >
+                ATPH
+              </Dropdown>
+            </NavDropdown>
+          </NavDropdownWrapper>
         </NavWrapper>
         <ButtonWrapper>
           <Button onClick={() => router.push(urls.LOGIN)}>Login</Button>
