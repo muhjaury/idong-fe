@@ -222,35 +222,35 @@ function Header() {
             <SideBarDropWrapper display={sideDrop4}>
               <SideBarItem
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.TKJ);
                 }}
               >
                 TKJ
               </SideBarItem>
               <SideBarItem
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.TBSM);
                 }}
               >
                 TBSM
               </SideBarItem>
               <SideBarItem
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.DPIB);
                 }}
               >
                 DPIB
               </SideBarItem>
               <SideBarItem
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.TRKO);
                 }}
               >
                 TRKO
               </SideBarItem>
               <SideBarItem
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.ATPH);
                 }}
               >
                 ATPH
@@ -422,35 +422,35 @@ function Header() {
             >
               <Dropdown
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.TKJ);
                 }}
               >
                 TKJ
               </Dropdown>
               <Dropdown
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.TBSM);
                 }}
               >
                 TBSM
               </Dropdown>
               <Dropdown
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.DPIB);
                 }}
               >
                 DPIB
               </Dropdown>
               <Dropdown
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.TRKO);
                 }}
               >
                 TRKO
               </Dropdown>
               <Dropdown
                 onClick={() => {
-                  handleClickMenu(urls.JURUSAN);
+                  handleClickMenu(urls.ATPH);
                 }}
               >
                 ATPH

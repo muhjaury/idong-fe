@@ -1,8 +1,10 @@
 export const urls = {
   ARSIP: "/arsip",
+  ATPH: "/atph",
   DAFTAR_HADIR: "/daftar-hadir",
   DAFTAR_PELANGGARAN: "/daftar-pelanggaran",
   DASHBOARD: "/dashboard",
+  DPIB: "/dpib",
   GALERI: "/galeri",
   HOME: "/",
   JURUSAN: "/jurusan",
@@ -17,5 +19,8 @@ export const urls = {
   TATA_TERTIB: "/tata-tertib",
   TENAGA_KEPENDIDIKAN: "/tenaga-kependidikan",
   TENAGA_PENDIDIK: "/tenaga-pendidik",
+  TBSM: "/tbsm",
+  TKJ: "/tkj",
+  TRKO: "/trko",
   VISI_MISI: "/visi-misi",
 };

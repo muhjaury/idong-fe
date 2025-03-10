@@ -3,22 +3,22 @@ import { Breadcrumb } from "@/constant/breadcrumb";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 
-function Jurusan() {
+function TBSM() {
   const [breadcrumb, setBreadcrumb] = useState([
     Breadcrumb.home,
-    Breadcrumb.jurusan,
+    Breadcrumb.tbsm,
   ]);
 
   useEffect(() => {
-    setBreadcrumb([Breadcrumb.home, Breadcrumb.jurusan]);
+    setBreadcrumb([Breadcrumb.home, Breadcrumb.tbsm]);
   }, []);
 
   return (
     <CoreLayout>
-      <PageTitle title="Jurusan" breadcrumb={breadcrumb} />
+      <PageTitle title="TBSM" breadcrumb={breadcrumb} />
       <Section type="secondary"></Section>
     </CoreLayout>
   );
 }
 
-export default Jurusan;
+export default TBSM;

@@ -1,13 +1,14 @@
 export const Breadcrumb = {
   home: { label: "Beranda", value: "/" },
   arsip: { label: "Arsip", value: "/arsip" },
+  atph: { label: "ATPH", value: "/atph" },
   daftarHadir: { label: "Daftar Hadir", value: "/daftar-hadir" },
   daftarPelanggaran: {
     label: "Daftar Pelanggaran",
     value: "/daftar-pelanggaran",
   },
+  dpib: { label: "DPIB", value: "/dpib" },
   galeri: { label: "Galeri", value: "/galeri" },
-  jurusan: { label: "Jurusan", value: "/jurusan" },
   kalenderAkademik: { label: "Kalender Akademik", value: "/kalender-akademik" },
   petaSitusKontak: {
     label: "Peta Situs & Kontak",
@@ -27,5 +28,8 @@ export const Breadcrumb = {
     value: "/tenaga-kependidikan",
   },
   tenagaPendidik: { label: "Tenaga Pendidik", value: "/tenaga-pendidik" },
+  tbsm: { label: "TBSM", value: "/tbsm" },
+  tkj: { label: "TKJ", value: "/tkj" },
+  trko: { label: "TRKO", value: "/trko" },
   visiMisi: { label: "Visi - Misi", value: "/visi-misi" },
 };
