@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 interface IF_Height {
   height?: number;
+  display?: string;
 }
 
 interface IF_Img {
@@ -40,27 +41,36 @@ export const SideBar = styled.div<IF_Height>`
   width: 300px;
   background: ${color.a2};
   overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    // display: none;
-    width: 8px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: ${color.a1};
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: ${color.a4};
-  }
-
-  &::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  margin-left: ${({ display }) => (display === "Y" ? "0" : "-300px")};
+  transition: 0.5s cubic-bezier(0.36, -0.01, 0, 0.77);
+  z-index: 2;
+
+  @media all and (min-width: 1024px) {
+    transition: unset;
+    margin-left: 0;
+    z-index: unset;
+
+    &::-webkit-scrollbar {
+      // display: none;
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: ${color.a1};
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: ${color.a4};
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  }
 `;
 
 export const SideBarItemWrapper = styled.div`
@@ -100,11 +110,12 @@ export const Content = styled.div<IF_Height>`
   top: 0;
   right: 0;
   bottom: 0;
-  left: 300px;
+  left: 0;
   padding: 16px;
   background: ${color.a1};
   color: ${color.a6};
   overflow-y: scroll;
+  transition: 0.5s cubic-bezier(0.36, -0.01, 0, 0.77);
 
   &::-webkit-scrollbar {
     // display: none;
@@ -121,5 +132,27 @@ export const Content = styled.div<IF_Height>`
 
   &::-webkit-scrollbar-thumb:hover {
     background: ${color.a2};
+  }
+
+  @media all and (min-width: 1024px) {
+    left: 300px;
+    transition: unset;
+  }
+`;
+
+export const ContentOverlay = styled.div<IF_Height>`
+  display: ${({ display }) => (display === "Y" ? "block" : "none")};
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(26, 32, 38, 0.8);
+  z-index: 1;
+
+  @media all and (min-width: 1024px) {
+    display: none;
   }
 `;

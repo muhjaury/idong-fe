@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import DOWN from "./../assets/img/down.png";
 import {
   Content,
+  ContentOverlay,
   ContentWrapper,
   SideBar,
   SideBarDropWrapper,
@@ -18,6 +19,7 @@ function UserLayout(props: any) {
   const [contentHeight, setContentHeight] = useState<number>(0);
   const [sideBarHeight, setSideBarHeight] = useState<number>(0);
   const [totalHeight, setTotalHeight] = useState<number>(0);
+  const [sideBar, setSideBar] = useState<string>("N");
   const [sideDropUser1, setSideDropUser1] = useState<string>("N");
   const [sideDropUser2, setSideDropUser2] = useState<string>("N");
   const [sideDropUser3, setSideDropUser3] = useState<string>("N");
@@ -62,9 +64,9 @@ function UserLayout(props: any) {
         <LoadingContent />
       ) : (
         <>
-          <HeaderUser />
+          <HeaderUser sideBar={sideBar} setSideBar={setSideBar} />
           <ContentWrapper>
-            <SideBar ref={refSideBar} height={totalHeight}>
+            <SideBar ref={refSideBar} height={totalHeight} display={sideBar}>
               <SideBarItem onClick={() => handleClickMenu("Dashboard")}>
                 Dashboard
               </SideBarItem>
@@ -202,6 +204,7 @@ function UserLayout(props: any) {
                 </SideBarItem>
               </SideBarDropWrapper>
             </SideBar>
+            <ContentOverlay display={sideBar} />
             <Content ref={refContent} height={totalHeight}>
               {props.children}
             </Content>

@@ -1,6 +1,11 @@
 import { color } from "@/constant/color";
 import styled from "styled-components";
 
+interface IF_Img {
+  src?: any;
+  display?: string;
+}
+
 export const Wrapper = styled.div`
   padding: 16px;
   display: flex;
@@ -14,6 +19,22 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Menu = styled.img<IF_Img>`
+  display: block;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+
+  @media all and (min-width: 1024px) {
+    display: none;
+  }
+`;
+
 export const Title = styled.span`
+  display: none;
   color: ${color.a1};
+
+  @media all and (min-width: 1024px) {
+    display: block;
+  }
 `;

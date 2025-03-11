@@ -1,9 +1,10 @@
+import { urls } from "@/constant/path";
 import { useRouter } from "next/navigation";
 import { Button } from "..";
-import { Title, Wrapper } from "./_headerUser";
-import { urls } from "@/constant/path";
+import MENU from "./../../assets/svg/menu.svg";
+import { Menu, Title, Wrapper } from "./_headerUser";
 
-function HeaderUser() {
+function HeaderUser(props: any) {
   const router = useRouter();
 
   const handleLogoutClick = () => {
@@ -12,6 +13,10 @@ function HeaderUser() {
 
   return (
     <Wrapper>
+      <Menu
+        src={MENU}
+        onClick={() => props.setSideBar(props.sideBar === "Y" ? "N" : "Y")}
+      />
       <Title>SMKS Karya Teknik Watansoppeng</Title>
       <Button onClick={handleLogoutClick}>Logout</Button>
     </Wrapper>
