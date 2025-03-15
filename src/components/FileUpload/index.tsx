@@ -61,7 +61,13 @@ function FileUpload({ multiple = false }) {
       );
 
       if (multiple) {
-        setFiles([...existingFile, ...initialDataWithBase64]);
+        let multipleData = [...existingFile, ...initialDataWithBase64];
+        multipleData = multipleData.map(
+          (item: Interface_File, index: number) => {
+            return { ...item, id: index };
+          }
+        );
+        setFiles(multipleData);
       } else {
         setFiles(initialDataWithBase64);
       }
