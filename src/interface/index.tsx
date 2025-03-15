@@ -10,13 +10,14 @@ export interface Interface_Request {
 }
 
 export interface Interface_File {
+  id?: number;
   originalFile?: File | null;
   size?: string;
   type?: string;
   name?: string;
   blob?: Blob | null;
   value?: ArrayBuffer | null;
-  objectUrl?: URL | null;
+  objectURL?: URL | null;
   base64?: string;
 }
 

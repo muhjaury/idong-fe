@@ -1,5 +1,5 @@
 import { color } from "@/constant/color";
-import { Interface_Img } from "@/interface";
+import { Interface_Components, Interface_Img } from "@/interface";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
@@ -9,9 +9,9 @@ export const Wrapper = styled.div`
   gap: 16px;
 `;
 
-export const ButtonWrapper = styled.div`
+export const ButtonWrapper = styled.div<Interface_Components>`
   position: relative;
-  display: flex;
+  display: ${({ display }) => (display === "Y" ? "flex" : "none")};
   align-items: center;
   justify-content: center;
   border-radius: 8px;
