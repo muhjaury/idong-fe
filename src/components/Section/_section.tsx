@@ -1,11 +1,8 @@
 import { color } from "@/constant/color";
+import { Interface_Components } from "@/interface";
 import styled from "styled-components";
 
-interface IF_Wrapper {
-  type?: string;
-}
-
-export const Wrapper = styled.div<IF_Wrapper>`
+export const Wrapper = styled.div<Interface_Components>`
   position: relative;
   padding: 32px 16px;
   width: 100%;

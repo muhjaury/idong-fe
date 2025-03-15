@@ -1,8 +1,4 @@
-interface IF_Params {
-  method: string;
-  body?: any;
-  headers?: any;
-}
+import { Interface_Request } from "@/interface";
 
 export default async function request(
   url: string,
@@ -10,7 +6,7 @@ export default async function request(
   headers: object | null,
   body: object | null
 ) {
-  let params: IF_Params;
+  let params: Interface_Request;
   params = {
     method: method,
     headers: {

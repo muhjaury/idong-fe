@@ -1,19 +1,6 @@
 import { color } from "@/constant/color";
+import { Interface_Components, Interface_Img } from "@/interface";
 import styled from "styled-components";
-
-interface IF_Height {
-  height?: number;
-  display?: string;
-}
-
-interface IF_Img {
-  src?: any;
-  display?: string;
-}
-
-interface IF_NavWrapper {
-  display?: string;
-}
 
 export const Wrapper = styled.div`
   position: relative;
@@ -32,7 +19,7 @@ export const ContentWrapper = styled.div`
   overflow: hidden;
 `;
 
-export const SideBar = styled.div<IF_Height>`
+export const SideBar = styled.div<Interface_Components>`
   position: absolute;
   top: 0;
   left: 0;
@@ -87,7 +74,7 @@ export const SideBarItem = styled.div`
   cursor: pointer;
 `;
 
-export const SideBarDropdown = styled.img<IF_Img>`
+export const SideBarDropdown = styled.img<Interface_Img>`
   height: 16px;
   width: 16px;
   transform: ${({ display }) =>
@@ -95,7 +82,7 @@ export const SideBarDropdown = styled.img<IF_Img>`
   transition: 0.2s;
 `;
 
-export const SideBarDropWrapper = styled.div<IF_NavWrapper>`
+export const SideBarDropWrapper = styled.div<Interface_Img>`
   display: ${({ display }) => (display === "Y" ? "flex" : "none")};
   flex-direction: column;
   width: 100%;
@@ -105,7 +92,7 @@ export const SideBarDropWrapper = styled.div<IF_NavWrapper>`
   justify-content: center;
 `;
 
-export const Content = styled.div<IF_Height>`
+export const Content = styled.div<Interface_Components>`
   position: absolute;
   top: 0;
   right: 0;
@@ -140,7 +127,7 @@ export const Content = styled.div<IF_Height>`
   }
 `;
 
-export const ContentOverlay = styled.div<IF_Height>`
+export const ContentOverlay = styled.div<Interface_Components>`
   display: ${({ display }) => (display === "Y" ? "block" : "none")};
   position: absolute;
   top: 0;

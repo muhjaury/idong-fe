@@ -1,10 +1,6 @@
 import { color } from "@/constant/color";
+import { Interface_Img } from "@/interface";
 import styled from "styled-components";
-
-interface IF_Img {
-  src?: any;
-  display?: string;
-}
 
 export const Wrapper = styled.div`
   padding: 16px;
@@ -19,7 +15,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Menu = styled.img<IF_Img>`
+export const Menu = styled.img<Interface_Img>`
   display: block;
   height: 40px;
   width: 40px;

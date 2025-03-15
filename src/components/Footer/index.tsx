@@ -1,3 +1,4 @@
+import { Interface_Components } from "@/interface";
 import { Content } from "..";
 import SOPPENG from "./../../assets/img/soppeng.png";
 import {
@@ -12,11 +13,7 @@ import {
   WrapperTop,
 } from "./_footer";
 
-interface IF_Footer {
-  displayNavigation?: boolean;
-}
-
-function Footer({ displayNavigation = true }: IF_Footer) {
+function Footer({ displayNavigation = true }: Interface_Components) {
   return (
     <>
       {displayNavigation && (

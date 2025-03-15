@@ -1,9 +1,6 @@
 import { color } from "@/constant/color";
+import { Interface_Img } from "@/interface";
 import styled from "styled-components";
-
-interface IF_Logo {
-  src: any;
-}
 
 export const WrapperTop = styled.div`
   height: 1005;
@@ -46,7 +43,7 @@ export const WrapperBottom = styled.div`
   }
 `;
 
-export const Logo = styled.img<IF_Logo>`
+export const Logo = styled.img<Interface_Img>`
   display: none;
 
   @media all and (min-width: 1024px) {

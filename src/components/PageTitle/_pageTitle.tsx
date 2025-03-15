@@ -1,15 +1,8 @@
 import { color } from "@/constant/color";
+import { Interface_Components, Interface_Img } from "@/interface";
 import styled from "styled-components";
 
-interface IF_Wrapper {
-  type?: string;
-}
-
-interface IF_Image {
-  src?: any;
-}
-
-export const Wrapper = styled.div<IF_Wrapper>`
+export const Wrapper = styled.div<Interface_Components>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -39,7 +32,7 @@ export const Breadcrumb = styled.div`
   cursor: pointer;
 `;
 
-export const BreadcrumbArrow = styled.img<IF_Image>`
+export const BreadcrumbArrow = styled.img<Interface_Img>`
   height: 12px;
 `;
 

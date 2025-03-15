@@ -1,20 +1,8 @@
 import { color } from "@/constant/color";
+import { Interface_Components, Interface_Img } from "@/interface";
 import styled, { keyframes } from "styled-components";
 
-interface IF_Wrapper {
-  scrolled?: string;
-}
-
-interface IF_Img {
-  src?: any;
-  display?: string;
-}
-
-interface IF_NavWrapper {
-  display?: string;
-}
-
-export const Wrapper = styled.div<IF_Wrapper>`
+export const Wrapper = styled.div<Interface_Components>`
   position: sticky;
   z-index: 5;
   top: 0;
@@ -37,7 +25,7 @@ export const WrapperLeft = styled.div`
   position: relative;
 `;
 
-export const Logo = styled.img<IF_Img>`
+export const Logo = styled.img<Interface_Img>`
   height: 80px;
   width: 60px;
 `;
@@ -77,7 +65,7 @@ export const Nav = styled.span`
   }
 `;
 
-export const NavDropdownWrapper = styled.div<IF_NavWrapper>`
+export const NavDropdownWrapper = styled.div<Interface_Img>`
   display: ${({ display }) => (display === "Y" ? "flex" : "none")};
   position: absolute;
   min-height: 100px;
@@ -95,7 +83,7 @@ to {
 }
 `;
 
-export const NavDropdown = styled.div<IF_NavWrapper>`
+export const NavDropdown = styled.div<Interface_Img>`
   position: absolute;
   display: ${({ display }) => (display === "Y" ? "flex" : "none")};
   min-height: 100px;
@@ -130,7 +118,7 @@ export const ButtonWrapper = styled.div`
   }
 `;
 
-export const Menu = styled.img<IF_Img>`
+export const Menu = styled.img<Interface_Img>`
   display: block;
   height: 40px;
   width: 40px;
@@ -159,7 +147,7 @@ to {
 }
 `;
 
-export const SideBarWrapper = styled.div<IF_NavWrapper>`
+export const SideBarWrapper = styled.div<Interface_Img>`
   display: ${({ display }) => (display === "Y" ? "block" : "none")};
   background: rgba(26, 32, 38, 0.8);
   position: fixed;
@@ -174,7 +162,7 @@ export const SideBarWrapper = styled.div<IF_NavWrapper>`
   }
 `;
 
-export const SideBar = styled.div<IF_NavWrapper>`
+export const SideBar = styled.div<Interface_Img>`
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -232,7 +220,7 @@ export const SideBarItem = styled.span`
   font-weight: 600;
 `;
 
-export const SideBarDropdown = styled.img<IF_Img>`
+export const SideBarDropdown = styled.img<Interface_Img>`
   height: 16px;
   width: 16px;
   transform: ${({ display }) =>
@@ -240,7 +228,7 @@ export const SideBarDropdown = styled.img<IF_Img>`
   transition: 0.2s;
 `;
 
-export const SideBarDropWrapper = styled.div<IF_NavWrapper>`
+export const SideBarDropWrapper = styled.div<Interface_Img>`
   display: ${({ display }) => (display === "Y" ? "flex" : "none")};
   flex-direction: column;
   width: 100%;
@@ -254,4 +242,4 @@ export const SideBarDropWrapper = styled.div<IF_NavWrapper>`
   }
 `;
 
-export const Close = styled.img<IF_Img>``;
+export const Close = styled.img<Interface_Img>``;

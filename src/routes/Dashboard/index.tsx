@@ -96,7 +96,7 @@ function Dashboard() {
           setActiveMenu(<ATPHPage />);
           break;
         default:
-          setActiveMenu(DashboardPage);
+          setActiveMenu(<DashboardPage />);
           break;
       }
     }

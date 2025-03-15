@@ -1,10 +1,6 @@
 import { color } from "@/constant/color";
+import { Interface_Img } from "@/interface";
 import styled from "styled-components";
-
-interface IF_Img {
-  src?: any;
-  display?: string;
-}
 
 export const Wrapper = styled.div`
   background: ${color.a1};
@@ -38,7 +34,7 @@ export const Title = styled.span`
   font-weight: 600;
 `;
 
-export const Logo = styled.img<IF_Img>`
+export const Logo = styled.img<Interface_Img>`
   height: 100px;
   width: 80px;
 `;

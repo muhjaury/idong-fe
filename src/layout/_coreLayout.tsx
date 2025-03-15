@@ -1,11 +1,8 @@
 import { color } from "@/constant/color";
+import { Interface_Components } from "@/interface";
 import styled from "styled-components";
 
-interface IF_Wrapper {
-  loading?: string;
-}
-
-export const Wrapper = styled.div<IF_Wrapper>`
+export const Wrapper = styled.div<Interface_Components>`
   display: ${({ loading }) => (loading === "Y" ? "flex" : "block")};
   align-items: center;
   justify-content: center;

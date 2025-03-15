@@ -56,6 +56,7 @@ function UserLayout(props: any) {
     urlParams.set("page", menu);
     history.pushState(null, "", "?" + urlParams.toString());
     setUrlChange(menu);
+    setSideBar("N");
   };
 
   return (

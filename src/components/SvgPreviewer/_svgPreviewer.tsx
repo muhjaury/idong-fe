@@ -1,13 +1,7 @@
+import { Interface_Components } from "@/interface";
 import styled from "styled-components";
 
-interface IF_Wrapper {
-  top?: string;
-  right?: string;
-  bottom?: string;
-  left?: string;
-}
-
-export const Wrapper = styled.div<IF_Wrapper>`
+export const Wrapper = styled.div<Interface_Components>`
   position: absolute;
   z-index: 1;
   ${({ top }) => top && `top:${top};`}
