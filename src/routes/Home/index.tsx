@@ -1,45 +1,53 @@
 "use client";
 
-import { Section } from "@/components";
+import { Card, Section } from "@/components";
 import CoreLayout from "@/layout/CoreLayout";
-import { useRef } from "react";
 import "swiper/css";
-import { A11y, Navigation, Pagination, Scrollbar } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
 import {
-  Content2Icon,
-  Content2Label,
-  Content2SubWrapper,
-  Content2SubWrapperFlex,
-  Content2Title,
+  CardWrapper,
   Content2Wrapper,
-  Content3LeftWrapper,
-  Content3RightWrapper,
+  Content2WrapperColumn,
+  Content2WrapperColumn1Desc,
+  Content2WrapperColumn1Label,
   Content3Wrapper,
-  Content4Title,
-  Content4Wrapper,
-  Content5Wrapper,
-  HeadMasterDetailWrapper,
-  HeadMasterName,
-  HeadMasterPhoto,
-  HeadMasterTitle,
-  MajorDesc,
-  MajorDescWrapper,
-  MajorLabel,
-  MajorPhoto,
-  MajorWrapper,
+  FacilityDesc,
+  FacilityLogo,
+  FacilityTitle,
+  FacilityWrapper,
+  FaciliyContentWrappper,
+  HeadmasterDesc,
+  HeadmasterPic,
+  HeadmasterTitle,
+  HeadmasterWrapper,
   NewsTitle,
-  SwiperWrapper,
+  ProgramColumn,
+  ProgramContentDesc,
+  ProgramContentTitle,
+  ProgramContentWrapper,
+  ProgramLogo,
+  ProgramTitle,
+  ProgramWrapper,
+  SchoolName,
+  SubTitle,
+  SubTitleWhite,
   Video,
-  WelcomeDescription,
-  WelcomeTitle,
+  WelcomeText,
+  WrapperGreeting,
 } from "./_home";
 
 function Home() {
-  const swiperRef = useRef<HTMLDivElement>(null);
-
   return (
     <CoreLayout>
+      <Section>
+        <WrapperGreeting>
+          <WelcomeText>Welcome</WelcomeText>
+          <SchoolName>
+            SMKS KARYA TEKNIK
+            <br />
+            WATANGSOPPENG
+          </SchoolName>
+        </WrapperGreeting>
+      </Section>
       <Section>
         <Video
           src="/WaitingForTheEnd-LP.mp4"
@@ -51,126 +59,169 @@ function Home() {
       </Section>
       <Section type="secondary">
         <Content2Wrapper>
-          <Content2Title>SMK Bisa</Content2Title>
-          <Content2SubWrapper>
-            <Content2SubWrapperFlex>
-              <Content2Icon />
-              <Content2Label>Fasilitas Lengkap</Content2Label>
-            </Content2SubWrapperFlex>
-            <Content2SubWrapperFlex>
-              <Content2Icon />
-              <Content2Label>Pengajar Kompeten</Content2Label>
-            </Content2SubWrapperFlex>
-          </Content2SubWrapper>
-          <Content2SubWrapper>
-            <Content2SubWrapperFlex>
-              <Content2Icon />
-              <Content2Label>Lingkungan Nyaman</Content2Label>
-            </Content2SubWrapperFlex>
-          </Content2SubWrapper>
+          <Content2WrapperColumn>
+            <Content2WrapperColumn1Label>
+              Kenapa Harus SMK Karya Teknik Watangsoppeng?
+            </Content2WrapperColumn1Label>
+            <Content2WrapperColumn1Desc>
+              Alasan kenapa kalian harus memilih untuk bergabung dengan SMK
+              Karya Teknik Watangsoppeng?
+            </Content2WrapperColumn1Desc>
+          </Content2WrapperColumn>
+          <Content2WrapperColumn>
+            <FacilityWrapper>
+              <FacilityLogo />
+              <FaciliyContentWrappper>
+                <FacilityTitle>Pengajar Kompeten</FacilityTitle>
+                <FacilityDesc>
+                  Guru yang up-to-date dengan perkembangan industri.
+                </FacilityDesc>
+              </FaciliyContentWrappper>
+            </FacilityWrapper>
+            <FacilityWrapper>
+              <FacilityLogo />
+              <FaciliyContentWrappper>
+                <FacilityTitle>Lingkungan Nyaman</FacilityTitle>
+                <FacilityDesc>
+                  Berada di lingkungan yang asri, aman, dan kondusif.
+                </FacilityDesc>
+              </FaciliyContentWrappper>
+            </FacilityWrapper>
+          </Content2WrapperColumn>
+          <Content2WrapperColumn>
+            <FacilityWrapper>
+              <FacilityLogo />
+              <FaciliyContentWrappper>
+                <FacilityTitle>Fasilitas Lengkap</FacilityTitle>
+                <FacilityDesc>
+                  Penunjang belajar dengan kualitas premium.
+                </FacilityDesc>
+              </FaciliyContentWrappper>
+            </FacilityWrapper>
+          </Content2WrapperColumn>
         </Content2Wrapper>
       </Section>
-      <Section>
+      <Section type="secondary">
         <Content3Wrapper>
-          <Content3LeftWrapper>
-            <HeadMasterPhoto />
-            <HeadMasterDetailWrapper>
-              <HeadMasterName>Nama Kepsek</HeadMasterName>
-              <HeadMasterTitle>Kepala Sekolah Blablabla</HeadMasterTitle>
-            </HeadMasterDetailWrapper>
-          </Content3LeftWrapper>
-          <Content3RightWrapper>
-            <WelcomeTitle>Sambutan Kepala Sekolah</WelcomeTitle>
-            <WelcomeDescription>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </WelcomeDescription>
-          </Content3RightWrapper>
+          <HeadmasterPic />
+          <HeadmasterWrapper>
+            <SubTitle>SAMBUTAN KEPALA SEKOLAH</SubTitle>
+            <HeadmasterTitle>
+              Selamat Datang Untukmu Para Pejuang Bangsa
+            </HeadmasterTitle>
+            <HeadmasterDesc>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
+              imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel semper
+              accumsan, magna tellus tincidunt massa, et egestas velit nibh ac
+              ex. Ut neque nisl, posuere ut ante ac, vehicula porta mi. Vivamus
+              congue neque nisl, sit amet venenatis nibh dictum ut. Nulla cursus
+              justo sapien, ac auctor urna iaculis non. Suspendisse sagittis
+              nulla felis, sit amet tempus tellus scelerisque vitae. Phasellus
+              non sapien ut dolor pharetra hendrerit. Curabitur sed laoreet
+              neque, nec blandit eros. Sed ultricies a nisl sed elementum.
+              Aliquam aliquet erat ut iaculis pharetra. Sed tincidunt sapien at
+              tortor tempus, id sagittis eros vulputate.
+            </HeadmasterDesc>
+          </HeadmasterWrapper>
         </Content3Wrapper>
       </Section>
-      <Section type="secondary">
-        <Content4Title>
+      <Section type="tertiary">
+        <SubTitle>PROGRAM KEAHLIAN</SubTitle>
+        <ProgramTitle>
           Jurusan Yang Tersedia di SMKS Karya Teknik Watangsoppeng
-        </Content4Title>
-        <Content4Wrapper>
-          <MajorWrapper>
-            <MajorPhoto />
-            <MajorDescWrapper>
-              <MajorLabel>List Item</MajorLabel>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-            </MajorDescWrapper>
-          </MajorWrapper>
-          <MajorWrapper>
-            <MajorPhoto />
-            <MajorDescWrapper>
-              <MajorLabel>List Item</MajorLabel>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-            </MajorDescWrapper>
-          </MajorWrapper>
-          <MajorWrapper>
-            <MajorPhoto />
-            <MajorDescWrapper>
-              <MajorLabel>List Item</MajorLabel>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-            </MajorDescWrapper>
-          </MajorWrapper>
-          <MajorWrapper>
-            <MajorPhoto />
-            <MajorDescWrapper>
-              <MajorLabel>List Item</MajorLabel>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-            </MajorDescWrapper>
-          </MajorWrapper>
-          <MajorWrapper>
-            <MajorPhoto />
-            <MajorDescWrapper>
-              <MajorLabel>List Item</MajorLabel>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-              <MajorDesc>jodjsa; lcma; slcmaodakllndadnanc</MajorDesc>
-            </MajorDescWrapper>
-          </MajorWrapper>
-        </Content4Wrapper>
+        </ProgramTitle>
+        <ProgramWrapper>
+          <ProgramContentWrapper>
+            <ProgramLogo />
+            <ProgramColumn>
+              <ProgramContentTitle>TKJ</ProgramContentTitle>
+              <ProgramContentDesc>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
+                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
+                semper accumsan, magna tellus tincidunt massa, et egestas velit
+                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
+                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
+                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
+                Suspendisse sagittis nulla felis, sit .
+              </ProgramContentDesc>
+            </ProgramColumn>
+          </ProgramContentWrapper>
+          <ProgramContentWrapper>
+            <ProgramLogo />
+            <ProgramColumn>
+              <ProgramContentTitle>DPIB</ProgramContentTitle>
+              <ProgramContentDesc>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
+                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
+                semper accumsan, magna tellus tincidunt massa, et egestas velit
+                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
+                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
+                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
+                Suspendisse sagittis nulla felis, sit .
+              </ProgramContentDesc>
+            </ProgramColumn>
+          </ProgramContentWrapper>
+        </ProgramWrapper>
+        <ProgramWrapper>
+          <ProgramContentWrapper>
+            <ProgramLogo />
+            <ProgramColumn>
+              <ProgramContentTitle>TBSM</ProgramContentTitle>
+              <ProgramContentDesc>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
+                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
+                semper accumsan, magna tellus tincidunt massa, et egestas velit
+                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
+                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
+                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
+                Suspendisse sagittis nulla felis, sit .
+              </ProgramContentDesc>
+            </ProgramColumn>
+          </ProgramContentWrapper>
+          <ProgramContentWrapper>
+            <ProgramLogo />
+            <ProgramColumn>
+              <ProgramContentTitle>TRKO</ProgramContentTitle>
+              <ProgramContentDesc>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
+                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
+                semper accumsan, magna tellus tincidunt massa, et egestas velit
+                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
+                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
+                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
+                Suspendisse sagittis nulla felis, sit .
+              </ProgramContentDesc>
+            </ProgramColumn>
+          </ProgramContentWrapper>
+        </ProgramWrapper>
+        <ProgramWrapper>
+          <ProgramContentWrapper>
+            <ProgramLogo />
+            <ProgramColumn>
+              <ProgramContentTitle>ATPH</ProgramContentTitle>
+              <ProgramContentDesc>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
+                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
+                semper accumsan, magna tellus tincidunt massa, et egestas velit
+                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
+                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
+                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
+                Suspendisse sagittis nulla felis, sit .
+              </ProgramContentDesc>
+            </ProgramColumn>
+          </ProgramContentWrapper>
+        </ProgramWrapper>
       </Section>
       <Section>
-        <Content5Wrapper>
-          <NewsTitle>Berita</NewsTitle>
-          <SwiperWrapper>
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={50}
-              slidesPerView={2}
-              navigation
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
-              centeredSlides={true}
-              centeredSlidesBounds={true}
-            >
-              <SwiperSlide>
-                <HeadMasterPhoto />
-              </SwiperSlide>
-              <SwiperSlide>
-                <HeadMasterPhoto />
-              </SwiperSlide>
-              <SwiperSlide>
-                <HeadMasterPhoto />
-              </SwiperSlide>
-              <SwiperSlide>
-                <HeadMasterPhoto />
-              </SwiperSlide>
-            </Swiper>
-          </SwiperWrapper>
-        </Content5Wrapper>
+        <SubTitleWhite>BERITA TERKINI</SubTitleWhite>
+        <NewsTitle>
+          Berita terkini dari SMKS Karya Teknik Watangsoppeng
+        </NewsTitle>
+        <CardWrapper>
+          <Card />
+          <Card />
+          <Card />
+        </CardWrapper>
       </Section>
     </CoreLayout>
   );

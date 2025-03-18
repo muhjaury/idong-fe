@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Top = styled.div`
+  background: ${color.a5};
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 12px;
@@ -21,6 +22,7 @@ export const Top = styled.div`
 `;
 
 export const Bottom = styled.div`
+  background: ${color.a1};
   border-top: 1px solid ${color.a5};
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;

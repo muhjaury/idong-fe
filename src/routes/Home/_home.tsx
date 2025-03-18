@@ -1,82 +1,115 @@
 import { color } from "@/constant/color";
+import { Interface_Img } from "@/interface";
 import styled from "styled-components";
 
 export const Video = styled.video`
+  border-radius: 32px;
   position: absolute;
   z-index: 4;
-  left: calc((100% - 300px) / 2);
-  width: 300px;
-  height: 169px;
+  top: 80px;
+  left: calc((100% - 360px) / 2);
+  width: 360px;
+  height: 204px;
   background: ${color.a6};
 
   @media all and (min-width: 1024px) {
-    left: calc((100% - 880px) / 2);
-    width: 880px;
-    height: 495px;
+    left: calc((100% - 960px) / 2);
+    width: 960px;
+    height: 540px;
   }
 `;
 
 export const Content2Wrapper = styled.div`
-  height: 240px;
-  margin-top: 0;
+  margin-top: 96px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 16px;
+  gap: 32px;
 
   @media all and (min-width: 1024px) {
+    gap: 80px;
     height: 100%;
     flex-direction: row;
     justify-content: space-between;
-    gap: 0;
-    margin-top: 320px;
+    margin-top: 480px;
   }
 `;
 
-export const Content2Title = styled.div`
-  width: 100%;
-  text-align: center;
-  font-size: 24px;
-  font-weight: 600;
-  color: ${color.a2};
-  margin-bottom: 16px;
-
-  @media all and (min-width: 1024px) {
-    margin-bottom: 0;
-    width: fit-content;
-    text-align: start;
-    font-size: 40px;
-  }
-`;
-
-export const Content2SubWrapper = styled.div`
+export const Content2WrapperColumn = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 16px;
-`;
-
-export const Content2SubWrapperFlex = styled.div`
-  display: flex;
-  gap: 16px;
-`;
-
-export const Content2Icon = styled.img`
-  height: 24px;
-  width: 24px;
+  gap: 32px;
 
   @media all and (min-width: 1024px) {
-    height: 40px;
-    width: 40px;
+    width: 33%;
   }
 `;
 
-export const Content2Label = styled.div`
-  font-size: 16px;
+export const Content2WrapperColumn1Label = styled.div`
+  font-size: 32px;
   font-weight: 600;
   color: ${color.a2};
+`;
+
+export const Content2WrapperColumn1Desc = styled.div`
+  font-size: 22px;
+  color: ${color.a7};
+`;
+
+export const FacilityWrapper = styled.div`
+  display: flex;
+  gap: 32px;
+`;
+
+export const FacilityLogo = styled.img<Interface_Img>`
+  border-radius: 16px;
+  background: ${color.a5};
+  min-width: 67px;
+  height: 58px;
+`;
+
+export const FaciliyContentWrappper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+
+export const FacilityTitle = styled.div`
+  font-weight: 600;
+  font-size: 24px;
+  color: ${color.a2};
+`;
+
+export const FacilityDesc = styled.div`
+  font-weight: 400;
+  font-size: 22px;
+  color: ${color.a7};
+`;
+
+export const WrapperGreeting = styled.div`
+  margin-top: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const WelcomeText = styled.div`
+  font-size: 20px;
 
   @media all and (min-width: 1024px) {
-    font-size: 32px;
+    font-size: 28px;
+  }
+`;
+
+export const SchoolName = styled.div`
+  font-size: 32px;
+  text-align: center;
+  font-weight: 600;
+
+  @media all and (min-width: 1024px) {
+    font-size: 72px;
   }
 `;
 
@@ -84,148 +117,123 @@ export const Content3Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  align-items: start;
+  gap: 32px;
+  align-items: center;
   justify-content: center;
+
+  @media all and (min-width: 1024px) {
+    align-items: start;
+    gap: 56px;
+    flex-direction: row;
+  }
+`;
+
+export const HeadmasterPic = styled.img<Interface_Img>`
+  border-radius: 16px;
+  background: ${color.a5};
+  min-width: 424px;
+  height: 520px;
+`;
+
+export const HeadmasterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+
+export const SubTitle = styled.div`
+  font-size: 22px;
+  font-weight: 600;
+  color: ${color.a2};
+`;
+
+export const HeadmasterTitle = styled.div`
+  font-size: 40px;
+  font-weight: 600;
+  color: ${color.a2};
+`;
+
+export const HeadmasterDesc = styled.div`
+  text-align: justify;
+  font-size: 22px;
+  color: ${color.a7};
+  line-height: 36px;
+`;
+
+export const ProgramTitle = styled.div`
+  text-align: center;
+  margin-top: 40px;
+  color: ${color.a2};
+  font-size: 40px;
+  font-weight: 600;
+`;
+
+export const ProgramWrapper = styled.div`
+  margin-top: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
 
   @media all and (min-width: 1024px) {
     flex-direction: row;
   }
 `;
 
-export const Content3LeftWrapper = styled.div`
-  width: 100%;
+export const ProgramContentWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-
-  @media all and (min-width: 1024px) {
-    width: 30%;
-  }
-`;
-
-export const HeadMasterPhoto = styled.img`
-  height: 300px;
-  width: 250px;
-`;
-
-export const HeadMasterDetailWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-`;
-
-export const HeadMasterName = styled.div`
-  font-size: 24px;
-  color: ${color.a1};
-`;
-
-export const HeadMasterTitle = styled.div`
-  font-size: 24px;
-  color: ${color.a1};
-`;
-
-export const Content3RightWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   gap: 32px;
-  align-items: center;
-  justify-content: center;
 
   @media all and (min-width: 1024px) {
-    width: 70%;
+    width: 50%;
   }
 `;
 
-export const WelcomeTitle = styled.div`
-  font-size: 32px;
-  color: ${color.a1};
-  font-weight: 600;
+export const ProgramLogo = styled.img<Interface_Img>`
+  border-radius: 16px;
+  min-width: 96px;
+  height: 96px;
+  background: ${color.a5};
 `;
 
-export const WelcomeDescription = styled.div`
-  font-size: 24px;
-  color: ${color.a1};
-`;
-
-export const Content4Title = styled.div`
-  width: 100%;
-  text-align: center;
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 48px;
-`;
-
-export const Content4Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-`;
-
-export const MajorWrapper = styled.div`
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-
-  @media all and (min-width: 1024px) {
-    width: calc(90% / 2);
-  }
-`;
-
-export const MajorPhoto = styled.img`
-  height: 48px;
-  width: 72px;
-`;
-
-export const MajorDescWrapper = styled.div`
+export const ProgramColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
 `;
 
-export const MajorLabel = styled.div`
-  font-size: 28px;
+export const ProgramContentTitle = styled.div`
   color: ${color.a2};
-  font-weight: 600;
-`;
-
-export const MajorDesc = styled.div`
   font-size: 24px;
-  color: ${color.a2};
 `;
 
-export const Content5Wrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 64px;
+export const ProgramContentDesc = styled.div`
+  color: ${color.a7};
+  font-size: 16px;
+`;
+
+export const SubTitleWhite = styled.div`
+  font-size: 22px;
+  font-weight: 600;
+  color: ${color.a1};
 `;
 
 export const NewsTitle = styled.div`
-  font-size: 32px;
+  text-align: center;
+  margin-top: 40px;
   color: ${color.a1};
+  font-size: 40px;
   font-weight: 600;
 `;
 
-export const SwiperWrapper = styled.div`
-  width: 100%;
+export const CardWrapper = styled.div`
+  margin-top: 56px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${color.a2};
+  flex-direction: column;
+  gap: 120px;
 
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
+  @media all and (min-width: 1024px) {
+    flex-direction: row;
   }
 `;
