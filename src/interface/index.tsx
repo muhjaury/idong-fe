@@ -40,6 +40,7 @@ export interface Interface_Components {
   scrolled?: string;
   type?: string;
   removeshadow?: string;
+  src?: any;
 
   top?: string;
   right?: string;
