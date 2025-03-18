@@ -3,6 +3,13 @@ import styled from "styled-components";
 
 export const Wrappper = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Label = styled.div`
+  color: ${color.a2};
+  font-size: 16px;
 `;
 
 export const Input = styled.input`
