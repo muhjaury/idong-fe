@@ -1,4 +1,5 @@
 import Button from "./Button";
+import Card from "./Card";
 import Content from "./Content";
 import Footer from "./Footer";
 import Header from "./Header";
@@ -11,6 +12,7 @@ import SvgPreviewer from "./SvgPreviewer";
 
 export {
   Button,
+  Card,
   Content,
   Footer,
   Header,

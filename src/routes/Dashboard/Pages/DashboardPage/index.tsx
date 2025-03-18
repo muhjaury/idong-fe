@@ -1,17 +1,28 @@
-import FileUpload from "@/components/FileUpload";
-import { Wrapper } from "./_dashboardPage";
+import { Card } from "@/components";
+import { useState } from "react";
+import { Wrapper, WrapperCard } from "./_dashboardPage";
 
 function DashboardPage() {
+  const [username, setUsername] = useState("Admin");
+
   return (
     <Wrapper>
-      Dashboard Page
-      <br />
-      <br />
-      <span>Single Upload</span>
-      <FileUpload />
-      <br />
-      <span>Multiple Upload</span>
-      <FileUpload multiple />
+      <span>
+        Selamat Datang,
+        <br />
+        {username && <b>{username}</b>}
+      </span>
+      <WrapperCard>
+        <Card />
+        <Card />
+      </WrapperCard>
+      <WrapperCard>
+        <Card />
+        <Card />
+      </WrapperCard>
+      <WrapperCard>
+        <Card />
+      </WrapperCard>
     </Wrapper>
   );
 }
