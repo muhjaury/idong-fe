@@ -1,4 +1,5 @@
-import { Button, InputText } from "@/components";
+import { Button, InputText, Modal } from "@/components";
+import { TambahDataAdmin } from "@/components/ModalContent";
 import { useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import {
@@ -148,6 +149,7 @@ function AdminPage() {
   ];
 
   const [data, setData] = useState(rawData);
+  const [displayModal, setDisplayModal] = useState(false);
 
   const handleSearch = (e: any) => {
     const filterData = rawData.filter(
@@ -159,18 +161,27 @@ function AdminPage() {
   };
 
   return (
-    <Wrapper>
-      <Button>Tambah Data Admin</Button>
-      <WrapperContent>
-        <WrapperSearch>
-          <InputText
-            placeholder="Pencarian"
-            onChange={(e: any) => handleSearch(e)}
-          />
-        </WrapperSearch>
-        <DataTable columns={columns} data={data} pagination></DataTable>
-      </WrapperContent>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Button onClick={() => setDisplayModal(true)}>Tambah Data Admin</Button>
+        <WrapperContent>
+          <WrapperSearch>
+            <InputText
+              placeholder="Pencarian"
+              onChange={(e: any) => handleSearch(e)}
+            />
+          </WrapperSearch>
+          <DataTable columns={columns} data={data} pagination></DataTable>
+        </WrapperContent>
+      </Wrapper>
+      <Modal
+        type="secondary"
+        display={displayModal}
+        onClose={() => setDisplayModal(false)}
+      >
+        <TambahDataAdmin />
+      </Modal>
+    </>
   );
 }
 
