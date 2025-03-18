@@ -210,7 +210,7 @@ function UserLayout(props: any) {
               {props.children}
             </Content>
           </ContentWrapper>
-          <Footer displayNavigation={false} />
+          <Footer displaynavigation={false} />
         </>
       )}
     </Wrapper>

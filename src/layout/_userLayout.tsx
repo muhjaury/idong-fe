@@ -98,7 +98,7 @@ export const Content = styled.div<Interface_Components>`
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 16px;
+  padding: 32px;
   background: ${color.a1};
   color: ${color.a6};
   overflow-y: scroll;

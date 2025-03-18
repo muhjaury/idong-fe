@@ -34,11 +34,12 @@ export interface Interface_PageTitle {
 
 export interface Interface_Components {
   display?: string;
-  displayNavigation?: boolean;
+  displaynavigation?: boolean;
   height?: number;
   loading?: string;
   scrolled?: string;
   type?: string;
+  removeshadow?: string;
 
   top?: string;
   right?: string;

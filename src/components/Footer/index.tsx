@@ -13,10 +13,10 @@ import {
   WrapperTop,
 } from "./_footer";
 
-function Footer({ displayNavigation = true }: Interface_Components) {
+function Footer({ displaynavigation = true }: Interface_Components) {
   return (
     <>
-      {displayNavigation && (
+      {displaynavigation && (
         <WrapperTop>
           <Logo src={SOPPENG} />
           <Content>
