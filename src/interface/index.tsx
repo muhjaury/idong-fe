@@ -41,6 +41,7 @@ export interface Interface_Components {
   type?: string;
   removeshadow?: string;
   src?: any;
+  iserror?: string;
 
   top?: string;
   right?: string;

@@ -7,7 +7,7 @@ import { verifyCred } from "./network";
 
 function Login() {
   const [initLoading, setInitLoading] = useState<boolean>(true);
-  const [username, setUsername] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [error, setError] = useState<string>("");
 
@@ -25,8 +25,8 @@ function Login() {
     }
   }, [error]);
 
-  const handleUsername = (username: string) => {
-    setUsername(username);
+  const handleEmail = (email: string) => {
+    setEmail(email);
     setError("");
   };
 
@@ -37,12 +37,12 @@ function Login() {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    if (username && password) {
+    if (email && password) {
       const func = { router, setError };
-      verifyCred(func, username, password);
+      verifyCred(func, email, password);
     } else {
-      setError("Invalid Username or Password");
-      setUsername("");
+      setError("Invalid Email or Password");
+      setEmail("");
       setPassword("");
     }
   };
@@ -59,9 +59,9 @@ function Login() {
           <Card onSubmit={(e) => handleSubmit(e)}>
             <InputText
               type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e: any) => handleUsername(e.target.value)}
+              placeholder="Email"
+              value={email}
+              onChange={(e: any) => handleEmail(e.target.value)}
             />
             <InputText
               type="password"

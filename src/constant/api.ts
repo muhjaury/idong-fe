@@ -10,4 +10,5 @@ const baseUrl = () => {
 
 const BASE_URL = baseUrl();
 
-export const VERIFY_API = BASE_URL + "api/verifyUser";
+export const VERIFY_API = BASE_URL + "api/user/verify";
+export const REGISTER_ADMIN_API = BASE_URL + "api/user/registerAdmin";
