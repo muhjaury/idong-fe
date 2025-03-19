@@ -38,3 +38,9 @@ export const Logo = styled.img<Interface_Img>`
   height: 100px;
   width: 80px;
 `;
+
+export const ErrorText = styled.div`
+  text-align: center;
+  font-size: 16px;
+  color: ${color.a9};
+`;

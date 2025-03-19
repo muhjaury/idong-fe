@@ -4,7 +4,7 @@ import { encryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 
 export const verifyCred = (func: any, username: string, password: string) => {
-  const { router } = func;
+  const { router, setError } = func;
 
   const usernameEnc = encryptData(username);
   const passwordEnc = encryptData(password);
@@ -12,8 +12,10 @@ export const verifyCred = (func: any, username: string, password: string) => {
   const data = { username: usernameEnc, password: passwordEnc };
 
   request(VERIFY_API, "POST", null, data).then((res) => {
-    if (res.status.toLowerCase() === "success") {
+    if (res?.status.toLowerCase() === "success") {
       router.push(urls.DASHBOARD);
+    } else {
+      setError("Invalid Username or Password");
     }
   });
 };

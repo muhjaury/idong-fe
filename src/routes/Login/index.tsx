@@ -2,13 +2,14 @@ import { Button, InputText, Loading, LoadingContent } from "@/components";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import SOPPENG from "./../../assets/img/soppeng.png";
-import { Card, Logo, Title, Wrapper } from "./_login";
+import { Card, ErrorText, Logo, Title, Wrapper } from "./_login";
 import { verifyCred } from "./network";
 
 function Login() {
   const [initLoading, setInitLoading] = useState<boolean>(true);
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
   const router = useRouter();
 
@@ -16,19 +17,33 @@ function Login() {
     setTimeout(() => setInitLoading(false), 500);
   }, []);
 
+  useEffect(() => {
+    if (error) {
+      setTimeout(() => {
+        setError("");
+      }, 3000);
+    }
+  }, [error]);
+
   const handleUsername = (username: string) => {
     setUsername(username);
+    setError("");
   };
 
   const handlePassword = (password: string) => {
     setPassword(password);
+    setError("");
   };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (username && password) {
-      const func = { router };
+      const func = { router, setError };
       verifyCred(func, username, password);
+    } else {
+      setError("Invalid Username or Password");
+      setUsername("");
+      setPassword("");
     }
   };
 
@@ -54,6 +69,7 @@ function Login() {
               value={password}
               onChange={(e: any) => handlePassword(e.target.value)}
             />
+            {error && <ErrorText>{error}</ErrorText>}
             <Button>Login</Button>
           </Card>
         </Wrapper>

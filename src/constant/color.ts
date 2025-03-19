@@ -7,4 +7,5 @@ export const color = {
   a6: "#000000",
   a7: "#4C4C4C",
   a8: "#F1F1F1",
+  a9: "#eb4034",
 };
