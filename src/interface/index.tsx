@@ -48,3 +48,10 @@ export interface Interface_Components {
   bottom?: string;
   left?: string;
 }
+
+export interface Interface_User {
+  nomor: number;
+  nama: string;
+  email: string;
+  aksi: any;
+}

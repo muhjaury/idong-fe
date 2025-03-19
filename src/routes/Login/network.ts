@@ -1,4 +1,4 @@
-import { VERIFY_API } from "@/constant/api";
+import { API_VERIFY } from "@/constant/api";
 import { urls } from "@/constant/path";
 import { encryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
@@ -11,7 +11,7 @@ export const verifyCred = (func: any, email: string, password: string) => {
 
   const data = { email: emailEnc, password: passwordEnc };
 
-  request(VERIFY_API, "POST", null, data)
+  request(API_VERIFY, "POST", null, data)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
         router.push(urls.DASHBOARD);

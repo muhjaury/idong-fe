@@ -1,4 +1,4 @@
-import { REGISTER_ADMIN_API } from "@/constant/api";
+import { API_REGISTER_ADMIN } from "@/constant/api";
 import { ROLE } from "@/constant/role";
 import { encryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
@@ -21,7 +21,7 @@ export const createAdmin = (func: any, data: any) => {
     }),
   };
 
-  request(REGISTER_ADMIN_API, "POST", null, body).then((res) => {
+  request(API_REGISTER_ADMIN, "POST", null, body).then((res) => {
     if (res?.status.toLowerCase() === "success") {
       setName("");
       setEmail("");
