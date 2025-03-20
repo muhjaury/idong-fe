@@ -1,8 +1,11 @@
 "use client";
 
+import { urls } from "@/constant/path";
 import { useWidget } from "@/context";
 import UserLayout from "@/layout/UserLayout";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import {
   ATPHPage,
   AdminPage,
@@ -30,7 +33,15 @@ import { Wrapper } from "./_dasboard";
 function Dashboard() {
   const [activeMenu, setActiveMenu] = useState<any>(<DashboardPage />);
 
+  const dataFromRedux = useSelector((state: any) => state.data);
+  const router = useRouter();
   const { urlChange } = useWidget();
+
+  useEffect(() => {
+    if (!dataFromRedux?.user?.isLogin) {
+      router.push(urls.LOGIN);
+    }
+  }, [dataFromRedux?.user?.isLogin]);
 
   useEffect(() => {
     const queryString = window.location.search;

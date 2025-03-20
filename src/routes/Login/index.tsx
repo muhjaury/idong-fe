@@ -1,8 +1,9 @@
 import { Button, InputText, Loading, LoadingContent } from "@/components";
+import { urls } from "@/constant/path";
 import { ADD_USER_DATA } from "@/redux/slices/dataSlice";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SOPPENG from "./../../assets/img/soppeng.png";
 import { Card, ErrorText, Logo, Title, Wrapper } from "./_login";
 import { verifyCred } from "./network";
@@ -15,10 +16,17 @@ function Login() {
 
   const router = useRouter();
   const dispatch = useDispatch();
+  const dataFromRedux = useSelector((state: any) => state.data);
 
   useEffect(() => {
     setTimeout(() => setInitLoading(false), 500);
   }, []);
+
+  useEffect(() => {
+    if (dataFromRedux?.user?.isLogin) {
+      router.push(urls.DASHBOARD);
+    }
+  }, [dataFromRedux?.user?.isLogin]);
 
   useEffect(() => {
     if (error) {
