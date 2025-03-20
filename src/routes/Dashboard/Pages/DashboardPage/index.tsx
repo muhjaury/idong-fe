@@ -1,9 +1,19 @@
 import { Card } from "@/components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Wrapper, WrapperCard } from "./_dashboardPage";
+import { useSelector } from "react-redux";
 
 function DashboardPage() {
-  const [username, setUsername] = useState("Admin");
+  const [username, setUsername] = useState("");
+
+  const dataFromRedux = useSelector((state: any) => state.data);
+
+  useEffect(() => {
+    const name = dataFromRedux?.user?.name;
+    if (name) {
+      setUsername(name);
+    }
+  }, [dataFromRedux?.user?.name]);
 
   return (
     <Wrapper>
