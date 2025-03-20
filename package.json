@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@reduxjs/toolkit": "^2.6.1",
     "@types/aos": "^3.0.7",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "^20",
@@ -31,6 +32,8 @@
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
     "react-data-table-component": "^7.7.0",
+    "react-redux": "^9.2.0",
+    "redux-persist": "^6.0.0",
     "sass": "^1.85.1",
     "styled-components": "^6.1.15",
     "swiper": "^11.2.4",

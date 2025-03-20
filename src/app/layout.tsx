@@ -1,4 +1,5 @@
 import WidgetProvider from "@/context";
+import Providers from "@/redux/Provider";
 import "./global.scss";
 
 export const metadata = {
@@ -13,9 +14,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <WidgetProvider>
-        <body>{children}</body>
-      </WidgetProvider>
+      <body>
+        <Providers>
+          <WidgetProvider>{children}</WidgetProvider>
+        </Providers>
+      </body>
     </html>
   );
 }

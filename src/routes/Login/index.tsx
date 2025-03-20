@@ -1,6 +1,8 @@
 import { Button, InputText, Loading, LoadingContent } from "@/components";
+import { ADD_USER_DATA } from "@/redux/slices/dataSlice";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import SOPPENG from "./../../assets/img/soppeng.png";
 import { Card, ErrorText, Logo, Title, Wrapper } from "./_login";
 import { verifyCred } from "./network";
@@ -12,6 +14,7 @@ function Login() {
   const [error, setError] = useState<string>("");
 
   const router = useRouter();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => setInitLoading(false), 500);
@@ -38,7 +41,7 @@ function Login() {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (email && password) {
-      const func = { router, setError };
+      const func = { router, setError, dispatch, ADD_USER_DATA };
       verifyCred(func, email, password);
     } else {
       setError("Invalid Email or Password");

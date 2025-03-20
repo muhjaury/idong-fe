@@ -1,13 +1,17 @@
 import { urls } from "@/constant/path";
+import { DELETE_DATA } from "@/redux/slices/dataSlice";
 import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
 import { Button } from "..";
 import MENU from "./../../assets/svg/menu.svg";
 import { Menu, Title, Wrapper } from "./_headerUser";
 
 function HeaderUser(props: any) {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleLogoutClick = () => {
+    dispatch(DELETE_DATA());
     router.push(urls.HOME);
   };
 
