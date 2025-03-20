@@ -131,8 +131,13 @@ export const Content3Wrapper = styled.div`
 export const HeadmasterPic = styled.img<Interface_Img>`
   border-radius: 16px;
   background: ${color.a5};
-  min-width: 424px;
-  height: 520px;
+  min-width: 240px;
+  height: 360px;
+
+  @media all and (min-width: 1024px) {
+    min-width: 424px;
+    height: 520px;
+  }
 `;
 
 export const HeadmasterWrapper = styled.div`
@@ -148,16 +153,25 @@ export const SubTitle = styled.div`
 `;
 
 export const HeadmasterTitle = styled.div`
-  font-size: 40px;
+  font-size: 24px;
   font-weight: 600;
   color: ${color.a2};
+
+  @media all and (min-width: 1024px) {
+    font-size: 40px;
+  }
 `;
 
 export const HeadmasterDesc = styled.div`
   text-align: justify;
-  font-size: 22px;
+  font-size: 16px;
+  line-height: 20px;
   color: ${color.a7};
-  line-height: 36px;
+
+  @media all and (min-width: 1024px) {
+    font-size: 22px;
+    line-height: 36px;
+  }
 `;
 
 export const ProgramTitle = styled.div`
