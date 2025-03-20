@@ -13,8 +13,11 @@ import {
   SideBarItemWrapper,
   Wrapper,
 } from "./_userLayout";
+import { useSelector } from "react-redux";
+import { ROLE } from "@/constant/role";
 
 function UserLayout(props: any) {
+  const [role, setRole] = useState<string>("");
   const [initLoading, setInitLoading] = useState<string>("Y");
   const [contentHeight, setContentHeight] = useState<number>(0);
   const [sideBarHeight, setSideBarHeight] = useState<number>(0);
@@ -27,6 +30,7 @@ function UserLayout(props: any) {
   const [sideDropUser5, setSideDropUser5] = useState<string>("N");
 
   const { setUrlChange } = useWidget();
+  const dataFromRedux = useSelector((state: any) => state.data);
 
   const refContent = useRef<HTMLDivElement>(null);
   const refSideBar = useRef<HTMLDivElement>(null);
@@ -51,6 +55,13 @@ function UserLayout(props: any) {
     setTotalHeight(Math.max(contentHeight, sideBarHeight));
   }, [contentHeight, sideBarHeight]);
 
+  useEffect(() => {
+    const roleFromRedux = dataFromRedux?.user?.role;
+    if (roleFromRedux) {
+      setRole(roleFromRedux);
+    }
+  }, [dataFromRedux?.user?.role]);
+
   const handleClickMenu = (menu: string): void => {
     const urlParams = new URLSearchParams(window.location.search);
     urlParams.set("page", menu);
@@ -71,26 +82,32 @@ function UserLayout(props: any) {
               <SideBarItem onClick={() => handleClickMenu("Dashboard")}>
                 Dashboard
               </SideBarItem>
-              <SideBarItemWrapper
-                onClick={() =>
-                  setSideDropUser1(sideDropUser1 === "Y" ? "N" : "Y")
-                }
-              >
-                <SideBarItem>User</SideBarItem>
-                <SideBarDropdown
-                  alt="down"
-                  src={DOWN}
-                  display={sideDropUser1}
-                />
-              </SideBarItemWrapper>
-              <SideBarDropWrapper display={sideDropUser1}>
-                <SideBarItem onClick={() => handleClickMenu("Admin")}>
-                  Admin
-                </SideBarItem>
-                <SideBarItem onClick={() => handleClickMenu("Guru")}>
-                  Guru
-                </SideBarItem>
-              </SideBarDropWrapper>
+              {[ROLE.SUPER_ADMIN, ROLE.ADMIN].includes(role) && (
+                <>
+                  <SideBarItemWrapper
+                    onClick={() =>
+                      setSideDropUser1(sideDropUser1 === "Y" ? "N" : "Y")
+                    }
+                  >
+                    <SideBarItem>User</SideBarItem>
+                    <SideBarDropdown
+                      alt="down"
+                      src={DOWN}
+                      display={sideDropUser1}
+                    />
+                  </SideBarItemWrapper>
+                  <SideBarDropWrapper display={sideDropUser1}>
+                    {role === ROLE.SUPER_ADMIN && (
+                      <SideBarItem onClick={() => handleClickMenu("Admin")}>
+                        Admin
+                      </SideBarItem>
+                    )}
+                    <SideBarItem onClick={() => handleClickMenu("Guru")}>
+                      Guru
+                    </SideBarItem>
+                  </SideBarDropWrapper>
+                </>
+              )}
               <SideBarItemWrapper
                 onClick={() =>
                   setSideDropUser2(sideDropUser2 === "Y" ? "N" : "Y")
