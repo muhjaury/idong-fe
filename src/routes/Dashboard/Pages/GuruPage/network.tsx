@@ -1,22 +1,22 @@
 import { Button } from "@/components";
-import { API_DELETE_USER, API_FETCH_ADMIN } from "@/constant/api";
+import { API_DELETE_USER, API_FETCH_GURU } from "@/constant/api";
 import request from "@/utils/request";
-import { ButtonWrapper } from "./_adminPage";
+import { ButtonWrapper } from "./_guruPage";
 
-const handleDeleteAdmin = async (func: any, id: number) => {
+const handleDeleteGuru = async (func: any, id: number) => {
   const data = { id };
   request(API_DELETE_USER, "POST", null, data)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
-        fetchAdmin(func);
+        fetchGuru(func);
       }
     })
     .catch((e) => console.log(e));
 };
 
-export const fetchAdmin = (func: any) => {
+export const fetchGuru = (func: any) => {
   const { setRawData } = func;
-  request(API_FETCH_ADMIN, "GET", null, null)
+  request(API_FETCH_GURU, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
         let result = res?.data;
@@ -29,7 +29,7 @@ export const fetchAdmin = (func: any) => {
               <ButtonWrapper>
                 <Button
                   removeshadow="Y"
-                  onClick={() => handleDeleteAdmin(func, item.id)}
+                  onClick={() => handleDeleteGuru(func, item.id)}
                 >
                   Hapus
                 </Button>
