@@ -1,5 +1,12 @@
+import { urls } from "@/constant/path";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Button } from "..";
+import CLOSE from "./../../assets/img/cancel.png";
+import DOWN from "./../../assets/img/down.png";
+import SOPPENG from "./../../assets/img/soppeng.png";
+import MENU from "./../../assets/svg/menu.svg";
 import {
   ButtonWrapper,
   Close,
@@ -22,12 +29,6 @@ import {
   WrapperLeft,
   WrapperRight,
 } from "./_header";
-import SOPPENG from "./../../assets/img/soppeng.png";
-import MENU from "./../../assets/svg/menu.svg";
-import CLOSE from "./../../assets/img/cancel.png";
-import DOWN from "./../../assets/img/down.png";
-import { useRouter } from "next/navigation";
-import { urls } from "@/constant/path";
 
 function Header() {
   const [scrolled, setScrolled] = useState<string>("N");
@@ -39,18 +40,7 @@ function Header() {
   const [sideDrop4, setSideDrop4] = useState<string>("N");
 
   const router = useRouter();
-
-  const handleOnHover = (index: number) => {
-    const data = hover;
-    data[index] = "Y";
-    setHover([...data]);
-  };
-
-  const handleOffHover = (index: number) => {
-    let data = hover;
-    data[index] = "N";
-    setHover([...data]);
-  };
+  const dataFromRedux = useSelector((state: any) => state.data);
 
   useEffect(() => {
     const handleStickyScroll = () => {
@@ -67,8 +57,27 @@ function Header() {
     };
   }, []);
 
+  const handleOnHover = (index: number) => {
+    const data = hover;
+    data[index] = "Y";
+    setHover([...data]);
+  };
+
+  const handleOffHover = (index: number) => {
+    let data = hover;
+    data[index] = "N";
+    setHover([...data]);
+  };
+
   const handleClickMenu = (url: string) => {
     router.push(url);
+  };
+
+  const handleClickLogin = () => {
+    if (dataFromRedux?.user?.isLogin) {
+      return router.push(urls.DASHBOARD);
+    }
+    return router.push(urls.LOGIN);
   };
 
   return (
@@ -459,7 +468,9 @@ function Header() {
           </NavDropdownWrapper>
         </NavWrapper>
         <ButtonWrapper>
-          <Button onClick={() => router.push(urls.LOGIN)}>Login</Button>
+          <Button onClick={() => handleClickLogin()}>
+            {dataFromRedux?.user?.isLogin ? "Dashboard" : "Login"}
+          </Button>
         </ButtonWrapper>
         <Menu src={MENU} onClick={() => setSideBar("Y")} />
       </WrapperRight>
