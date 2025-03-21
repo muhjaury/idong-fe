@@ -31,6 +31,10 @@ export const Close = styled.img<Interface_Components>`
 
 export const Content = styled.div<Interface_Components>`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 25px;
   background: ${color.a1};
   padding: 40px;
