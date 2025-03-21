@@ -22,6 +22,7 @@ export const store = configureStore({
         ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
       },
     }),
+  devTools: process.env.NEXT_PUBLIC_TYPE! !== "prod",
 });
 
 export const persistor = persistStore(store);
