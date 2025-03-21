@@ -1,4 +1,5 @@
 import TambahDataAdmin from "./TambahDataAdmin";
 import TambahDataGuru from "./TambahDataGuru";
+import TambahProfilSekolah from "./TambahProfilSekolah";
 
-export { TambahDataAdmin, TambahDataGuru };
+export { TambahDataAdmin, TambahDataGuru, TambahProfilSekolah };

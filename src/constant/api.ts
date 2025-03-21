@@ -15,3 +15,5 @@ export const API_REGISTER_ADMIN = BASE_URL + "api/user/registerUser";
 export const API_FETCH_ADMIN = BASE_URL + "api/user/fetchAdmin";
 export const API_FETCH_GURU = BASE_URL + "api/user/fetchGuru";
 export const API_DELETE_USER = BASE_URL + "api/user/deleteUser";
+export const API_REGISTER_SCHOOL_PROFILE =
+  BASE_URL + "api/registerProfileSchool";
