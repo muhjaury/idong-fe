@@ -11,6 +11,7 @@ import Modal from "./Modal";
 import PageTitle from "./PageTitle";
 import Section from "./Section";
 import SvgPreviewer from "./SvgPreviewer";
+import TextArea from "./TextArea";
 
 export {
   Button,
@@ -27,4 +28,5 @@ export {
   PageTitle,
   Section,
   SvgPreviewer,
+  TextArea,
 };

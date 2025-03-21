@@ -3,13 +3,19 @@ import { Interface_Components, Interface_Img } from "@/interface";
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  width: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+`;
+
+export const Label = styled.div`
+  color: ${color.a2};
+  font-size: 16px;
 `;
 
 export const ButtonWrapper = styled.div<Interface_Components>`
+  margin-top: 8px;
   position: relative;
   display: ${({ display }) => (display === "Y" ? "flex" : "none")};
   align-items: center;
@@ -32,9 +38,16 @@ export const ButtonWrapper = styled.div<Interface_Components>`
   }
 `;
 
+export const FilesWrapper = styled.div`
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+`;
+
 export const Input = styled.input``;
 
-export const Label = styled.span`
+export const ButtonLabel = styled.span`
   color: ${color.a1};
   cursor: pointer;
 `;

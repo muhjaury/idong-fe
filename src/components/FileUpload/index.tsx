@@ -1,19 +1,39 @@
 import { Interface_File } from "@/interface";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CLOSE from "./../../assets/img/cancel-black.png";
 import {
+  ButtonLabel,
   ButtonWrapper,
   Close,
   FileLabel,
   FileWrapper,
+  FilesWrapper,
   Input,
   Label,
   Wrapper,
 } from "./_fileUpload";
 
-function FileUpload({ multiple = false }) {
+function FileUpload({
+  label = "",
+  multiple = false,
+  onChange = (props: any): any => {},
+  value = [],
+}) {
   const [files, setFiles] = useState<Interface_File[]>([]);
-  // const [fileActive, setFileActive] = useState<any>(null);
+
+  useEffect(() => {
+    if (value.length > 0 && files.length === 0) {
+      setFiles(value);
+    }
+  }, [value]);
+
+  // useEffect(() => {
+  //   if (file.base64) {
+  //     base64ToBlob(file.base64).then((res) => {
+  //       setFileActive(URL.createObjectURL(res));
+  //     });
+  //   }
+  // }, [file]);
 
   const handleFileChange = async (e: any, existingFile: Interface_File[]) => {
     const files = e.target.files;
@@ -68,8 +88,10 @@ function FileUpload({ multiple = false }) {
           }
         );
         setFiles(multipleData);
+        onChange(multipleData);
       } else {
         setFiles(initialDataWithBase64);
+        onChange(initialDataWithBase64);
       }
     }
     e.target.value = null;
@@ -82,41 +104,37 @@ function FileUpload({ multiple = false }) {
   const handleRemoveFile = (file: Interface_File) => {
     const data = files.filter((item: Interface_File) => item.id !== file.id);
     setFiles(data);
+    onChange(data);
   };
-
-  // useEffect(() => {
-  //   if (file.base64) {
-  //     base64ToBlob(file.base64).then((res) => {
-  //       setFileActive(URL.createObjectURL(res));
-  //     });
-  //   }
-  // }, [file]);
 
   return (
     <Wrapper>
+      {label && <Label>{label}</Label>}
       <ButtonWrapper display={multiple || !files[0]?.name ? "Y" : "N"}>
         <Input
           type="file"
           onChange={(e) => handleFileChange(e, files)}
           multiple={multiple}
         />
-        <Label>Upload File</Label>
+        <ButtonLabel>Upload File</ButtonLabel>
       </ButtonWrapper>
-      {files.length > 0 &&
-        files.map((file: Interface_File, index: number) => {
-          return (
-            <FileWrapper key={index}>
-              <FileLabel onClick={() => handleClickFile(file.objectURL)}>
-                {file.name}
-              </FileLabel>
-              <Close
-                src={CLOSE}
-                alt="close"
-                onClick={() => handleRemoveFile(file)}
-              />
-            </FileWrapper>
-          );
-        })}
+      <FilesWrapper>
+        {files.length > 0 &&
+          files.map((file: Interface_File, index: number) => {
+            return (
+              <FileWrapper key={index}>
+                <FileLabel onClick={() => handleClickFile(file.objectURL)}>
+                  {file.name}
+                </FileLabel>
+                <Close
+                  src={CLOSE}
+                  alt="close"
+                  onClick={() => handleRemoveFile(file)}
+                />
+              </FileWrapper>
+            );
+          })}
+      </FilesWrapper>
     </Wrapper>
   );
 }

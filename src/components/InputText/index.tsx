@@ -1,10 +1,24 @@
 import { Input, Label, Wrappper } from "./_inputText";
 
-function InputText(props: any) {
+function InputText({
+  label = "",
+  onChange = (props: any): any => {},
+  placeholder = "",
+  type = "text",
+  value = "",
+}) {
+  const handleChange = (e: any) => {
+    onChange(e);
+  };
   return (
     <Wrappper>
-      {props.label && <Label>{props.label}</Label>}
-      <Input {...props} />
+      {label && <Label>{label}</Label>}
+      <Input
+        onChange={(e) => handleChange(e)}
+        placeholder={placeholder}
+        type={type}
+        value={value}
+      />
     </Wrappper>
   );
 }
