@@ -11,8 +11,10 @@ function HeaderUser(props: any) {
   const dispatch = useDispatch();
 
   const handleLogoutClick = () => {
-    dispatch(DELETE_DATA());
     router.push(urls.HOME);
+    setTimeout(() => {
+      dispatch(DELETE_DATA());
+    }, 500);
   };
 
   return (
