@@ -22,9 +22,7 @@ function FileUpload({
   const [files, setFiles] = useState<Interface_File[]>([]);
 
   useEffect(() => {
-    if (value.length > 0 && files.length === 0) {
-      setFiles(value);
-    }
+    setFiles(value);
   }, [value]);
 
   // useEffect(() => {
