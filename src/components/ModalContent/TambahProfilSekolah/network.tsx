@@ -28,11 +28,11 @@ export const saveData = (func: any, data: any) => {
   let body = {
     data: JSON.stringify({
       principleName: principleNameEnc,
-      principleFile: principleFile,
+      principleFile: principleFile[0].base64,
       principleGreeting: principleGreetingEnc,
-      visionMissionFile: visionMissionFile,
-      orgStructureFile: orgStructureFile,
-      academicCalenderFile: academicCalenderFile,
+      visionMissionFile: visionMissionFile[0].base64,
+      orgStructureFile: orgStructureFile[0].base64,
+      academicCalenderFile: academicCalenderFile[0].base64,
     }),
   };
 

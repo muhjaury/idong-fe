@@ -2,6 +2,7 @@ import { Button, FieldWrapper, InputText, TextArea } from "@/components";
 import FileUpload from "@/components/FileUpload";
 import { useEffect, useState } from "react";
 import { ButtonWrapper, PromptText, Wrapper } from "./_tambahProfilSekolah";
+import { saveData } from "./network";
 
 function TambahProfilSekolah(props: any) {
   const [principleName, setPrincipleName] = useState("");
@@ -38,12 +39,6 @@ function TambahProfilSekolah(props: any) {
   };
 
   const handleAddClick = () => {
-    console.log("principleName", principleName);
-    console.log("principleFile", principleFile);
-    console.log("principleGreeting", principleGreeting);
-    console.log("visionMissionFile", visionMissionFile);
-    console.log("orgStructureFile", orgStructureFile);
-    console.log("academicCalenderFile", academicCalenderFile);
     if (
       principleName &&
       principleFile.length > 0 &&
@@ -70,7 +65,7 @@ function TambahProfilSekolah(props: any) {
         setError,
         setSuccess,
       };
-      // saveData(func, data);
+      saveData(func, data);
     } else {
       setError("Semua data harus diisi");
     }
