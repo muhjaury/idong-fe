@@ -1,13 +1,14 @@
-import { Button, Modal } from "@/components";
+import { Button, InputText, Modal } from "@/components";
 import { TambahTenagaPendidik } from "@/components/ModalContent";
 import { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
-import { Wrapper, WrapperContent } from "./_tenagaPendidikPage";
+import { Wrapper, WrapperContent, WrapperSearch } from "./_tenagaPendidikPage";
 import { fetch } from "./network";
 
 function TenagaPendidikPage() {
   const [rawData, setRawData] = useState<any[]>([]);
   const [data, setData] = useState(rawData);
+  const [search, setSearch] = useState("");
   const [displayModal, setDisplayModal] = useState(false);
   const [modalData, setModalData] = useState({});
 
@@ -42,6 +43,17 @@ function TenagaPendidikPage() {
     { name: "Aksi", selector: (row) => row.aksi, sortable: true },
   ];
 
+  const handleSearch = (e: any) => {
+    const value = e.target.value;
+    setSearch(value);
+    const filterData = rawData.filter(
+      (row) =>
+        row?.nama?.toLowerCase().includes(value.toLowerCase()) ||
+        row?.deskripsi?.toLowerCase().includes(value.toLowerCase())
+    );
+    setData(filterData);
+  };
+
   return (
     <>
       <Wrapper>
@@ -49,6 +61,13 @@ function TenagaPendidikPage() {
           Tambah Tenaga Pendidik
         </Button>
         <WrapperContent>
+          <WrapperSearch>
+            <InputText
+              placeholder="Pencarian"
+              onChange={(e: any) => handleSearch(e)}
+              value={search}
+            />
+          </WrapperSearch>
           <DataTable columns={columns} data={data} pagination></DataTable>
         </WrapperContent>
       </Wrapper>

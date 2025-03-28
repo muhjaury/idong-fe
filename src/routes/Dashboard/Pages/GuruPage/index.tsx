@@ -9,6 +9,7 @@ import { fetchGuru } from "./network";
 function GuruPage() {
   const [rawData, setRawData] = useState<Interface_User[]>([]);
   const [data, setData] = useState(rawData);
+  const [search, setSearch] = useState("");
   const [displayModal, setDisplayModal] = useState(false);
 
   useEffect(() => {
@@ -30,10 +31,12 @@ function GuruPage() {
   ];
 
   const handleSearch = (e: any) => {
+    const value = e.target.value;
+    setSearch(value);
     const filterData = rawData.filter(
       (row) =>
-        row?.nama?.toLowerCase().includes(e.target.value.toLowerCase()) ||
-        row?.email?.toLowerCase().includes(e.target.value.toLowerCase())
+        row?.nama?.toLowerCase().includes(value.toLowerCase()) ||
+        row?.email?.toLowerCase().includes(value.toLowerCase())
     );
     setData(filterData);
   };
@@ -47,6 +50,7 @@ function GuruPage() {
             <InputText
               placeholder="Pencarian"
               onChange={(e: any) => handleSearch(e)}
+              value={search}
             />
           </WrapperSearch>
           <DataTable columns={columns} data={data} pagination></DataTable>
