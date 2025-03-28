@@ -22,3 +22,9 @@ export const API_FETCH_TENAGA_PENDIDIK = BASE_URL + "tenagaPendidik/fetch";
 export const API_REGISTER_TENAGA_PENDIDIK =
   BASE_URL + "tenagaPendidik/register";
 export const API_DELETE_TENAGA_PENDIDIK = BASE_URL + "tenagaPendidik/delete";
+export const API_FETCH_TENAGA_KEPENDIDIKAN =
+  BASE_URL + "tenagaKependidikan/fetch";
+export const API_REGISTER_TENAGA_KEPENDIDIKAN =
+  BASE_URL + "tenagaKependidikan/register";
+export const API_DELETE_TENAGA_KEPENDIDIKAN =
+  BASE_URL + "tenagaKependidikan/delete";
