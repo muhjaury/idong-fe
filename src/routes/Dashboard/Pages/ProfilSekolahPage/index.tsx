@@ -9,10 +9,11 @@ function ProfilSekolahPage() {
   const [rawData, setRawData] = useState<any[]>([]);
   const [data, setData] = useState(rawData);
   const [displayModal, setDisplayModal] = useState(false);
+  const [modalData, setModalData] = useState({});
 
   useEffect(() => {
     if (rawData.length === 0) {
-      const func = { setRawData };
+      const func = { setDisplayModal, setModalData, setRawData };
       fetchSchoolProfile(func);
     }
   }, []);
@@ -69,11 +70,18 @@ function ProfilSekolahPage() {
         display={displayModal}
         onClose={() => {
           setDisplayModal(false);
-          const func = { setRawData };
+          setModalData({});
+          const func = { setDisplayModal, setModalData, setRawData };
           fetchSchoolProfile(func);
         }}
       >
-        <TambahProfilSekolah onClose={() => setDisplayModal(false)} />
+        <TambahProfilSekolah
+          data={modalData}
+          onClose={() => {
+            setDisplayModal(false);
+            setModalData({});
+          }}
+        />
       </Modal>
     </>
   );

@@ -9,6 +9,18 @@ export const Wrapper = styled.div`
     font-weight: bolder;
     font-size: 14px;
   }
+
+  .rdt_TableHeadRow {
+    > div:last-child {
+      min-width: 240px;
+    }
+  }
+
+  .rdt_TableRow {
+    > div:last-child {
+      min-width: 240px;
+    }
+  }
 `;
 
 export const WrapperContent = styled.div`

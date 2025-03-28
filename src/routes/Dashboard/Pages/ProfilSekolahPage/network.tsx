@@ -19,7 +19,7 @@ const handleDeleteSP = async (func: any, id: number) => {
 };
 
 export const fetchSchoolProfile = (func: any) => {
-  const { setRawData } = func;
+  const { setDisplayModal, setModalData, setRawData } = func;
   request(API_FETCH_SCHOOL_PROFILE, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
@@ -51,6 +51,15 @@ export const fetchSchoolProfile = (func: any) => {
             ),
             aksi: (
               <ButtonWrapper>
+                <Button
+                  removeshadow="Y"
+                  onClick={() => {
+                    setModalData(item);
+                    setDisplayModal(true);
+                  }}
+                >
+                  Ubah
+                </Button>
                 <Button
                   removeshadow="Y"
                   onClick={() => handleDeleteSP(func, item.id)}

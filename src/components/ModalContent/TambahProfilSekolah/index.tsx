@@ -1,18 +1,56 @@
 import { Button, FieldWrapper, InputText, TextArea } from "@/components";
 import FileUpload from "@/components/FileUpload";
+import { decryptData } from "@/utils/dataManipulation";
+import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
 import { ButtonWrapper, PromptText, Wrapper } from "./_tambahProfilSekolah";
 import { saveData } from "./network";
 
 function TambahProfilSekolah(props: any) {
   const [principleName, setPrincipleName] = useState("");
-  const [principleFile, setPrincipleFile] = useState([]);
+  const [principleFile, setPrincipleFile] = useState<any>([]);
   const [principleGreeting, setPrincipleGreeting] = useState("");
-  const [visionMissionFile, setVisionMissionFile] = useState([]);
-  const [orgStructureFile, setOrgStructureFile] = useState([]);
-  const [academicCalenderFile, setAcademicCalenderFile] = useState([]);
+  const [visionMissionFile, setVisionMissionFile] = useState<any>([]);
+  const [orgStructureFile, setOrgStructureFile] = useState<any>([]);
+  const [academicCalenderFile, setAcademicCalenderFile] = useState<any>([]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  //Prefill
+  useEffect(() => {
+    const data = props?.data;
+    if (
+      data?.principleName &&
+      data?.principleFile &&
+      data?.principleGreeting &&
+      data?.visionMissionFile &&
+      data?.orgStructureFile &&
+      data?.academicCalenderFile
+    ) {
+      setPrincipleName(decryptData(data.principleName));
+      generateOneFileDataFromBase64({
+        fileName: "File_Foto_Kepala_Sekolah",
+        base64: data?.principleFile,
+        setData: setPrincipleFile,
+      });
+      setPrincipleGreeting(decryptData(data.principleGreeting));
+      generateOneFileDataFromBase64({
+        fileName: "File_Visi_Misi",
+        base64: data?.visionMissionFile,
+        setData: setVisionMissionFile,
+      });
+      generateOneFileDataFromBase64({
+        fileName: "File_Struktur_Organisasi",
+        base64: data?.orgStructureFile,
+        setData: setOrgStructureFile,
+      });
+      generateOneFileDataFromBase64({
+        fileName: "File_Kalender_Akademik",
+        base64: data?.academicCalenderFile,
+        setData: setAcademicCalenderFile,
+      });
+    }
+  }, [props?.data]);
 
   useEffect(() => {
     if (error) {
