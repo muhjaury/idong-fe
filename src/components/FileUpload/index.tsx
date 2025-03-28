@@ -16,7 +16,7 @@ import {
 function FileUpload({
   label = "",
   multiple = false,
-  onChange = (props: any): any => {},
+  onChange = (props: any): any => props,
   value = [],
 }) {
   const [files, setFiles] = useState<Interface_File[]>([]);
@@ -24,14 +24,6 @@ function FileUpload({
   useEffect(() => {
     setFiles(value);
   }, [value]);
-
-  // useEffect(() => {
-  //   if (file.base64) {
-  //     base64ToBlob(file.base64).then((res) => {
-  //       setFileActive(URL.createObjectURL(res));
-  //     });
-  //   }
-  // }, [file]);
 
   const handleFileChange = async (e: any, existingFile: Interface_File[]) => {
     const files = e.target.files;
