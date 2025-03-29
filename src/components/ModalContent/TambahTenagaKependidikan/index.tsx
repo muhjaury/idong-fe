@@ -8,7 +8,7 @@ import {
   PromptText,
   Title,
   Wrapper,
-} from "./_tambahTenagaPendidik";
+} from "./_tambahTenagaKependidikan";
 import { saveData } from "./network";
 
 function TambahTenagaPendidik(props: any) {

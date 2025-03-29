@@ -32,3 +32,8 @@ export const API_FETCH_SARANA_PRASARANA = BASE_URL + "saranaPrasarana/fetch";
 export const API_REGISTER_SARANA_PRASARANA =
   BASE_URL + "saranaPrasarana/register";
 export const API_DELETE_SARANA_PRASARANA = BASE_URL + "saranaPrasarana/delete";
+export const API_FETCH_PETA_STATUS_KONTAK = BASE_URL + "petaStatusKontak/fetch";
+export const API_REGISTER_PETA_STATUS_KONTAK =
+  BASE_URL + "petaStatusKontak/register";
+export const API_DELETE_PETA_STATUS_KONTAK =
+  BASE_URL + "petaStatusKontak/delete";
