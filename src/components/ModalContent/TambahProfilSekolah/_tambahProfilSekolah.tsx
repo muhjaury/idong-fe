@@ -18,6 +18,11 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const Title = styled.div`
+  font-size: 16px;
+  font-weight: 600;
+`;
+
 export const ButtonWrapper = styled.div`
   display: flex;
   gap: 16px;

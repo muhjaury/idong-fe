@@ -3,10 +3,16 @@ import FileUpload from "@/components/FileUpload";
 import { decryptData } from "@/utils/dataManipulation";
 import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
-import { ButtonWrapper, PromptText, Wrapper } from "./_tambahProfilSekolah";
+import {
+  ButtonWrapper,
+  PromptText,
+  Title,
+  Wrapper,
+} from "./_tambahProfilSekolah";
 import { saveData } from "./network";
 
 function TambahProfilSekolah(props: any) {
+  const [id, setId] = useState("");
   const [principleName, setPrincipleName] = useState("");
   const [principleFile, setPrincipleFile] = useState<any>([]);
   const [principleGreeting, setPrincipleGreeting] = useState("");
@@ -27,6 +33,9 @@ function TambahProfilSekolah(props: any) {
       data?.orgStructureFile &&
       data?.academicCalenderFile
     ) {
+      if (data?.id) {
+        setId(data?.id);
+      }
       setPrincipleName(decryptData(data.principleName));
       generateOneFileDataFromBase64({
         fileName: "File_Foto_Kepala_Sekolah",
@@ -86,6 +95,7 @@ function TambahProfilSekolah(props: any) {
       academicCalenderFile.length > 0
     ) {
       const data = {
+        id,
         principleName,
         principleFile,
         principleGreeting,
@@ -94,6 +104,7 @@ function TambahProfilSekolah(props: any) {
         academicCalenderFile,
       };
       const func = {
+        setId,
         setPrincipleName,
         setPrincipleFile,
         setPrincipleGreeting,
@@ -111,6 +122,7 @@ function TambahProfilSekolah(props: any) {
 
   return (
     <Wrapper>
+      <Title>{id ? "Ubah Data" : "Tambah Data"}</Title>
       <FieldWrapper>
         <InputText
           label="Nama Kepala Sekolah"

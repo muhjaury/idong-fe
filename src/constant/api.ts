@@ -15,9 +15,9 @@ export const API_REGISTER_ADMIN = BASE_URL + "user/registerUser";
 export const API_FETCH_ADMIN = BASE_URL + "user/fetchAdmin";
 export const API_FETCH_GURU = BASE_URL + "user/fetchGuru";
 export const API_DELETE_USER = BASE_URL + "user/deleteUser";
-export const API_REGISTER_SCHOOL_PROFILE = BASE_URL + "registerSchoolProfile";
-export const API_FETCH_SCHOOL_PROFILE = BASE_URL + "fetchSchoolProfile";
-export const API_DELETE_SCHOOL_PROFILE = BASE_URL + "deleteSchoolProfile";
+export const API_REGISTER_SCHOOL_PROFILE = BASE_URL + "schoolProfile/register";
+export const API_FETCH_SCHOOL_PROFILE = BASE_URL + "schoolProfile/fetch";
+export const API_DELETE_SCHOOL_PROFILE = BASE_URL + "schoolProfile/delete";
 export const API_FETCH_TENAGA_PENDIDIK = BASE_URL + "tenagaPendidik/fetch";
 export const API_REGISTER_TENAGA_PENDIDIK =
   BASE_URL + "tenagaPendidik/register";
