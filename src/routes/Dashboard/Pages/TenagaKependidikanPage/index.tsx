@@ -2,7 +2,11 @@ import { Button, InputText, Modal } from "@/components";
 import { TambahTenagaKependidikan } from "@/components/ModalContent";
 import { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
-import { Wrapper, WrapperContent, WrapperSearch } from "./_tenagaPendidikPage";
+import {
+  Wrapper,
+  WrapperContent,
+  WrapperSearch,
+} from "./_tenagaKependidikanPage";
 import { fetch } from "./network";
 
 function TenagaKependidikanPage() {

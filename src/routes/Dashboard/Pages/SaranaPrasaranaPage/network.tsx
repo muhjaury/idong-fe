@@ -1,15 +1,15 @@
 import { Button, DisplayFile } from "@/components";
 import {
-  API_FETCH_TENAGA_KEPENDIDIKAN,
-  API_REGISTER_TENAGA_KEPENDIDIKAN,
+  API_DELETE_SARANA_PRASARANA,
+  API_FETCH_SARANA_PRASARANA,
 } from "@/constant/api";
 import { decryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
-import { ButtonWrapper } from "./_tenagaKependidikanPage";
+import { ButtonWrapper } from "./_saranaPrasaranaPage";
 
 const handleDelete = async (func: any, id: number) => {
   const data = { id };
-  request(API_REGISTER_TENAGA_KEPENDIDIKAN, "POST", null, data)
+  request(API_DELETE_SARANA_PRASARANA, "POST", null, data)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
         fetch(func);
@@ -20,7 +20,7 @@ const handleDelete = async (func: any, id: number) => {
 
 export const fetch = (func: any) => {
   const { setDisplayModal, setModalData, setRawData } = func;
-  request(API_FETCH_TENAGA_KEPENDIDIKAN, "GET", null, null)
+  request(API_FETCH_SARANA_PRASARANA, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
         let result = res?.data;
@@ -28,7 +28,6 @@ export const fetch = (func: any) => {
           return {
             nomor: index + 1,
             nama: decryptData(item.nama),
-            deskripsi: decryptData(item.deskripsi),
             foto: (
               <ButtonWrapper>
                 <DisplayFile base64={item.foto} />

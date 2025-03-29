@@ -28,3 +28,7 @@ export const API_REGISTER_TENAGA_KEPENDIDIKAN =
   BASE_URL + "tenagaKependidikan/register";
 export const API_DELETE_TENAGA_KEPENDIDIKAN =
   BASE_URL + "tenagaKependidikan/delete";
+export const API_FETCH_SARANA_PRASARANA = BASE_URL + "saranaPrasarana/fetch";
+export const API_REGISTER_SARANA_PRASARANA =
+  BASE_URL + "saranaPrasarana/register";
+export const API_DELETE_SARANA_PRASARANA = BASE_URL + "saranaPrasarana/delete";
