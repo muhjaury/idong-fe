@@ -113,6 +113,7 @@ function TambahPetaStatusKontak(props: any) {
         setMaps,
         setError,
         setSuccess,
+        onClose: props.onClose,
       };
       saveData(func, data);
     } else {

@@ -110,6 +110,8 @@ function PetaStatusKontakPage() {
           onClose={() => {
             setDisplayModal(false);
             setModalData({});
+            const func = { setDisplayModal, setModalData, setRawData };
+            fetch(func);
           }}
         />
       </Modal>

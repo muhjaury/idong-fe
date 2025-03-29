@@ -113,6 +113,7 @@ function TambahProfilSekolah(props: any) {
         setAcademicCalenderFile,
         setError,
         setSuccess,
+        onClose: props.onClose,
       };
       saveData(func, data);
     } else {

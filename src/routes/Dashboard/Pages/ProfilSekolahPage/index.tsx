@@ -80,6 +80,8 @@ function ProfilSekolahPage() {
           onClose={() => {
             setDisplayModal(false);
             setModalData({});
+            const func = { setDisplayModal, setModalData, setRawData };
+            fetchSchoolProfile(func);
           }}
         />
       </Modal>

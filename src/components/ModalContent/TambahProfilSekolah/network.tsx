@@ -13,6 +13,7 @@ export const saveData = (func: any, data: any) => {
     setAcademicCalenderFile,
     setError,
     setSuccess,
+    onClose,
   } = func;
   const {
     id,
@@ -55,6 +56,7 @@ export const saveData = (func: any, data: any) => {
         setOrgStructureFile([]);
         setAcademicCalenderFile([]);
         setSuccess("Berhasil menambahkan data");
+        onClose();
       }
     } else {
       setError("Data gagal ditambahkan");
