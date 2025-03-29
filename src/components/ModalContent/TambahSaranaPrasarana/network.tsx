@@ -21,10 +21,14 @@ export const saveData = (func: any, data: any) => {
 
   request(API_REGISTER_SARANA_PRASARANA, "POST", null, body).then((res) => {
     if (res?.status.toLowerCase() === "success") {
-      setId("");
-      setNama("");
-      setFoto("");
-      setSuccess("Berhasil menambahkan data");
+      if (id) {
+        setSuccess("Berhasil mengubah data");
+      } else {
+        setId("");
+        setNama("");
+        setFoto("");
+        setSuccess("Berhasil menambahkan data");
+      }
     } else {
       setError("Data gagal ditambahkan");
     }
