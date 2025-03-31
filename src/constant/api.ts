@@ -49,3 +49,6 @@ export const API_DELETE_ARSIP = BASE_URL + "arsip/delete";
 export const API_FETCH_TKJ = BASE_URL + "tkj/fetch";
 export const API_REGISTER_TKJ = BASE_URL + "tkj/register";
 export const API_DELETE_TKJ = BASE_URL + "tkj/delete";
+export const API_FETCH_TBSM = BASE_URL + "tbsm/fetch";
+export const API_REGISTER_TBSM = BASE_URL + "tbsm/register";
+export const API_DELETE_TBSM = BASE_URL + "tbsm/delete";
