@@ -1,3 +1,4 @@
+import TambahArsip from "./TambahArsip";
 import TambahDataAdmin from "./TambahDataAdmin";
 import TambahDataGuru from "./TambahDataGuru";
 import TambahGaleri from "./TambahGaleri";
@@ -9,6 +10,7 @@ import TambahTenagaKependidikan from "./TambahTenagaKependidikan";
 import TambahTenagaPendidik from "./TambahTenagaPendidik";
 
 export {
+  TambahArsip,
   TambahDataAdmin,
   TambahDataGuru,
   TambahGaleri,

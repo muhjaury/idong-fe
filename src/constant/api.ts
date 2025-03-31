@@ -43,3 +43,6 @@ export const API_DELETE_PORTAL_BERITA = BASE_URL + "portalBerita/delete";
 export const API_FETCH_GALERI = BASE_URL + "galeri/fetch";
 export const API_REGISTER_GALERI = BASE_URL + "galeri/register";
 export const API_DELETE_GALERI = BASE_URL + "galeri/delete";
+export const API_FETCH_ARSIP = BASE_URL + "arsip/fetch";
+export const API_REGISTER_ARSIP = BASE_URL + "arsip/register";
+export const API_DELETE_ARSIP = BASE_URL + "arsip/delete";
