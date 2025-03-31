@@ -9,6 +9,7 @@ import TambahProfilSekolah from "./TambahProfilSekolah";
 import TambahSaranaPrasarana from "./TambahSaranaPrasarana";
 import TambahTBSM from "./TambahTBSM";
 import TambahTKJ from "./TambahTKJ";
+import TambahTRKO from "./TambahTRKO";
 import TambahTenagaKependidikan from "./TambahTenagaKependidikan";
 import TambahTenagaPendidik from "./TambahTenagaPendidik";
 
@@ -24,6 +25,7 @@ export {
   TambahSaranaPrasarana,
   TambahTBSM,
   TambahTKJ,
+  TambahTRKO,
   TambahTenagaKependidikan,
   TambahTenagaPendidik,
 };
