@@ -1,5 +1,6 @@
 import TambahDataAdmin from "./TambahDataAdmin";
 import TambahDataGuru from "./TambahDataGuru";
+import TambahGaleri from "./TambahGaleri";
 import TambahPetaStatusKontak from "./TambahPetaStatusKontak";
 import TambahPortalBerita from "./TambahPortalBerita";
 import TambahProfilSekolah from "./TambahProfilSekolah";
@@ -10,6 +11,7 @@ import TambahTenagaPendidik from "./TambahTenagaPendidik";
 export {
   TambahDataAdmin,
   TambahDataGuru,
+  TambahGaleri,
   TambahPetaStatusKontak,
   TambahPortalBerita,
   TambahProfilSekolah,

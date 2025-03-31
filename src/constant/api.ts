@@ -40,3 +40,6 @@ export const API_DELETE_PETA_STATUS_KONTAK =
 export const API_FETCH_PORTAL_BERITA = BASE_URL + "portalBerita/fetch";
 export const API_REGISTER_PORTAL_BERITA = BASE_URL + "portalBerita/register";
 export const API_DELETE_PORTAL_BERITA = BASE_URL + "portalBerita/delete";
+export const API_FETCH_GALERI = BASE_URL + "galeri/fetch";
+export const API_REGISTER_GALERI = BASE_URL + "galeri/register";
+export const API_DELETE_GALERI = BASE_URL + "galeri/delete";
