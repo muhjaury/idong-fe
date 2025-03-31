@@ -46,3 +46,6 @@ export const API_DELETE_GALERI = BASE_URL + "galeri/delete";
 export const API_FETCH_ARSIP = BASE_URL + "arsip/fetch";
 export const API_REGISTER_ARSIP = BASE_URL + "arsip/register";
 export const API_DELETE_ARSIP = BASE_URL + "arsip/delete";
+export const API_FETCH_TKJ = BASE_URL + "tkj/fetch";
+export const API_REGISTER_TKJ = BASE_URL + "tkj/register";
+export const API_DELETE_TKJ = BASE_URL + "tkj/delete";

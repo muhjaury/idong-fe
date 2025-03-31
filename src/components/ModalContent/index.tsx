@@ -8,6 +8,7 @@ import TambahProfilSekolah from "./TambahProfilSekolah";
 import TambahSaranaPrasarana from "./TambahSaranaPrasarana";
 import TambahTenagaKependidikan from "./TambahTenagaKependidikan";
 import TambahTenagaPendidik from "./TambahTenagaPendidik";
+import TambahTKJ from "./TambahTKJ";
 
 export {
   TambahArsip,
@@ -20,4 +21,5 @@ export {
   TambahSaranaPrasarana,
   TambahTenagaKependidikan,
   TambahTenagaPendidik,
+  TambahTKJ,
 };
