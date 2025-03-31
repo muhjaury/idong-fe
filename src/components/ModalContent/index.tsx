@@ -1,3 +1,4 @@
+import TambahATPH from "./TambahATPH";
 import TambahArsip from "./TambahArsip";
 import TambahDPIB from "./TambahDPIB";
 import TambahDataAdmin from "./TambahDataAdmin";
@@ -14,6 +15,7 @@ import TambahTenagaKependidikan from "./TambahTenagaKependidikan";
 import TambahTenagaPendidik from "./TambahTenagaPendidik";
 
 export {
+  TambahATPH,
   TambahArsip,
   TambahDPIB,
   TambahDataAdmin,
