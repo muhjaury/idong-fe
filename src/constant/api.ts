@@ -61,3 +61,6 @@ export const API_DELETE_TRKO = BASE_URL + "trko/delete";
 export const API_FETCH_ATPH = BASE_URL + "atph/fetch";
 export const API_REGISTER_ATPH = BASE_URL + "atph/register";
 export const API_DELETE_ATPH = BASE_URL + "atph/delete";
+export const API_FETCH_TATA_TERTIB = BASE_URL + "tataTertib/fetch";
+export const API_REGISTER_TATA_TERTIB = BASE_URL + "tataTertib/register";
+export const API_DELETE_TATA_TERTIB = BASE_URL + "tataTertib/delete";
