@@ -3,6 +3,7 @@ import { useWidget } from "@/context";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, useState } from "react";
+import "react-loading-skeleton/dist/skeleton.css";
 import { Content, Wrapper } from "./_coreLayout";
 
 function CoreLayout(props: any) {

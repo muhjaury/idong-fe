@@ -2,6 +2,7 @@
 
 import { Card, Section } from "@/components";
 import CoreLayout from "@/layout/CoreLayout";
+import Skeleton from "react-loading-skeleton";
 import "swiper/css";
 import {
   CardWrapper,
@@ -109,6 +110,7 @@ function Home() {
             <HeadmasterTitle>
               Selamat Datang Untukmu Para Pejuang Bangsa
             </HeadmasterTitle>
+            <Skeleton count={10} />
             <HeadmasterDesc>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
               imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel semper

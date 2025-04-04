@@ -1,6 +1,9 @@
 import { Footer, HeaderUser, LoadingContent } from "@/components";
+import { ROLE } from "@/constant/role";
 import { useWidget } from "@/context";
 import { useEffect, useRef, useState } from "react";
+import "react-loading-skeleton/dist/skeleton.css";
+import { useSelector } from "react-redux";
 import DOWN from "./../assets/img/down.png";
 import {
   Content,
@@ -13,8 +16,6 @@ import {
   SideBarItemWrapper,
   Wrapper,
 } from "./_userLayout";
-import { useSelector } from "react-redux";
-import { ROLE } from "@/constant/role";
 
 function UserLayout(props: any) {
   const [role, setRole] = useState<string>("");
