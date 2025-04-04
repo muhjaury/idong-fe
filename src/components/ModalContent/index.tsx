@@ -8,6 +8,7 @@ import TambahPetaStatusKontak from "./TambahPetaStatusKontak";
 import TambahPortalBerita from "./TambahPortalBerita";
 import TambahProfilSekolah from "./TambahProfilSekolah";
 import TambahSaranaPrasarana from "./TambahSaranaPrasarana";
+import TambahSiswa from "./TambahSiswa";
 import TambahTBSM from "./TambahTBSM";
 import TambahTKJ from "./TambahTKJ";
 import TambahTRKO from "./TambahTRKO";
@@ -16,20 +17,21 @@ import TambahTenagaKependidikan from "./TambahTenagaKependidikan";
 import TambahTenagaPendidik from "./TambahTenagaPendidik";
 
 export {
-  TambahATPH,
   TambahArsip,
-  TambahDPIB,
+  TambahATPH,
   TambahDataAdmin,
   TambahDataGuru,
+  TambahDPIB,
   TambahGaleri,
   TambahPetaStatusKontak,
   TambahPortalBerita,
   TambahProfilSekolah,
   TambahSaranaPrasarana,
-  TambahTBSM,
-  TambahTKJ,
-  TambahTRKO,
+  TambahSiswa,
   TambahTataTertib,
+  TambahTBSM,
   TambahTenagaKependidikan,
   TambahTenagaPendidik,
+  TambahTKJ,
+  TambahTRKO,
 };
