@@ -1,6 +1,7 @@
 import TambahATPH from "./TambahATPH";
 import TambahArsip from "./TambahArsip";
 import TambahDPIB from "./TambahDPIB";
+import TambahDaftarHadir from "./TambahDaftarHadir";
 import TambahDataAdmin from "./TambahDataAdmin";
 import TambahDataGuru from "./TambahDataGuru";
 import TambahGaleri from "./TambahGaleri";
@@ -19,6 +20,7 @@ import TambahTenagaPendidik from "./TambahTenagaPendidik";
 export {
   TambahArsip,
   TambahATPH,
+  TambahDaftarHadir,
   TambahDataAdmin,
   TambahDataGuru,
   TambahDPIB,
