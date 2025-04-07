@@ -73,3 +73,7 @@ export const API_DELETE_DAFTAR_HADIR = BASE_URL + "daftarHadir/delete";
 export const API_FETCH_PELANGGARAN = BASE_URL + "pelanggaran/fetch";
 export const API_REGISTER_PELANGGARAN = BASE_URL + "pelanggaran/register";
 export const API_DELETE_PELANGGARAN = BASE_URL + "pelanggaran/delete";
+
+export const API_BERANDA_FETCH_KEPALA_SEKOLAH =
+  BASE_URL + "beranda/kepalaSekolah";
+export const API_BERANDA_FETCH_BERITA = BASE_URL + "beranda/berita";

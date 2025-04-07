@@ -2,9 +2,12 @@
 
 import { Card, Section } from "@/components";
 import CoreLayout from "@/layout/CoreLayout";
+import React, { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "swiper/css";
 import {
+  CardDesc,
+  CardTitle,
   CardWrapper,
   Content2Wrapper,
   Content2WrapperColumn,
@@ -35,8 +38,24 @@ import {
   WelcomeText,
   WrapperGreeting,
 } from "./_home";
+import { fetchBerita, fetchKepalaSekolah } from "./network";
 
 function Home() {
+  const [namaKepsek, setNamaKepsek] = useState("");
+  const [sambutanKepsek, setSambutanKepsek] = useState("");
+  const [fotoKepsek, setFotoKepsek] = useState("");
+  const [berita, setBerita] = useState<any>([]);
+
+  useEffect(() => {
+    const func = { setNamaKepsek, setSambutanKepsek, setFotoKepsek };
+    fetchKepalaSekolah(func);
+  }, []);
+
+  useEffect(() => {
+    const func = { setBerita };
+    fetchBerita(func);
+  }, []);
+
   return (
     <CoreLayout>
       <Section>
@@ -104,25 +123,17 @@ function Home() {
       </Section>
       <Section type="secondary">
         <Content3Wrapper>
-          <HeadmasterPic />
+          <HeadmasterWrapper>
+            <HeadmasterPic src={fotoKepsek} />
+            <SubTitle>{namaKepsek ? namaKepsek : <Skeleton />}</SubTitle>
+          </HeadmasterWrapper>
           <HeadmasterWrapper>
             <SubTitle>SAMBUTAN KEPALA SEKOLAH</SubTitle>
             <HeadmasterTitle>
               Selamat Datang Untukmu Para Pejuang Bangsa
             </HeadmasterTitle>
-            <Skeleton count={10} />
             <HeadmasterDesc>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
-              imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel semper
-              accumsan, magna tellus tincidunt massa, et egestas velit nibh ac
-              ex. Ut neque nisl, posuere ut ante ac, vehicula porta mi. Vivamus
-              congue neque nisl, sit amet venenatis nibh dictum ut. Nulla cursus
-              justo sapien, ac auctor urna iaculis non. Suspendisse sagittis
-              nulla felis, sit amet tempus tellus scelerisque vitae. Phasellus
-              non sapien ut dolor pharetra hendrerit. Curabitur sed laoreet
-              neque, nec blandit eros. Sed ultricies a nisl sed elementum.
-              Aliquam aliquet erat ut iaculis pharetra. Sed tincidunt sapien at
-              tortor tempus, id sagittis eros vulputate.
+              {sambutanKepsek ? sambutanKepsek : <Skeleton count={10} />}
             </HeadmasterDesc>
           </HeadmasterWrapper>
         </Content3Wrapper>
@@ -220,9 +231,22 @@ function Home() {
           Berita terkini dari SMKS Karya Teknik Watangsoppeng
         </NewsTitle>
         <CardWrapper>
-          <Card />
-          <Card />
-          <Card />
+          {berita.length > 0 &&
+            berita.map((item: any, index: number) => {
+              return (
+                <React.Fragment key={index}>
+                  <Card
+                    image={item.foto}
+                    contentBottom={
+                      <>
+                        <CardTitle>{item.judul}</CardTitle>
+                        <CardDesc>{item.deskripsi}</CardDesc>
+                      </>
+                    }
+                  />
+                </React.Fragment>
+              );
+            })}
         </CardWrapper>
       </Section>
     </CoreLayout>
