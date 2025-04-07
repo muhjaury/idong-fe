@@ -124,7 +124,11 @@ function Home() {
       <Section type="secondary">
         <Content3Wrapper>
           <HeadmasterWrapper>
-            <HeadmasterPic src={fotoKepsek} />
+            {fotoKepsek ? (
+              <HeadmasterPic src={fotoKepsek} />
+            ) : (
+              <HeadmasterPic />
+            )}
             <SubTitle>{namaKepsek ? namaKepsek : <Skeleton />}</SubTitle>
           </HeadmasterWrapper>
           <HeadmasterWrapper>

@@ -77,3 +77,7 @@ export const API_DELETE_PELANGGARAN = BASE_URL + "pelanggaran/delete";
 export const API_BERANDA_FETCH_KEPALA_SEKOLAH =
   BASE_URL + "beranda/kepalaSekolah";
 export const API_BERANDA_FETCH_BERITA = BASE_URL + "beranda/berita";
+export const API_STRUKTUR_ORGANISASI_FETCH =
+  BASE_URL + "strukturOrganisasi/fetch";
+export const API_VISI_MISI_FETCH = BASE_URL + "visiMisi/fetch";
+export const API_KALENDER_AKADEMIK_FETCH = BASE_URL + "kalenderAkademik/fetch";
