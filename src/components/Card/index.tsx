@@ -1,9 +1,9 @@
 import { Bottom, Top, Wrapper } from "./_card";
 
-function Card({ contentTop, contentBottom }: any) {
+function Card({ image, contentBottom }: any) {
   return (
     <Wrapper>
-      <Top>{contentTop}</Top>
+      <Top src={image} />
       <Bottom>{contentBottom}</Bottom>
     </Wrapper>
   );

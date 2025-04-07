@@ -147,6 +147,7 @@ export const HeadmasterWrapper = styled.div`
 `;
 
 export const SubTitle = styled.div`
+  text-align: center;
   font-size: 22px;
   font-weight: 600;
   color: ${color.a2};
@@ -167,6 +168,7 @@ export const HeadmasterDesc = styled.div`
   font-size: 16px;
   line-height: 20px;
   color: ${color.a7};
+  white-space: pre-line;
 
   @media all and (min-width: 1024px) {
     font-size: 22px;
@@ -250,4 +252,14 @@ export const CardWrapper = styled.div`
   @media all and (min-width: 1024px) {
     flex-direction: row;
   }
+`;
+
+export const CardTitle = styled.span`
+  font-size: 16px;
+  font-weight: 600;
+  color: ${color.a2};
+`;
+
+export const CardDesc = styled.span`
+  color: ${color.a2};
 `;
