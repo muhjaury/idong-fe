@@ -14,11 +14,12 @@ export const Wrapper = styled.div`
 `;
 
 export const Top = styled.img<Interface_Img>`
-  background: ${color.a5};
+  background: ${color.a1};
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 220px;
   width: 100%;
+  object-fit: cover;
 `;
 
 export const Bottom = styled.div`
