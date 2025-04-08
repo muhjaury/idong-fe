@@ -238,17 +238,16 @@ function Home() {
           {berita.length > 0 &&
             berita.map((item: any, index: number) => {
               return (
-                <React.Fragment key={index}>
-                  <Card
-                    image={item.foto}
-                    contentBottom={
-                      <>
-                        <CardTitle>{item.judul}</CardTitle>
-                        <CardDesc>{item.deskripsi}</CardDesc>
-                      </>
-                    }
-                  />
-                </React.Fragment>
+                <Card
+                  key={index}
+                  image={item.foto}
+                  contentBottom={
+                    <>
+                      <CardTitle>{item.judul}</CardTitle>
+                      <CardDesc>{item.deskripsi}</CardDesc>
+                    </>
+                  }
+                />
               );
             })}
         </CardWrapper>
