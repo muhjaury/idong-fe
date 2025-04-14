@@ -30,8 +30,6 @@ function PetaSitusKontak() {
     fetch(func);
   }, []);
 
-  console.log("list", list);
-
   return (
     <CoreLayout>
       <PageTitle title="Peta Situs & Kontak" breadcrumb={breadcrumb} />
