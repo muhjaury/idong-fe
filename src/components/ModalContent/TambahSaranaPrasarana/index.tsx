@@ -85,6 +85,7 @@ function TambahSaranaPrasarana(props: any) {
           label="Foto"
           value={foto}
           onChange={(data) => setFoto(data)}
+          accept="img"
         />
       </FieldWrapper>
       <PromptText iserror={error}>{error || success}</PromptText>

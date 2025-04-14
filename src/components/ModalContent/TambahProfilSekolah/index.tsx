@@ -136,6 +136,7 @@ function TambahProfilSekolah(props: any) {
           label="Foto Kepala Sekolah"
           value={principleFile}
           onChange={(data) => setPrincipleFile(data)}
+          accept="img"
         />
       </FieldWrapper>
       <FieldWrapper>
@@ -150,6 +151,7 @@ function TambahProfilSekolah(props: any) {
           label="Visi-Misi"
           value={visionMissionFile}
           onChange={(data) => setVisionMissionFile(data)}
+          accept="img"
         />
       </FieldWrapper>
       <FieldWrapper>
@@ -157,6 +159,7 @@ function TambahProfilSekolah(props: any) {
           label="Struktur Organisasi"
           value={orgStructureFile}
           onChange={(data) => setOrgStructureFile(data)}
+          accept="img"
         />
       </FieldWrapper>
       <FieldWrapper>
@@ -164,6 +167,7 @@ function TambahProfilSekolah(props: any) {
           label="Kalender Akademik"
           value={academicCalenderFile}
           onChange={(data) => setAcademicCalenderFile(data)}
+          accept="pdf"
         />
       </FieldWrapper>
       <PromptText iserror={error}>{error || success}</PromptText>

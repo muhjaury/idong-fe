@@ -1,3 +1,8 @@
+import {
+  IMAGE_TYPE_FILE_UPLOAD,
+  PDF_TYPE_FILE_UPLOAD,
+  TYPES_FILE_UPLOAD,
+} from "@/constant/validFileType";
 import { Interface_File } from "@/interface";
 import { useEffect, useState } from "react";
 import CLOSE from "./../../assets/img/cancel-black.png";
@@ -12,14 +17,27 @@ import {
   Label,
   Wrapper,
 } from "./_fileUpload";
+import { FileUploadType } from "./_fileUpload.type";
 
 function FileUpload({
   label = "",
   multiple = false,
   onChange = (props: any): any => props,
   value = [],
-}) {
+  accept = "all",
+}: FileUploadType) {
+  const [acceptTypes, setAcceptTypes] = useState<string>(
+    TYPES_FILE_UPLOAD.join()
+  );
   const [files, setFiles] = useState<Interface_File[]>([]);
+
+  useEffect(() => {
+    if (accept === "img") {
+      setAcceptTypes(IMAGE_TYPE_FILE_UPLOAD.join());
+    } else if (accept === "pdf") {
+      setAcceptTypes(PDF_TYPE_FILE_UPLOAD.join());
+    }
+  }, [accept]);
 
   useEffect(() => {
     setFiles(value);
@@ -105,6 +123,7 @@ function FileUpload({
           type="file"
           onChange={(e) => handleFileChange(e, files)}
           multiple={multiple}
+          accept={acceptTypes}
         />
         <ButtonLabel>Upload File</ButtonLabel>
       </ButtonWrapper>

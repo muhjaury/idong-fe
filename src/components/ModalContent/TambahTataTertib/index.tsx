@@ -80,6 +80,7 @@ function TambahTataTertib(props: any) {
           label="File"
           value={file}
           onChange={(data) => setFile(data)}
+          accept="pdf"
         />
       </FieldWrapper>
       <PromptText iserror={error}>{error || success}</PromptText>

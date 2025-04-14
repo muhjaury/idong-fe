@@ -80,6 +80,7 @@ function TambahArsip(props: any) {
           label="Foto"
           value={foto}
           onChange={(data) => setFoto(data)}
+          accept="pdf"
         />
       </FieldWrapper>
       <PromptText iserror={error}>{error || success}</PromptText>
