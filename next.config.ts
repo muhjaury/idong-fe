@@ -31,6 +31,8 @@ const nextConfig = {
 
     fileLoaderRule.exclude = /\.(jpe?g|png|svg)$/;
 
+    config.resolve.alias.canvas = false;
+
     return config;
   },
 };
