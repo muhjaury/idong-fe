@@ -1,6 +1,5 @@
 import { Button } from "@/components";
 import { API_DELETE_PELANGGARAN, API_FETCH_PELANGGARAN } from "@/constant/api";
-import { decryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 import { ButtonWrapper } from "./_pelanggaranPage";
 
@@ -24,8 +23,8 @@ export const fetch = (func: any) => {
         result = result.map((item: any, index: number) => {
           return {
             nomor: index + 1,
-            nis: decryptData(item.nis),
-            pelanggaran: decryptData(item.pelanggaran),
+            nis: item.nis,
+            pelanggaran: item.pelanggaran,
             aksi: (
               <ButtonWrapper>
                 <Button

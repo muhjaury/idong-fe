@@ -82,3 +82,4 @@ export const API_STRUKTUR_ORGANISASI_FETCH =
 export const API_VISI_MISI_FETCH = BASE_URL + "visiMisi/fetch";
 export const API_KALENDER_AKADEMIK_FETCH = BASE_URL + "kalenderAkademik/fetch";
 export const API_DAFTAR_HADIR_FETCH = BASE_URL + "daftarHadir/fetchData";
+export const API_PELANGGARAN_FETCH = BASE_URL + "pelanggaran/fetchData";

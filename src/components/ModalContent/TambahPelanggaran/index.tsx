@@ -1,5 +1,4 @@
 import { Button, FieldWrapper, InputText } from "@/components";
-import { decryptData } from "@/utils/dataManipulation";
 import { useEffect, useState } from "react";
 import {
   ButtonWrapper,
@@ -23,8 +22,8 @@ function TambahPelanggaran(props: any) {
       if (data?.id) {
         setId(data?.id);
       }
-      setNis(decryptData(data.nis));
-      setPelanggaran(decryptData(data.pelanggaran));
+      setNis(data.nis);
+      setPelanggaran(data.pelanggaran);
     }
   }, [props?.data]);
 

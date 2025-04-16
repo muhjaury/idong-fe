@@ -1,18 +1,11 @@
 import { API_REGISTER_PELANGGARAN } from "@/constant/api";
-import { encryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 
 export const saveData = (func: any, data: any) => {
   const { setId, setNis, setPelanggaran, setError, setSuccess } = func;
   const { id, nis, pelanggaran } = data;
 
-  const nisEnc = encryptData(nis);
-  const pelanggaranEnc = encryptData(pelanggaran);
-
-  let bodyData: any = {
-    nis: nisEnc,
-    pelanggaran: pelanggaranEnc,
-  };
+  let bodyData: any = { nis, pelanggaran };
   if (id) {
     bodyData = { ...bodyData, id: id };
   }
