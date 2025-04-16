@@ -1,6 +1,5 @@
 import { Button, FieldWrapper, InputText } from "@/components";
 import FileUpload from "@/components/FileUpload";
-import { decryptData } from "@/utils/dataManipulation";
 import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
 import {
@@ -27,9 +26,9 @@ function TambahDaftarHadir(props: any) {
       if (data?.id) {
         setId(data?.id);
       }
-      setKelas(decryptData(data.kelas));
-      setJurusan(decryptData(data.jurusan));
-      setTahunAjar(decryptData(data.tahunAjar));
+      setKelas(data.kelas);
+      setJurusan(data.jurusan);
+      setTahunAjar(data.tahunAjar);
       generateOneFileDataFromBase64({
         fileName: "File_File",
         base64: data?.file,

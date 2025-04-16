@@ -3,7 +3,6 @@ import {
   API_DELETE_DAFTAR_HADIR,
   API_FETCH_DAFTAR_HADIR,
 } from "@/constant/api";
-import { decryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 import { ButtonWrapper } from "./_daftarHadirPage";
 
@@ -27,9 +26,9 @@ export const fetch = (func: any) => {
         result = result.map((item: any, index: number) => {
           return {
             nomor: index + 1,
-            kelas: decryptData(item.kelas),
-            jurusan: decryptData(item.jurusan),
-            tahunAjar: decryptData(item.tahunAjar),
+            kelas: item.kelas,
+            jurusan: item.jurusan,
+            tahunAjar: item.tahunAjar,
             file: (
               <ButtonWrapper>
                 <DisplayFile base64={item.file} />
