@@ -3,7 +3,7 @@ import { Button } from "..";
 import { Wrapper } from "./_displayFile";
 import { base64ToBlob } from "@/utils/fileManipulation";
 
-function DisplayFile({ base64 = "" }) {
+function DisplayFile({ label = "Lihat File", base64 = "" }) {
   const [objectURL, setObjectURL] = useState<string>("");
 
   useEffect(() => {
@@ -21,7 +21,7 @@ function DisplayFile({ base64 = "" }) {
   return (
     <Wrapper>
       <Button onClick={handleButtonClick} removeshadow="Y">
-        Lihat File
+        {label}
       </Button>
     </Wrapper>
   );
