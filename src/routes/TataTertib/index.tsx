@@ -49,18 +49,24 @@ function TataTertib() {
   };
 
   const handleBackClick = () => {
-    setPageNumber(pageNumber - 1);
+    if (pageNumber > 1) {
+      document.getElementById("top")!.scrollIntoView();
+      setPageNumber(pageNumber - 1);
+    }
   };
 
   const handleNextClick = () => {
-    setPageNumber(pageNumber + 1);
+    if (pageNumber < numPages!) {
+      document.getElementById("top")!.scrollIntoView();
+      setPageNumber(pageNumber + 1);
+    }
   };
 
   return (
     <CoreLayout>
       <PageTitle title="Tata Tertib" breadcrumb={breadcrumb} />
       <Section type="secondary">
-        <Wrapper>
+        <Wrapper id="top">
           {list.length > 0 &&
             list.map((item: any, index: number) => {
               return (
@@ -80,7 +86,7 @@ function TataTertib() {
                   </Document>
                   <WrapperDetails>
                     <Button
-                      disabled={pageNumber === 1}
+                      disabled={pageNumber === 0}
                       onClick={() => handleBackClick()}
                     >
                       Back
@@ -89,7 +95,7 @@ function TataTertib() {
                       Page {pageNumber} of {numPages}
                     </span>
                     <Button
-                      disabled={pageNumber === numPages}
+                      disabled={pageNumber > 7}
                       onClick={() => handleNextClick()}
                     >
                       Next
