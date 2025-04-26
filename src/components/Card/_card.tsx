@@ -23,7 +23,7 @@ export const Top = styled.img<Interface_Img>`
 `;
 
 export const Bottom = styled.div`
-  background: ${color.a5};
+  background: ${color.a1};
   border-top: 1px solid ${color.a5};
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;

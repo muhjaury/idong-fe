@@ -57,12 +57,14 @@ export const fetchSchoolProfile = (func: any) => {
                     setModalData(item);
                     setDisplayModal(true);
                   }}
+                  type="secondary"
                 >
                   Ubah
                 </Button>
                 <Button
                   removeshadow="Y"
                   onClick={() => handleDeleteSP(func, item.id)}
+                  type="tertiary"
                 >
                   Hapus
                 </Button>

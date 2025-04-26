@@ -45,12 +45,14 @@ export const fetch = (func: any) => {
                     setModalData(item);
                     setDisplayModal(true);
                   }}
+                  type="secondary"
                 >
                   Ubah
                 </Button>
                 <Button
                   removeshadow="Y"
                   onClick={() => handleDelete(func, item.id)}
+                  type="tertiary"
                 >
                   Hapus
                 </Button>

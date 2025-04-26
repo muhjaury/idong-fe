@@ -30,6 +30,7 @@ export const fetchAdmin = (func: any) => {
                 <Button
                   removeshadow="Y"
                   onClick={() => handleDeleteAdmin(func, item.id)}
+                  type="tertiary"
                 >
                   Hapus
                 </Button>

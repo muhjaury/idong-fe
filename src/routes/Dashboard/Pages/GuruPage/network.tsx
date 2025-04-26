@@ -30,6 +30,7 @@ export const fetchGuru = (func: any) => {
                 <Button
                   removeshadow="Y"
                   onClick={() => handleDeleteGuru(func, item.id)}
+                  type="tertiary"
                 >
                   Hapus
                 </Button>
