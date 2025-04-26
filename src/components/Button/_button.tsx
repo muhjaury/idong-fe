@@ -28,8 +28,8 @@ export const Btn = styled.button<Interface_Components>`
   ${({ removeshadow }) =>
     removeshadow !== "Y" &&
     `box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);`}
-  min-width: 80px;
-  min-height: 32px;
+  min-width: ${({ width }) => (width ? width : "80px")};
+  min-height: ${({ height }) => (height ? height : "32px")};
   cursor: pointer;
   transition: 0.5s;
 

@@ -468,7 +468,7 @@ function Header() {
           </NavDropdownWrapper>
         </NavWrapper>
         <ButtonWrapper>
-          <Button onClick={() => handleClickLogin()}>
+          <Button onClick={() => handleClickLogin()} height="40px">
             {dataFromRedux?.user?.isLogin ? "Dashboard" : "Login"}
           </Button>
         </ButtonWrapper>

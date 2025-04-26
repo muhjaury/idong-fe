@@ -24,7 +24,9 @@ function HeaderUser(props: any) {
         onClick={() => props.setSideBar(props.sideBar === "Y" ? "N" : "Y")}
       />
       <Title>SMKS Karya Teknik Watansoppeng</Title>
-      <Button onClick={handleLogoutClick}>Logout</Button>
+      <Button onClick={handleLogoutClick} height="40px">
+        Logout
+      </Button>
     </Wrapper>
   );
 }

@@ -35,6 +35,7 @@ export interface Interface_PageTitle {
 export interface Interface_Components {
   display?: string;
   displaynavigation?: boolean;
+  width?: number;
   height?: number;
   loading?: string;
   scrolled?: string;
