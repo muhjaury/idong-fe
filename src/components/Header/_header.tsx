@@ -93,7 +93,7 @@ export const NavDropdown = styled.div<Interface_Img>`
   flex-direction: column;
   gap: 16px;
   background: ${color.a1};
-  animation: ${dropdownAppear} 1s;
+  animation: ${dropdownAppear} 0.5s;
   border-radius: 16px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `;
@@ -102,6 +102,11 @@ export const Dropdown = styled.div`
   color: ${color.a2};
   font-weight: 600;
   cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    color: ${color.a7};
+  }
 `;
 
 export const ButtonWrapper = styled.div`

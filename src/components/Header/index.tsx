@@ -50,15 +50,24 @@ function Header() {
         setScrolled("N");
       }
     };
+    const handleMouseLeavePage = () => {
+      let data = hover;
+      data = data.map(() => "N");
+      setHover([...data]);
+    };
+
     window.addEventListener("scroll", handleStickyScroll);
+    document.addEventListener("mouseleave", handleMouseLeavePage);
 
     return () => {
       window.removeEventListener("scroll", handleStickyScroll);
+      document.removeEventListener("mouseleave", handleMouseLeavePage);
     };
   }, []);
 
   const handleOnHover = (index: number) => {
-    const data = hover;
+    let data = hover;
+    data = data.map(() => "N");
     data[index] = "Y";
     setHover([...data]);
   };
