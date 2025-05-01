@@ -1,4 +1,4 @@
-import { Footer, HeaderUser, LoadingContent } from "@/components";
+import { Footer, HeaderUser, Loading, LoadingContent } from "@/components";
 import { ROLE } from "@/constant/role";
 import { useWidget } from "@/context";
 import { useEffect, useRef, useState } from "react";
@@ -30,7 +30,7 @@ function UserLayout(props: any) {
   const [sideDropUser4, setSideDropUser4] = useState<string>("N");
   const [sideDropUser5, setSideDropUser5] = useState<string>("N");
 
-  const { setUrlChange } = useWidget();
+  const { loading, setUrlChange } = useWidget();
   const dataFromRedux = useSelector((state: any) => state.data);
 
   const refContent = useRef<HTMLDivElement>(null);
@@ -77,6 +77,7 @@ function UserLayout(props: any) {
         <LoadingContent />
       ) : (
         <>
+          {loading && <Loading />}
           <HeaderUser sideBar={sideBar} setSideBar={setSideBar} />
           <ContentWrapper>
             <SideBar ref={refSideBar} height={totalHeight} display={sideBar}>
