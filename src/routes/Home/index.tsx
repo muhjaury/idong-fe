@@ -229,29 +229,31 @@ function Home() {
           </ProgramContentWrapper>
         </ProgramWrapper>
       </Section>
-      <Section>
-        <SubTitleWhite>BERITA TERKINI</SubTitleWhite>
-        <NewsTitle>
-          Berita terkini dari SMKS Karya Teknik Watangsoppeng
-        </NewsTitle>
-        <CardWrapper>
-          {berita.length > 0 &&
-            berita.map((item: any, index: number) => {
-              return (
-                <Card
-                  key={index}
-                  image={item.foto}
-                  contentBottom={
-                    <>
-                      <CardTitle>{item.judul}</CardTitle>
-                      <CardDesc>{item.deskripsi}</CardDesc>
-                    </>
-                  }
-                />
-              );
-            })}
-        </CardWrapper>
-      </Section>
+      {berita.length > 0 && (
+        <Section>
+          <SubTitleWhite>BERITA TERKINI</SubTitleWhite>
+          <NewsTitle>
+            Berita terkini dari SMKS Karya Teknik Watangsoppeng
+          </NewsTitle>
+          <CardWrapper>
+            {berita.length > 0 &&
+              berita.map((item: any, index: number) => {
+                return (
+                  <Card
+                    key={index}
+                    image={item.foto}
+                    contentBottom={
+                      <>
+                        <CardTitle>{item.judul}</CardTitle>
+                        <CardDesc>{item.deskripsi}</CardDesc>
+                      </>
+                    }
+                  />
+                );
+              })}
+          </CardWrapper>
+        </Section>
+      )}
     </CoreLayout>
   );
 }
