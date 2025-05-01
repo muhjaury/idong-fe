@@ -1,4 +1,6 @@
+import { urls } from "@/constant/path";
 import { Interface_Components } from "@/interface";
+import { useRouter } from "next/navigation";
 import { Content } from "..";
 import SOPPENG from "./../../assets/img/soppeng.png";
 import {
@@ -14,6 +16,11 @@ import {
 } from "./_footer";
 
 function Footer({ displaynavigation = true }: Interface_Components) {
+  const router = useRouter();
+
+  const handlePetaClick = () => {
+    router.push(urls.PETA_SITUS_KONTAK);
+  };
   return (
     <>
       {displaynavigation && (
@@ -21,10 +28,10 @@ function Footer({ displaynavigation = true }: Interface_Components) {
           <Logo src={SOPPENG} />
           <Content>
             <WrapperColumn>
-              <Title>SMKS Karya Teknik Watangsoppeng</Title>
+              <Title>Hubungi Kami</Title>
               <DescriptionWrapper>
                 <Description>Lokasi</Description>
-                <Description>Nomor Telephone</Description>
+                <Description>No. Telp</Description>
                 <Description>Email</Description>
                 <Description>Instagram</Description>
                 <Description>Facebook</Description>
@@ -47,7 +54,9 @@ function Footer({ displaynavigation = true }: Interface_Components) {
           <Copyright>&copy; 2025 SMKS Karya Teknik Watangsoppeng</Copyright>
         </Content>
         <Content>
-          <Navigation>Peta Situs & Contact</Navigation>
+          <Navigation onClick={() => handlePetaClick()}>
+            Peta Situs & Contact
+          </Navigation>
         </Content>
       </WrapperBottom>
     </>
