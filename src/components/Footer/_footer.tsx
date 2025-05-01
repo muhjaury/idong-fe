@@ -49,7 +49,7 @@ export const Logo = styled.img<Interface_Img>`
   @media all and (min-width: 1024px) {
     display: block;
     height: 160px;
-    width: 120px;
+    width: 160px;
   }
 `;
 

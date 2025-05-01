@@ -27,7 +27,7 @@ export const WrapperLeft = styled.div`
 
 export const Logo = styled.img<Interface_Img>`
   height: 80px;
-  width: 60px;
+  width: 80px;
 `;
 
 export const WrapperRight = styled.div`

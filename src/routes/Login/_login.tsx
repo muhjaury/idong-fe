@@ -36,7 +36,7 @@ export const Title = styled.span`
 
 export const Logo = styled.img<Interface_Img>`
   height: 100px;
-  width: 80px;
+  width: 100px;
 `;
 
 export const ErrorText = styled.div`
