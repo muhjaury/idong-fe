@@ -3,7 +3,7 @@ const baseUrl = () => {
   if (["local"].includes(process.env.NEXT_PUBLIC_TYPE!)) {
     url = "http://localhost:3001/api/";
   } else {
-    url = "";
+    url = "http://103.191.63.62:3001/api/";
   }
   return url;
 };
