@@ -7,7 +7,6 @@ export interface Interface_Request {
   method: string;
   body?: any;
   headers?: any;
-  referrerPolicy?: any;
 }
 
 export interface Interface_File {

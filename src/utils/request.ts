@@ -13,7 +13,6 @@ export default async function request(
       "Content-Type": "application/json",
       ...headers,
     },
-    referrerPolicy: "unsafe-url",
   };
   if (body) {
     params.body = JSON.stringify(body);
