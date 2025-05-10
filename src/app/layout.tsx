@@ -14,6 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <meta
+        httpEquiv="Content-Security-Policy"
+        content="upgrade-insecure-requests"
+      />
       <body>
         <Providers>
           <WidgetProvider>{children}</WidgetProvider>
