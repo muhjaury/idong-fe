@@ -164,6 +164,7 @@ function TambahPetaStatusKontak(props: any) {
           label="Maps"
           value={maps}
           onChange={(data) => setMaps(data)}
+          accept="img"
         />
       </FieldWrapper>
       <PromptText iserror={error}>{error || success}</PromptText>
