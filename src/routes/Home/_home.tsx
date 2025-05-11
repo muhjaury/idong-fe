@@ -188,7 +188,7 @@ export const ProgramWrapper = styled.div`
   margin-top: 56px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   gap: 56px;
 
@@ -215,6 +215,7 @@ export const ProgramLogo = styled.img<Interface_Img>`
 
 export const ProgramColumn = styled.div`
   display: flex;
+
   flex-direction: column;
   gap: 16px;
 `;
@@ -224,7 +225,8 @@ export const ProgramContentTitle = styled.div`
   font-size: 24px;
 `;
 
-export const ProgramContentDesc = styled.div`
+export const ProgramContentDesc = styled.span`
+  text-align: justify;
   color: ${color.a7};
   font-size: 16px;
 `;

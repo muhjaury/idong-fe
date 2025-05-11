@@ -153,13 +153,16 @@ function Home() {
             <ProgramColumn>
               <ProgramContentTitle>TKJ</ProgramContentTitle>
               <ProgramContentDesc>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
-                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
-                semper accumsan, magna tellus tincidunt massa, et egestas velit
-                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
-                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
-                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
-                Suspendisse sagittis nulla felis, sit .
+                Jurusan TKJ (Teknik Komputer dan Jaringan) adalah
+                programkeahlian di SMK yang mempelajari cara merakit,
+                menginstal,mengelola, dan memperbaiki perangkat komputer serta
+                membangundan mengelola jaringan komputer, baik lokal (LAN)
+                maupun internet. Siswa juga diajarkan tentang keamanan jaringan,
+                system operasi, perangkat keras, serta dasar-dasar pemrograman
+                dan layanan jaringan seperti server dan hosting. Jurusan ini
+                cocokbagi siswa yang tertarik pada dunia teknologi informasi dan
+                memiliki peluang kerja luas di bidang IT, seperti menjadi
+                teknisi jaringan, administrator server, atau teknisi komputer.
               </ProgramContentDesc>
             </ProgramColumn>
           </ProgramContentWrapper>
@@ -168,13 +171,16 @@ function Home() {
             <ProgramColumn>
               <ProgramContentTitle>DPIB</ProgramContentTitle>
               <ProgramContentDesc>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
-                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
-                semper accumsan, magna tellus tincidunt massa, et egestas velit
-                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
-                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
-                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
-                Suspendisse sagittis nulla felis, sit .
+                Jurusan DPIB (Desain Pemodelan dan Informasi Bangunan) adalah
+                program keahlian di SMK yang mempelajari perencanaan, desain,
+                dan penggambaran bangunan, baik secara manual maupun menggunakan
+                perangkat lunak seperti AutoCAD dan SketchUp. Siswa dibekali
+                keterampilan dalam membuat gambar teknik bangunan, menghitung
+                kebutuhan material dan biaya konstruksi, serta memahami proses
+                pembangunan dari awal hingga selesai. Jurusan ini cocok bagi
+                siswa yang tertarik pada dunia arsitektur, konstruksi, dan
+                teknik sipil, dengan peluang kerja di bidang perencanaan
+                bangunan, pengawasan proyek, maupun konsultan teknik.
               </ProgramContentDesc>
             </ProgramColumn>
           </ProgramContentWrapper>
@@ -185,13 +191,15 @@ function Home() {
             <ProgramColumn>
               <ProgramContentTitle>TBSM</ProgramContentTitle>
               <ProgramContentDesc>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
-                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
-                semper accumsan, magna tellus tincidunt massa, et egestas velit
-                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
-                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
-                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
-                Suspendisse sagittis nulla felis, sit .
+                Jurusan TBSM (Teknik dan Bisnis Sepeda Motor) adalah program
+                keahlian di SMK yang mempelajari cara merawat, memperbaiki, dan
+                menganalisis kerusakan sepeda motor, baik dari segi mesin,
+                kelistrikan, maupun sistem injeksi. Selain keterampilan teknis,
+                siswa juga dibekali dengan pengetahuan bisnis dan manajemen
+                bengkel, sehingga mampu bekerja di bengkel resmi, pabrik
+                otomotif, atau membuka usaha sendiri. Jurusan ini cocok bagi
+                siswa yang tertarik pada dunia otomotif dan ingin langsung
+                terjun ke dunia kerja atau wirausaha setelah lulus.
               </ProgramContentDesc>
             </ProgramColumn>
           </ProgramContentWrapper>
@@ -200,13 +208,17 @@ function Home() {
             <ProgramColumn>
               <ProgramContentTitle>TRKO</ProgramContentTitle>
               <ProgramContentDesc>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
-                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
-                semper accumsan, magna tellus tincidunt massa, et egestas velit
-                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
-                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
-                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
-                Suspendisse sagittis nulla felis, sit .
+                Jurusan TRKO (Teknik Rekayasa Konstruksi) adalah program
+                keahlian di SMK yang mempelajari tentang perencanaan,
+                pelaksanaan, dan pengawasan proyek konstruksi bangunan, seperti
+                rumah, gedung, dan infrastruktur lainnya. Siswa dibekali dengan
+                keterampilan menggambar teknik, menghitung struktur dan anggaran
+                biaya, memahami bahan bangunan, serta menggunakan alat ukur dan
+                perangkat lunak konstruksi. Jurusan ini cocok bagi siswa yang
+                tertarik pada dunia teknik sipil dan konstruksi, serta memiliki
+                peluang kerja sebagai drafter, teknisi konstruksi, estimator
+                proyek, atau melanjutkan pendidikan ke jenjang teknik sipil atau
+                arsitektur.
               </ProgramContentDesc>
             </ProgramColumn>
           </ProgramContentWrapper>
@@ -217,13 +229,16 @@ function Home() {
             <ProgramColumn>
               <ProgramContentTitle>ATPH</ProgramContentTitle>
               <ProgramContentDesc>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a
-                imperdiet sem, ac accumsan massa. Sed condimentum, nibh vel
-                semper accumsan, magna tellus tincidunt massa, et egestas velit
-                nibh ac ex. Ut neque nisl, posuere ut ante ac, vehicula porta
-                mi. Vivamus congue neque nisl, sit amet venenatis nibh dictum
-                ut. Nulla cursus justo sapien, ac auctor urna iaculis non.
-                Suspendisse sagittis nulla felis, sit .
+                Jurusan ATPH (Agribisnis Tanaman Pangan dan Hortikultura) adalah
+                program keahlian di SMK yang mempelajari cara budidaya tanaman
+                pangan seperti padi, jagung, serta tanaman hortikultura seperti
+                sayuran, buah, dan tanaman hias, mulai dari penanaman,
+                perawatan, panen, hingga pemasaran hasil pertanian. Siswa juga
+                dibekali dengan pengetahuan tentang penggunaan alat dan
+                teknologipertanian, pengendalian hama, serta kewirausahaan di
+                bidang agribisnis. Jurusan ini cocok bagi siswa yang tertarik
+                pada pertanian modern dan ingin bekerja atau berwirausaha di
+                sektor pertanian yang berkelanjutan.
               </ProgramContentDesc>
             </ProgramColumn>
           </ProgramContentWrapper>

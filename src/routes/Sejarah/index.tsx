@@ -2,6 +2,7 @@ import { PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
+import { Paragraph, Wrapper } from "./_sejarah";
 
 function Sejarah() {
   const [breadcrumb, setBreadcrumb] = useState([
@@ -16,14 +17,36 @@ function Sejarah() {
   return (
     <CoreLayout>
       <PageTitle title="Sejarah" breadcrumb={breadcrumb} />
-      <Section type="secondary">SMKS Karya Teknik Watansoppeng didirikan tanggal 5 juli 1969 
-      di atas lahan seluas 12.239 m 2 dengan Nomor SK pendirian 120/UK.3/1969 dengan 
-      nama SMKS Karya Teknik Watansoppeng. Sekolah ini merupakan sekolah menengah kejuruan 
-      tertua di kabupaten Soppeng yang sekarang ini bernama SMKS Karya Teknik Watansoppeng, 
-      NPSS 40304501, berakreditasi A. SMKS Karya Teknik Watansoppen berlokasi di jalan tekukur No. 
-      1 Sinjai kelurahan biringere, kecamatan sinjai utara yang dikelilingi oleh 
-      empat jalan yaitu di sebelah Barat Jalan Tekukur, di sebelah utara Jalan Teuku Umar, 
-      sebelah timur Jalan Wolter Monginsidi, dan di sebelah selatan Jalan Tamrin.</Section>
+      <Section type="secondary">
+        <Wrapper>
+          <Paragraph>
+            &nbsp;&nbsp;&nbsp;SMKS Karya Teknik Watansoppeng adalah Sekolah
+            Menengah Kejuruan (SMK) swasta yang berdiri pada tanggal 26 Oktober
+            2015 di bawah naungan Yayasan Karya Teknik. Sekolah ini berlokasi di
+            Jalan Kayangan, Kelurahan Lalabata Rilau, Kecamatan Lalabata,
+            Kabupaten Soppeng, Sulawesi Selatan. Dengan Nomor Pokok Sekolah
+            Nasional (NPSN) 40303667, SMKS Karya Teknik Watansoppeng telah
+            mendapatkan izin operasional pada 2 Januari 2016 dan memperoleh
+            akreditasi B pada tahun 2021.
+          </Paragraph>
+          <Paragraph>
+            &nbsp;&nbsp;&nbsp;Sejak awal berdirinya, SMKS Karya Teknik
+            Watansoppeng berkomitmen untuk menyediakan pendidikan kejuruan yang
+            berkualitas, mempersiapkan siswa dengan keterampilan teknis dan
+            profesional yang dibutuhkan di dunia kerja. Sekolah ini menawarkan
+            berbagai program keahlian, termasuk Teknik Otomotif, Teknologi
+            Konstruksi dan Properti, serta Teknik Komputer dan Informatika, yang
+            dirancang untuk memenuhi kebutuhan industri lokal dan nasional.
+          </Paragraph>
+          <Paragraph>
+            &nbsp;&nbsp;&nbsp;Dengan fasilitas yang memadai dan tenaga pengajar
+            yang kompeten, SMKS Karya Teknik Watansoppeng terus berupaya
+            meningkatkan mutu pendidikan dan menghasilkan lulusan yang siap
+            bersaing di dunia kerja maupun melanjutkan pendidikan ke jenjang
+            yang lebih tinggi.
+          </Paragraph>
+        </Wrapper>
+      </Section>
     </CoreLayout>
   );
 }
