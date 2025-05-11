@@ -35,7 +35,9 @@ function Galeri() {
                   contentBottom={
                     <>
                       <CardTitle>{item.judul}</CardTitle>
-                      <CardDesc>{item.deskripsi}</CardDesc>
+                      <CardDesc title={item.deskripsi}>
+                        {item.deskripsi}
+                      </CardDesc>
                     </>
                   }
                 />

@@ -3,7 +3,7 @@ import { Breadcrumb } from "@/constant/breadcrumb";
 import CoreLayout from "@/layout/CoreLayout";
 import { decryptData } from "@/utils/dataManipulation";
 import { useEffect, useState } from "react";
-import { CardDesc, CardTitle, CardWrapper } from "./_saranaPrasarana";
+import { CardTitle, CardWrapper } from "./_saranaPrasarana";
 import { fetch } from "./network";
 
 function SaranaPrasarana() {

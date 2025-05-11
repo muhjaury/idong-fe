@@ -14,7 +14,3 @@ export const CardTitle = styled.span`
   font-weight: 600;
   color: ${color.a2};
 `;
-
-export const CardDesc = styled.span`
-  color: ${color.a2};
-`;

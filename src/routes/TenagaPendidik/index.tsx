@@ -36,7 +36,9 @@ function TenagaPendidik() {
                   contentBottom={
                     <>
                       <CardTitle>{decryptData(item.nama)}</CardTitle>
-                      <CardDesc>{decryptData(item.deskripsi)}</CardDesc>
+                      <CardDesc title={decryptData(item.deskripsi)}>
+                        {decryptData(item.deskripsi)}
+                      </CardDesc>
                     </>
                   }
                 />
