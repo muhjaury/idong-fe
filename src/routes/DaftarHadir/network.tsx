@@ -5,7 +5,7 @@ import { ButtonWrapper } from "./_daftarHadir";
 
 export const fetch = (data: any, func: any) => {
   const { jurusan, kelas, tahunAjar } = data;
-  const { setData, setShowTable } = func;
+  const { setData, setShowTable, setListFetchAPI } = func;
 
   let bodyData: any = { kelas, jurusan, tahunAjar };
   const body = {
@@ -31,6 +31,10 @@ export const fetch = (data: any, func: any) => {
         });
         setData(result);
         setShowTable(true);
+
+        setListFetchAPI((prev: any) => {
+          return { ...prev, fetchDaftarHadir: false };
+        });
       }
     })
     .catch((e) => console.log(e));

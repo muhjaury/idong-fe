@@ -1,5 +1,6 @@
 import { InputText, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
@@ -15,13 +16,18 @@ function Arsip() {
   const [data, setData] = useState(rawData);
   const [search, setSearch] = useState("");
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
     setBreadcrumb([Breadcrumb.home, Breadcrumb.arsip]);
   }, []);
 
   useEffect(() => {
     if (rawData.length === 0) {
-      const func = { setRawData };
+      setListFetchAPI((prev: any) => {
+        return { ...prev, fetchArsip: true };
+      });
+      const func = { setRawData, setListFetchAPI };
       fetch(func);
     }
   }, []);

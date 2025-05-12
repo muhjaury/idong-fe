@@ -5,7 +5,7 @@ import request from "@/utils/request";
 import { ButtonWrapper } from "./_arsip";
 
 export const fetch = (func: any) => {
-  const { setRawData } = func;
+  const { setRawData, setListFetchAPI } = func;
   request(API_FETCH_ARSIP, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
@@ -22,6 +22,10 @@ export const fetch = (func: any) => {
           };
         });
         setRawData(result);
+
+        setListFetchAPI((prev: any) => {
+          return { ...prev, fetchArsip: false };
+        });
       }
     })
     .catch((e) => console.log(e));

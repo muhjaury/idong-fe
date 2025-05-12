@@ -3,7 +3,7 @@ import request from "@/utils/request";
 
 export const fetch = (data: any, func: any) => {
   const { nis } = data;
-  const { setData, setShowTable } = func;
+  const { setData, setShowTable, setListFetchAPI } = func;
 
   let bodyData: any = { nis };
   const body = {
@@ -23,6 +23,10 @@ export const fetch = (data: any, func: any) => {
         });
         setData(result);
         setShowTable(true);
+
+        setListFetchAPI((prev: any) => {
+          return { ...prev, fetchDaftarPelanggaran: false };
+        });
       }
     })
     .catch((e) => console.log(e));

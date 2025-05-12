@@ -1,5 +1,6 @@
 import { DisplayFile, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 import { Modul, Ol, Paragraph, Wrapper } from "./_ATPH";
@@ -12,8 +13,13 @@ function ATPH() {
   ]);
   const [list, setList] = useState([]);
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
-    const func = { setList };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchATPH: true };
+    });
+    const func = { setList, setListFetchAPI };
     fetch(func);
   }, []);
 

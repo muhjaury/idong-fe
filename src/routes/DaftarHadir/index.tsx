@@ -1,5 +1,6 @@
 import { Button, InputText, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
@@ -21,6 +22,8 @@ function DaftarHadir() {
   const [tahunAjar, setTahunAjar] = useState("");
   const [data, setData] = useState<any[]>([]);
   const [showTable, setShowTable] = useState(false);
+
+  const { setListFetchAPI } = useWidget();
 
   useEffect(() => {
     setBreadcrumb([Breadcrumb.home, Breadcrumb.daftarHadir]);
@@ -66,8 +69,12 @@ function DaftarHadir() {
   };
 
   const handleSearch = () => {
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchDaftarHadir: true };
+    });
+
     const data = { jurusan, kelas, tahunAjar };
-    const func = { setData, setShowTable };
+    const func = { setData, setShowTable, setListFetchAPI };
     fetch(data, func);
   };
 
