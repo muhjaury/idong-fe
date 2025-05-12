@@ -56,14 +56,24 @@ function PetaSitusKontak() {
                       <DetailTitle>Email</DetailTitle>
                       <DetailValue>{decryptData(item.email)}</DetailValue>
                     </DetailWrapper>
-                    <DetailWrapper>
-                      <DetailTitle>Instagram</DetailTitle>
-                      <DetailValue>{decryptData(item.instagram)}</DetailValue>
-                    </DetailWrapper>
-                    <DetailWrapper>
-                      <DetailTitle>Facebook</DetailTitle>
-                      <DetailValue>{decryptData(item.facebook)}</DetailValue>
-                    </DetailWrapper>
+                    {item.instagram &&
+                      decryptData(item.instagram).includes("http") && (
+                        <DetailWrapper>
+                          <DetailTitle>Instagram</DetailTitle>
+                          <DetailValue>
+                            {decryptData(item.instagram)}
+                          </DetailValue>
+                        </DetailWrapper>
+                      )}
+                    {item.facebook &&
+                      decryptData(item.facebook).includes("http") && (
+                        <DetailWrapper>
+                          <DetailTitle>Facebook</DetailTitle>
+                          <DetailValue>
+                            {decryptData(item.facebook)}
+                          </DetailValue>
+                        </DetailWrapper>
+                      )}
                   </InfoWrapper>
                 </React.Fragment>
               );
