@@ -4,7 +4,8 @@ import { encryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 
 export const createGuru = (func: any, data: any) => {
-  const { setName, setEmail, setPassword, setError, setSuccess } = func;
+  const { setName, setEmail, setPassword, setError, setSuccess, setLoading } =
+    func;
   const { name, email, password } = data;
 
   const nameEnc = encryptData(name);
@@ -27,8 +28,12 @@ export const createGuru = (func: any, data: any) => {
       setEmail("");
       setPassword("");
       setSuccess("Berhasil menambahkan data");
+
+      setLoading(false);
     } else {
       setError("Data gagal ditambahkan");
+
+      setLoading(false);
     }
   });
 };

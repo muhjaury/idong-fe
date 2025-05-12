@@ -15,7 +15,7 @@ const handleDeleteGuru = async (func: any, id: number) => {
 };
 
 export const fetchGuru = (func: any) => {
-  const { setRawData } = func;
+  const { setRawData, setLoading } = func;
   request(API_FETCH_GURU, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
@@ -29,7 +29,10 @@ export const fetchGuru = (func: any) => {
               <ButtonWrapper>
                 <Button
                   removeshadow="Y"
-                  onClick={() => handleDeleteGuru(func, item.id)}
+                  onClick={() => {
+                    setLoading(true);
+                    handleDeleteGuru(func, item.id);
+                  }}
                   type="tertiary"
                 >
                   Hapus
@@ -39,6 +42,8 @@ export const fetchGuru = (func: any) => {
           };
         });
         setRawData(result);
+
+        setLoading(false);
       }
     })
     .catch((e) => console.log(e));

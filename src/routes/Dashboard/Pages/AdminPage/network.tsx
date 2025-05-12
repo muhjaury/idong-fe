@@ -15,7 +15,7 @@ const handleDeleteAdmin = async (func: any, id: number) => {
 };
 
 export const fetchAdmin = (func: any) => {
-  const { setRawData } = func;
+  const { setRawData, setLoading } = func;
   request(API_FETCH_ADMIN, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
@@ -29,7 +29,10 @@ export const fetchAdmin = (func: any) => {
               <ButtonWrapper>
                 <Button
                   removeshadow="Y"
-                  onClick={() => handleDeleteAdmin(func, item.id)}
+                  onClick={() => {
+                    setLoading(true);
+                    handleDeleteAdmin(func, item.id);
+                  }}
                   type="tertiary"
                 >
                   Hapus
@@ -39,6 +42,8 @@ export const fetchAdmin = (func: any) => {
           };
         });
         setRawData(result);
+
+        setLoading(false);
       }
     })
     .catch((e) => console.log(e));

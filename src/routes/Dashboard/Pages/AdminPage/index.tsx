@@ -1,5 +1,6 @@
 import { Button, InputText, Modal } from "@/components";
 import { TambahDataAdmin } from "@/components/ModalContent";
+import { useWidget } from "@/context";
 import { Interface_User } from "@/interface";
 import { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
@@ -12,9 +13,12 @@ function AdminPage() {
   const [search, setSearch] = useState("");
   const [displayModal, setDisplayModal] = useState(false);
 
+  const { setLoading } = useWidget();
+
   useEffect(() => {
     if (rawData.length === 0) {
-      const func = { setRawData };
+      setLoading(true);
+      const func = { setRawData, setLoading };
       fetchAdmin(func);
     }
   }, []);
@@ -60,8 +64,9 @@ function AdminPage() {
         type="secondary"
         display={displayModal}
         onClose={() => {
+          setLoading(true);
           setDisplayModal(false);
-          const func = { setRawData };
+          const func = { setRawData, setLoading };
           fetchAdmin(func);
         }}
       >

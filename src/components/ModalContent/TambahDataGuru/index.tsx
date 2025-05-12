@@ -1,4 +1,5 @@
 import { Button, FieldWrapper, InputText } from "@/components";
+import { useWidget } from "@/context";
 import { useEffect, useState } from "react";
 import { ButtonWrapper, PromptText, Wrapper } from "./_tambahDataGuru";
 import { createGuru } from "./network";
@@ -9,6 +10,8 @@ function TambahDataGuru() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   useEffect(() => {
     if (error) {
@@ -38,8 +41,16 @@ function TambahDataGuru() {
 
   const handleAddClick = () => {
     if (name && email && password) {
+      setLoading(true);
       const data = { name, email, password };
-      const func = { setName, setEmail, setPassword, setError, setSuccess };
+      const func = {
+        setName,
+        setEmail,
+        setPassword,
+        setError,
+        setSuccess,
+        setLoading,
+      };
       createGuru(func, data);
     } else {
       setError("Semua data harus diisi");
