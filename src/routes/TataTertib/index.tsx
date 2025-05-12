@@ -1,5 +1,6 @@
 import { Button, DisplayFile, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import React, { useEffect, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -20,8 +21,14 @@ function TataTertib() {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [view, setView] = useState("desktop");
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
-    const func = { setList };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchTataTertib: true };
+    });
+
+    const func = { setList, setListFetchAPI };
     fetch(func);
   }, []);
 

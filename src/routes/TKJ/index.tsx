@@ -1,5 +1,6 @@
 import { DisplayFile, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 import { Modul, Paragraph, Wrapper } from "./_TKJ";
@@ -12,8 +13,14 @@ function TKJ() {
   ]);
   const [list, setList] = useState([]);
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
-    const func = { setList };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchTKJ: true };
+    });
+
+    const func = { setList, setListFetchAPI };
     fetch(func);
   }, []);
 
