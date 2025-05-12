@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import { Wrapper, WrapperContent, WrapperSearch } from "./_siswa";
 import { fetch } from "./network";
+import { useWidget } from "@/context";
 
 function Siswa() {
   const [breadcrumb, setBreadcrumb] = useState([
@@ -15,13 +16,19 @@ function Siswa() {
   const [data, setData] = useState(rawData);
   const [search, setSearch] = useState("");
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
     setBreadcrumb([Breadcrumb.home, Breadcrumb.siswa]);
   }, []);
 
   useEffect(() => {
     if (rawData.length === 0) {
-      const func = { setRawData };
+      setListFetchAPI((prev: any) => {
+        return { ...prev, fetchSiswa: true };
+      });
+
+      const func = { setRawData, setListFetchAPI };
       fetch(func);
     }
   }, []);

@@ -1,5 +1,6 @@
 import { PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { decryptData } from "@/utils/dataManipulation";
 import React, { useEffect, useState } from "react";
@@ -21,12 +22,18 @@ function PetaSitusKontak() {
   ]);
   const [list, setList] = useState([]);
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
     setBreadcrumb([Breadcrumb.home, Breadcrumb.petaSitusKontak]);
   }, []);
 
   useEffect(() => {
-    const func = { setList };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchPetaSitusKontak: true };
+    });
+
+    const func = { setList, setListFetchAPI };
     fetch(func);
   }, []);
 

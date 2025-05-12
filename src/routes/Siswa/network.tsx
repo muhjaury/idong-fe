@@ -3,7 +3,7 @@ import { decryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 
 export const fetch = (func: any) => {
-  const { setRawData } = func;
+  const { setRawData, setListFetchAPI } = func;
   request(API_FETCH_SISWA, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
@@ -19,6 +19,10 @@ export const fetch = (func: any) => {
           };
         });
         setRawData(result);
+
+        setListFetchAPI((prev: any) => {
+          return { ...prev, fetchSiswa: false };
+        });
       }
     })
     .catch((e) => console.log(e));

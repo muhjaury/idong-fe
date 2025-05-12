@@ -1,5 +1,6 @@
 import { Card, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { decryptData } from "@/utils/dataManipulation";
 import { useEffect, useState } from "react";
@@ -13,12 +14,18 @@ function SaranaPrasarana() {
   ]);
   const [list, setList] = useState([]);
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
     setBreadcrumb([Breadcrumb.home, Breadcrumb.saranaPrasarana]);
   }, []);
 
   useEffect(() => {
-    const func = { setList };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchSaranaPrasarana: true };
+    });
+
+    const func = { setList, setListFetchAPI };
     fetch(func);
   }, []);
 

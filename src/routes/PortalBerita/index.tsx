@@ -1,5 +1,6 @@
 import { Card, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 import { CardDesc, CardTitle, CardWrapper } from "./_portalBerita";
@@ -12,12 +13,18 @@ function PortalBerita() {
   ]);
   const [list, setList] = useState([]);
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
     setBreadcrumb([Breadcrumb.home, Breadcrumb.portalBerita]);
   }, []);
 
   useEffect(() => {
-    const func = { setList };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchPortalBerita: true };
+    });
+
+    const func = { setList, setListFetchAPI };
     fetch(func);
   }, []);
 
