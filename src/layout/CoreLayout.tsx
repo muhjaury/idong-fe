@@ -8,13 +8,23 @@ import { Content, Wrapper } from "./_coreLayout";
 
 function CoreLayout(props: any) {
   const [initLoading, setInitLoading] = useState<string>("Y");
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const { loading } = useWidget();
+  const { listFetchAPI } = useWidget();
 
   useEffect(() => {
     setTimeout(() => setInitLoading("N"), 500);
     AOS.init({ duration: 300 });
   }, []);
+
+  useEffect(() => {
+    const extractValuesFetchAPIs = Object.values(listFetchAPI);
+    if (extractValuesFetchAPIs.some((i: any) => i === true)) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [listFetchAPI]);
 
   return (
     <Wrapper loading={initLoading}>

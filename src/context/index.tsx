@@ -3,12 +3,15 @@
 import { createContext, useContext, useState } from "react";
 
 const useValue = () => {
+  const [listFetchAPI, setListFetchAPI] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(false);
   const [urlChange, setUrlChange] = useState<string>("");
 
   return {
+    listFetchAPI,
     loading,
     urlChange,
+    setListFetchAPI,
     setLoading,
     setUrlChange,
   };
