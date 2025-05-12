@@ -3,7 +3,6 @@ import { Interface_Img } from "@/interface";
 import styled from "styled-components";
 
 export const WrapperTop = styled.div`
-  height: 1005;
   width: 100%;
   padding: 32px 16px;
   display: flex;
@@ -15,8 +14,7 @@ export const WrapperTop = styled.div`
   color: ${color.a1};
 
   @media all and (min-width: 1024px) {
-    height: 220px;
-    padding: 32px 120px;
+    padding: 32px 120px 16px;
     flex-direction: row;
   }
 `;
@@ -60,6 +58,7 @@ export const WrapperColumn = styled.div`
 `;
 
 export const Title = styled.div`
+  font-size: 20px;
   font-weight: 600;
 `;
 
@@ -67,9 +66,15 @@ export const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  @media all and (min-width: 1024px) {
+    gap: 12px;
+  }
 `;
 
-export const Description = styled.div``;
+export const Description = styled.div`
+  max-width: 320px;
+`;
 
 export const Copyright = styled.div`
   cursor: context-menu;
@@ -82,4 +87,15 @@ export const Navigation = styled.div`
 export const WrapperBottomNavigation = styled.div`
   display: flex;
   gap: 4px;
+`;
+
+export const SocialMediaWrapper = styled.div`
+  display: flex;
+  gap: 16px;
+`;
+
+export const SocialMediaLogo = styled.img<Interface_Img>`
+  height: 32px;
+  width: 32px;
+  cursor: pointer;
 `;

@@ -1,7 +1,10 @@
 import { urls } from "@/constant/path";
 import { Interface_Components } from "@/interface";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Content } from "..";
+import FB from "./../../assets/img/fb.png";
+import IG from "./../../assets/img/ig.png";
 import SOPPENG from "./../../assets/img/soppeng.png";
 import {
   Copyright,
@@ -9,32 +12,76 @@ import {
   DescriptionWrapper,
   Logo,
   Navigation,
+  SocialMediaLogo,
+  SocialMediaWrapper,
   Title,
   WrapperBottom,
   WrapperColumn,
   WrapperTop,
 } from "./_footer";
+import { fetch } from "./network";
+import { decryptData } from "@/utils/dataManipulation";
 
 function Footer({ displaynavigation = true }: Interface_Components) {
+  const [list, setList] = useState<any>([]);
+
   const router = useRouter();
+
+  useEffect(() => {
+    const func = { setList };
+    fetch(func);
+  }, []);
 
   const handlePetaClick = () => {
     router.push(urls.PETA_SITUS_KONTAK);
   };
+
+  const handleSocialMediaClick = (url: string) => {
+    window.open(url);
+  };
+
   return (
     <>
       {displaynavigation && (
         <WrapperTop>
-          <Logo src={SOPPENG} />
+          <Content>
+            <WrapperColumn>
+              <Logo src={SOPPENG} />
+              <SocialMediaWrapper>
+                {list[0]?.facebook &&
+                  decryptData(list[0].facebook).includes("http") && (
+                    <SocialMediaLogo
+                      src={FB}
+                      onClick={() =>
+                        handleSocialMediaClick(decryptData(list[0].facebook))
+                      }
+                    />
+                  )}
+                {list[0]?.instagram &&
+                  decryptData(list[0].instagram).includes("http") && (
+                    <SocialMediaLogo
+                      src={IG}
+                      onClick={() =>
+                        handleSocialMediaClick(decryptData(list[0].instagram))
+                      }
+                    />
+                  )}
+              </SocialMediaWrapper>
+            </WrapperColumn>
+          </Content>
           <Content>
             <WrapperColumn>
               <Title>Hubungi Kami</Title>
               <DescriptionWrapper>
-                <Description>Lokasi</Description>
-                <Description>No. Telp</Description>
-                <Description>Email</Description>
-                <Description>Instagram</Description>
-                <Description>Facebook</Description>
+                {list[0]?.lokasi && (
+                  <Description>{decryptData(list[0].lokasi)}</Description>
+                )}
+                {list[0]?.nomorTelepon && (
+                  <Description>{decryptData(list[0].nomorTelepon)}</Description>
+                )}
+                {list[0]?.email && (
+                  <Description>{decryptData(list[0].email)}</Description>
+                )}
               </DescriptionWrapper>
             </WrapperColumn>
           </Content>
