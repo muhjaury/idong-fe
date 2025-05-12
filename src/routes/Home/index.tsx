@@ -1,8 +1,9 @@
 "use client";
 
 import { Card, Section } from "@/components";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "swiper/css";
 import {
@@ -46,13 +47,26 @@ function Home() {
   const [fotoKepsek, setFotoKepsek] = useState("");
   const [berita, setBerita] = useState<any>([]);
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
-    const func = { setNamaKepsek, setSambutanKepsek, setFotoKepsek };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchKepalaSekolah: true };
+    });
+    const func = {
+      setNamaKepsek,
+      setSambutanKepsek,
+      setFotoKepsek,
+      setListFetchAPI,
+    };
     fetchKepalaSekolah(func);
   }, []);
 
   useEffect(() => {
-    const func = { setBerita };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchBerita: true };
+    });
+    const func = { setBerita, setListFetchAPI };
     fetchBerita(func);
   }, []);
 
