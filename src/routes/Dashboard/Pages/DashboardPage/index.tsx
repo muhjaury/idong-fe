@@ -22,7 +22,7 @@ function DashboardPage() {
         <br />
         {username && <b>{username}</b>}
       </span>
-      <WrapperCard>
+      {/* <WrapperCard>
         <Card />
         <Card />
       </WrapperCard>
@@ -32,7 +32,7 @@ function DashboardPage() {
       </WrapperCard>
       <WrapperCard>
         <Card />
-      </WrapperCard>
+      </WrapperCard> */}
     </Wrapper>
   );
 }
