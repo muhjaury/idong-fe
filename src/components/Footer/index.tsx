@@ -1,5 +1,7 @@
 import { urls } from "@/constant/path";
+import { useWidget } from "@/context";
 import { Interface_Components } from "@/interface";
+import { decryptData } from "@/utils/dataManipulation";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Content } from "..";
@@ -20,15 +22,18 @@ import {
   WrapperTop,
 } from "./_footer";
 import { fetch } from "./network";
-import { decryptData } from "@/utils/dataManipulation";
 
 function Footer({ displaynavigation = true }: Interface_Components) {
   const [list, setList] = useState<any>([]);
 
   const router = useRouter();
+  const { setListFetchAPI } = useWidget();
 
   useEffect(() => {
-    const func = { setList };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchFooter: true };
+    });
+    const func = { setList, setListFetchAPI };
     fetch(func);
   }, []);
 
