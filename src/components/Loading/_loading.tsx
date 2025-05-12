@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
 `;
 
 export const LoadingWrapper = styled.div`
-  z-index: 99;
+  z-index: 100;
   position: fixed;
   top: 0;
   right: 0;
