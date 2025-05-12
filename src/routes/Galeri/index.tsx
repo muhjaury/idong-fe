@@ -1,9 +1,10 @@
 import { Card, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
-import { fetch } from "./network";
 import { CardDesc, CardTitle, CardWrapper } from "./_galeri";
+import { fetch } from "./network";
 
 function Galeri() {
   const [breadcrumb, setBreadcrumb] = useState([
@@ -12,12 +13,18 @@ function Galeri() {
   ]);
   const [list, setList] = useState([]);
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
     setBreadcrumb([Breadcrumb.home, Breadcrumb.galeri]);
   }, []);
 
   useEffect(() => {
-    const func = { setList };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchGaleri: true };
+    });
+
+    const func = { setList, setListFetchAPI };
     fetch(func);
   }, []);
 

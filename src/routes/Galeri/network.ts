@@ -3,7 +3,7 @@ import { decryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 
 export const fetch = (func: any) => {
-  const { setList } = func;
+  const { setList, setListFetchAPI } = func;
   request(API_FETCH_GALERI, "GET", null, null)
     .then((res) => {
       const data = res?.data;
@@ -15,6 +15,10 @@ export const fetch = (func: any) => {
         }));
 
         setList(result.reverse());
+
+        setListFetchAPI((prev: any) => {
+          return { ...prev, fetchGaleri: false };
+        });
       }
     })
     .catch((e) => console.log(e));

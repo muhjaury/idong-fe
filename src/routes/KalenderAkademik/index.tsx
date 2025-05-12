@@ -1,5 +1,6 @@
 import { Button, PageTitle, Section } from "@/components";
 import { Breadcrumb } from "@/constant/breadcrumb";
+import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
 import { useEffect, useState } from "react";
 import { Document, Page } from "react-pdf";
@@ -16,12 +17,18 @@ function KalenderAkademik() {
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [view, setView] = useState("desktop");
 
+  const { setListFetchAPI } = useWidget();
+
   useEffect(() => {
     setBreadcrumb([Breadcrumb.home, Breadcrumb.kalenderAkademik]);
   }, []);
 
   useEffect(() => {
-    const func = { setFile };
+    setListFetchAPI((prev: any) => {
+      return { ...prev, fetchKalenderAkademik: true };
+    });
+
+    const func = { setFile, setListFetchAPI };
     fetch(func);
   }, []);
 
@@ -63,16 +70,18 @@ function KalenderAkademik() {
       <PageTitle title="Kalender Akademik" breadcrumb={breadcrumb} />
       <Section type="secondary">
         <Wrapper id="top">
-          <Document
-            file={file}
-            onLoadSuccess={onDocumentLoadSuccess}
-            onLoadError={(err) => console.log(err)}
-          >
-            <Page
-              pageNumber={pageNumber}
-              width={view === "mobile" ? 320 : 1024}
-            />
-          </Document>
+          {file && (
+            <Document
+              file={file}
+              onLoadSuccess={onDocumentLoadSuccess}
+              onLoadError={(err) => console.log(err)}
+            >
+              <Page
+                pageNumber={pageNumber}
+                width={view === "mobile" ? 320 : 1024}
+              />
+            </Document>
+          )}
           {numPages! > 1 && (
             <WrapperDetails>
               <Button

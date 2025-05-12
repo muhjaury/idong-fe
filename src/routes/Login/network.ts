@@ -4,7 +4,7 @@ import { encryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 
 export const verifyCred = (func: any, email: string, password: string) => {
-  const { router, setError, dispatch, ADD_USER_DATA } = func;
+  const { setListFetchAPI, router, setError, dispatch, ADD_USER_DATA } = func;
 
   const emailEnc = encryptData(email);
   const passwordEnc = encryptData(password);
@@ -22,8 +22,16 @@ export const verifyCred = (func: any, email: string, password: string) => {
           })
         );
         router.push(urls.DASHBOARD);
+
+        setListFetchAPI((prev: any) => {
+          return { ...prev, verifyCred: false };
+        });
       } else {
         setError("Invalid Username or Password");
+
+        setListFetchAPI((prev: any) => {
+          return { ...prev, verifyCred: false };
+        });
       }
     })
     .catch(() => setError("Connection Error"));
