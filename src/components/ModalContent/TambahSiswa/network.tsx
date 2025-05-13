@@ -12,6 +12,7 @@ export const saveData = (func: any, data: any) => {
     setAlamat,
     setError,
     setSuccess,
+    setLoading,
   } = func;
   const { id, kelas, nis, nama, jenisKelamin, alamat } = data;
 
@@ -51,5 +52,7 @@ export const saveData = (func: any, data: any) => {
     } else {
       setError("Data gagal ditambahkan");
     }
+
+    setLoading(false);
   });
 };

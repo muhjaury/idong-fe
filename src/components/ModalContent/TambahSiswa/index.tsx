@@ -1,4 +1,5 @@
 import { Button, FieldWrapper, InputText } from "@/components";
+import { useWidget } from "@/context";
 import { decryptData } from "@/utils/dataManipulation";
 import { useEffect, useState } from "react";
 import { ButtonWrapper, PromptText, Title, Wrapper } from "./_tambahSiswa";
@@ -13,6 +14,8 @@ function TambahSiswa(props: any) {
   const [alamat, setAlamat] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   //Prefill
   useEffect(() => {
@@ -73,6 +76,8 @@ function TambahSiswa(props: any) {
 
   const handleAddClick = () => {
     if (kelas && nis && nama && jenisKelamin && alamat) {
+      setLoading(true);
+
       const data = { id, kelas, nis, nama, jenisKelamin, alamat };
       const func = {
         setId,
@@ -83,6 +88,7 @@ function TambahSiswa(props: any) {
         setAlamat,
         setError,
         setSuccess,
+        setLoading,
       };
       saveData(func, data);
     } else {
