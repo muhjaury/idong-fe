@@ -3,7 +3,7 @@ import { encryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
 
 export const saveData = (func: any, data: any) => {
-  const { setId, setNama, setFoto, setError, setSuccess } = func;
+  const { setId, setNama, setFoto, setError, setSuccess, setLoading } = func;
   const { id, nama, foto } = data;
 
   const namaEnc = encryptData(nama);
@@ -32,5 +32,7 @@ export const saveData = (func: any, data: any) => {
     } else {
       setError("Data gagal ditambahkan");
     }
+
+    setLoading(false);
   });
 };

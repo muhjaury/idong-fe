@@ -19,7 +19,7 @@ const handleDelete = async (func: any, id: number) => {
 };
 
 export const fetch = (func: any) => {
-  const { setDisplayModal, setModalData, setRawData } = func;
+  const { setDisplayModal, setModalData, setRawData, setLoading } = func;
   request(API_FETCH_SARANA_PRASARANA, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
@@ -47,7 +47,10 @@ export const fetch = (func: any) => {
                 </Button>
                 <Button
                   removeshadow="Y"
-                  onClick={() => handleDelete(func, item.id)}
+                  onClick={() => {
+                    setLoading(true);
+                    handleDelete(func, item.id);
+                  }}
                   type="tertiary"
                 >
                   Hapus
@@ -57,6 +60,8 @@ export const fetch = (func: any) => {
           };
         });
         setRawData(result);
+
+        setLoading(false);
       }
     })
     .catch((e) => console.log(e));

@@ -1,5 +1,6 @@
 import { Button, FieldWrapper, InputText } from "@/components";
 import FileUpload from "@/components/FileUpload";
+import { useWidget } from "@/context";
 import { decryptData } from "@/utils/dataManipulation";
 import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
@@ -17,6 +18,8 @@ function TambahSaranaPrasarana(props: any) {
   const [foto, setFoto] = useState<any>([]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   //Prefill
   useEffect(() => {
@@ -56,6 +59,8 @@ function TambahSaranaPrasarana(props: any) {
 
   const handleAddClick = () => {
     if (nama && foto.length > 0) {
+      setLoading(true);
+
       const data = { id, nama, foto };
       const func = {
         setId,
@@ -63,6 +68,7 @@ function TambahSaranaPrasarana(props: any) {
         setFoto,
         setError,
         setSuccess,
+        setLoading,
       };
       saveData(func, data);
     } else {
