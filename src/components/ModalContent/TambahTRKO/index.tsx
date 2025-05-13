@@ -1,5 +1,6 @@
 import { Button, FieldWrapper, InputText } from "@/components";
 import FileUpload from "@/components/FileUpload";
+import { useWidget } from "@/context";
 import { decryptData } from "@/utils/dataManipulation";
 import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
@@ -12,6 +13,8 @@ function TambahTRKO(props: any) {
   const [file, setFile] = useState<any>([]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   //Prefill
   useEffect(() => {
@@ -51,6 +54,8 @@ function TambahTRKO(props: any) {
 
   const handleAddClick = () => {
     if (deskripsi && file.length > 0) {
+      setLoading(true);
+
       const data = { id, deskripsi, file };
       const func = {
         setId,
@@ -58,6 +63,7 @@ function TambahTRKO(props: any) {
         setFile,
         setError,
         setSuccess,
+        setLoading,
       };
       saveData(func, data);
     } else {
