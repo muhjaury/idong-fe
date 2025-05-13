@@ -5,6 +5,7 @@ import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
 import { ButtonWrapper, PromptText, Title, Wrapper } from "./_tambahArsip";
 import { saveData } from "./network";
+import { useWidget } from "@/context";
 
 function TambahArsip(props: any) {
   const [id, setId] = useState("");
@@ -12,6 +13,8 @@ function TambahArsip(props: any) {
   const [foto, setFoto] = useState<any>([]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   //Prefill
   useEffect(() => {
@@ -51,6 +54,8 @@ function TambahArsip(props: any) {
 
   const handleAddClick = () => {
     if (nama && foto.length > 0) {
+      setLoading(true);
+
       const data = { id, nama, foto };
       const func = {
         setId,
@@ -58,6 +63,7 @@ function TambahArsip(props: any) {
         setFoto,
         setError,
         setSuccess,
+        setLoading,
       };
       saveData(func, data);
     } else {
