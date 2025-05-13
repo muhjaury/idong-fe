@@ -1,6 +1,8 @@
 import { Footer, HeaderUser, Loading, LoadingContent } from "@/components";
+import { urls } from "@/constant/path";
 import { ROLE } from "@/constant/role";
 import { useWidget } from "@/context";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useSelector } from "react-redux";
@@ -32,6 +34,7 @@ function UserLayout(props: any) {
 
   const { loading, setUrlChange } = useWidget();
   const dataFromRedux = useSelector((state: any) => state.data);
+  const router = useRouter();
 
   const refContent = useRef<HTMLDivElement>(null);
   const refSideBar = useRef<HTMLDivElement>(null);
@@ -69,6 +72,10 @@ function UserLayout(props: any) {
     history.pushState(null, "", "?" + urlParams.toString());
     setUrlChange(menu);
     setSideBar("N");
+  };
+
+  const handleMainPageClick = () => {
+    router.push(urls.HOME);
   };
 
   return (
@@ -223,6 +230,9 @@ function UserLayout(props: any) {
                   ATPH
                 </SideBarItem>
               </SideBarDropWrapper>
+              <SideBarItem onClick={handleMainPageClick}>
+                Kembali ke Halaman Utama
+              </SideBarItem>
             </SideBar>
             <ContentOverlay display={sideBar} />
             <Content ref={refContent} height={totalHeight}>
