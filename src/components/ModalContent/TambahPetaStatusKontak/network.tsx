@@ -14,6 +14,7 @@ export const saveData = (func: any, data: any) => {
     setError,
     setSuccess,
     onClose,
+    setLoading,
   } = func;
   const { id, lokasi, nomorTelepon, email, instagram, facebook, maps } = data;
 
@@ -56,5 +57,7 @@ export const saveData = (func: any, data: any) => {
     } else {
       setError("Data gagal ditambahkan");
     }
+
+    setLoading(false);
   });
 };

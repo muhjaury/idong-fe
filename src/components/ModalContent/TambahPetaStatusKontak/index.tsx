@@ -1,5 +1,6 @@
 import { Button, FieldWrapper, InputText } from "@/components";
 import FileUpload from "@/components/FileUpload";
+import { useWidget } from "@/context";
 import { decryptData } from "@/utils/dataManipulation";
 import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
@@ -21,6 +22,8 @@ function TambahPetaStatusKontak(props: any) {
   const [maps, setMaps] = useState<any>([]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   //Prefill
   useEffect(() => {
@@ -94,6 +97,8 @@ function TambahPetaStatusKontak(props: any) {
       facebook &&
       maps.length > 0
     ) {
+      setLoading(true);
+
       const data = {
         id,
         lokasi,
@@ -114,6 +119,7 @@ function TambahPetaStatusKontak(props: any) {
         setError,
         setSuccess,
         onClose: props.onClose,
+        setLoading,
       };
       saveData(func, data);
     } else {
