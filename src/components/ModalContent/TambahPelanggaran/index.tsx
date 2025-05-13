@@ -1,4 +1,5 @@
 import { Button, FieldWrapper, InputText } from "@/components";
+import { useWidget } from "@/context";
 import { useEffect, useState } from "react";
 import {
   ButtonWrapper,
@@ -14,6 +15,8 @@ function TambahPelanggaran(props: any) {
   const [pelanggaran, setPelanggaran] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   //Prefill
   useEffect(() => {
@@ -53,6 +56,8 @@ function TambahPelanggaran(props: any) {
 
   const handleAddClick = () => {
     if (nis && pelanggaran) {
+      setLoading(true);
+
       const data = { id, nis, pelanggaran };
       const func = {
         setId,
@@ -60,6 +65,7 @@ function TambahPelanggaran(props: any) {
         setPelanggaran,
         setError,
         setSuccess,
+        setLoading,
       };
       saveData(func, data);
     } else {

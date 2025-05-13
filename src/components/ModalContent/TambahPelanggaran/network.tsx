@@ -2,7 +2,8 @@ import { API_REGISTER_PELANGGARAN } from "@/constant/api";
 import request from "@/utils/request";
 
 export const saveData = (func: any, data: any) => {
-  const { setId, setNis, setPelanggaran, setError, setSuccess } = func;
+  const { setId, setNis, setPelanggaran, setError, setSuccess, setLoading } =
+    func;
   const { id, nis, pelanggaran } = data;
 
   let bodyData: any = { nis, pelanggaran };
@@ -26,5 +27,7 @@ export const saveData = (func: any, data: any) => {
     } else {
       setError("Data gagal ditambahkan");
     }
+
+    setLoading(false);
   });
 };
