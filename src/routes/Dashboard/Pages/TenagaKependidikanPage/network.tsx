@@ -1,7 +1,7 @@
 import { Button, DisplayFile } from "@/components";
 import {
+  API_DELETE_TENAGA_KEPENDIDIKAN,
   API_FETCH_TENAGA_KEPENDIDIKAN,
-  API_REGISTER_TENAGA_KEPENDIDIKAN,
 } from "@/constant/api";
 import { decryptData } from "@/utils/dataManipulation";
 import request from "@/utils/request";
@@ -9,7 +9,7 @@ import { ButtonWrapper } from "./_tenagaKependidikanPage";
 
 const handleDelete = async (func: any, id: number) => {
   const data = { id };
-  request(API_REGISTER_TENAGA_KEPENDIDIKAN, "POST", null, data)
+  request(API_DELETE_TENAGA_KEPENDIDIKAN, "POST", null, data)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
         fetch(func);
@@ -19,7 +19,7 @@ const handleDelete = async (func: any, id: number) => {
 };
 
 export const fetch = (func: any) => {
-  const { setDisplayModal, setModalData, setRawData } = func;
+  const { setDisplayModal, setModalData, setRawData, setLoading } = func;
   request(API_FETCH_TENAGA_KEPENDIDIKAN, "GET", null, null)
     .then((res) => {
       if (res?.status.toLowerCase() === "success") {
@@ -48,7 +48,10 @@ export const fetch = (func: any) => {
                 </Button>
                 <Button
                   removeshadow="Y"
-                  onClick={() => handleDelete(func, item.id)}
+                  onClick={() => {
+                    setLoading(true);
+                    handleDelete(func, item.id);
+                  }}
                   type="tertiary"
                 >
                   Hapus
@@ -58,6 +61,8 @@ export const fetch = (func: any) => {
           };
         });
         setRawData(result);
+
+        setLoading(false);
       }
     })
     .catch((e) => console.log(e));
