@@ -1,5 +1,6 @@
 import { Button, InputText, Modal } from "@/components";
 import { TambahTataTertib } from "@/components/ModalContent";
+import { useWidget } from "@/context";
 import { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import { Wrapper, WrapperContent, WrapperSearch } from "./_tataTertibPage";
@@ -12,9 +13,13 @@ function TataTertibPage() {
   const [displayModal, setDisplayModal] = useState(false);
   const [modalData, setModalData] = useState({});
 
+  const { setLoading } = useWidget();
+
   useEffect(() => {
     if (rawData.length === 0) {
-      const func = { setDisplayModal, setModalData, setRawData };
+      setLoading(true);
+
+      const func = { setDisplayModal, setModalData, setRawData, setLoading };
       fetch(func);
     }
   }, []);
@@ -70,17 +75,33 @@ function TataTertibPage() {
         type="secondary"
         display={displayModal}
         onClose={() => {
+          setLoading(true);
+
           setDisplayModal(false);
           setModalData({});
-          const func = { setDisplayModal, setModalData, setRawData };
+          const func = {
+            setDisplayModal,
+            setModalData,
+            setRawData,
+            setLoading,
+          };
           fetch(func);
         }}
       >
         <TambahTataTertib
           data={modalData}
           onClose={() => {
+            setLoading(true);
+
             setDisplayModal(false);
             setModalData({});
+            const func = {
+              setDisplayModal,
+              setModalData,
+              setRawData,
+              setLoading,
+            };
+            fetch(func);
           }}
         />
       </Modal>
