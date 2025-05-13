@@ -27,15 +27,23 @@ function Footer({ displaynavigation = true }: Interface_Components) {
   const [list, setList] = useState<any>([]);
 
   const router = useRouter();
-  const { setListFetchAPI } = useWidget();
+  const { footerData, setListFetchAPI, setFooterData } = useWidget();
 
   useEffect(() => {
-    setListFetchAPI((prev: any) => {
-      return { ...prev, fetchFooter: true };
-    });
-    const func = { setList, setListFetchAPI };
-    fetch(func);
-  }, []);
+    if (displaynavigation && footerData.length === 0) {
+      setListFetchAPI((prev: any) => {
+        return { ...prev, fetchFooter: true };
+      });
+      const func = { setList, setListFetchAPI, setFooterData };
+      fetch(func);
+    }
+  }, [displaynavigation, footerData]);
+
+  useEffect(() => {
+    if (footerData.length > 0) {
+      setList(footerData);
+    }
+  }, [footerData]);
 
   const handlePetaClick = () => {
     router.push(urls.PETA_SITUS_KONTAK);

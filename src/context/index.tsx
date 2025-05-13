@@ -6,11 +6,14 @@ const useValue = () => {
   const [listFetchAPI, setListFetchAPI] = useState<any>({});
   const [loading, setLoading] = useState<boolean>(false);
   const [urlChange, setUrlChange] = useState<string>("");
+  const [footerData, setFooterData] = useState<any>([]);
 
   return {
+    footerData,
     listFetchAPI,
     loading,
     urlChange,
+    setFooterData,
     setListFetchAPI,
     setLoading,
     setUrlChange,
