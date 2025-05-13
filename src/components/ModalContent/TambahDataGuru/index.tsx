@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ButtonWrapper, PromptText, Wrapper } from "./_tambahDataGuru";
 import { createGuru } from "./network";
 
-function TambahDataGuru() {
+function TambahDataGuru(props: any) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -82,7 +82,9 @@ function TambahDataGuru() {
       </FieldWrapper>
       <PromptText iserror={error}>{error || success}</PromptText>
       <ButtonWrapper>
-        <Button removeshadow="Y">Batal</Button>
+        <Button removeshadow="Y" onClick={() => props.onClose()}>
+          Batal
+        </Button>
         <Button removeshadow="Y" onClick={() => handleAddClick()}>
           Tambahkan
         </Button>

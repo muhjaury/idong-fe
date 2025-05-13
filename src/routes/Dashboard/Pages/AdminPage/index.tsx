@@ -65,12 +65,21 @@ function AdminPage() {
         display={displayModal}
         onClose={() => {
           setLoading(true);
+
           setDisplayModal(false);
           const func = { setRawData, setLoading };
           fetchAdmin(func);
         }}
       >
-        <TambahDataAdmin />
+        <TambahDataAdmin
+          onClose={() => {
+            setLoading(true);
+
+            setDisplayModal(false);
+            const func = { setRawData, setLoading };
+            fetchAdmin(func);
+          }}
+        />
       </Modal>
     </>
   );

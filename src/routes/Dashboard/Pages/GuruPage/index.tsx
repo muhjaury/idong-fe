@@ -65,12 +65,21 @@ function GuruPage() {
         display={displayModal}
         onClose={() => {
           setLoading(true);
+
           setDisplayModal(false);
           const func = { setRawData, setLoading };
           fetchGuru(func);
         }}
       >
-        <TambahDataGuru />
+        <TambahDataGuru
+          onClose={() => {
+            setLoading(true);
+
+            setDisplayModal(false);
+            const func = { setRawData, setLoading };
+            fetchGuru(func);
+          }}
+        />
       </Modal>
     </>
   );
