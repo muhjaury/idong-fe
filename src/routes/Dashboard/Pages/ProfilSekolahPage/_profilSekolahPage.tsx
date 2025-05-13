@@ -11,12 +11,30 @@ export const Wrapper = styled.div`
   }
 
   .rdt_TableHeadRow {
+    > div {
+      width: 200px;
+      max-width: 200px;
+    }
+
+    > div:first-child {
+      max-width: 100px;
+    }
+
     > div:last-child {
       min-width: 240px;
     }
   }
 
   .rdt_TableRow {
+    > div {
+      width: 200px;
+      max-width: 200px;
+    }
+
+    > div:first-child {
+      max-width: 100px;
+    }
+
     > div:last-child {
       min-width: 240px;
     }

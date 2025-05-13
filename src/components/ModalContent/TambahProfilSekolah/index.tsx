@@ -1,5 +1,6 @@
 import { Button, FieldWrapper, InputText, TextArea } from "@/components";
 import FileUpload from "@/components/FileUpload";
+import { useWidget } from "@/context";
 import { decryptData } from "@/utils/dataManipulation";
 import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
@@ -21,6 +22,8 @@ function TambahProfilSekolah(props: any) {
   const [academicCalenderFile, setAcademicCalenderFile] = useState<any>([]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   //Prefill
   useEffect(() => {
@@ -94,6 +97,8 @@ function TambahProfilSekolah(props: any) {
       orgStructureFile.length > 0 &&
       academicCalenderFile.length > 0
     ) {
+      setLoading(true);
+
       const data = {
         id,
         principleName,
@@ -114,6 +119,7 @@ function TambahProfilSekolah(props: any) {
         setError,
         setSuccess,
         onClose: props.onClose,
+        setLoading,
       };
       saveData(func, data);
     } else {
