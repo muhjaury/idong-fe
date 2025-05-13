@@ -1,5 +1,6 @@
 import { Button, InputText, Modal } from "@/components";
 import { TambahDaftarHadir } from "@/components/ModalContent";
+import { useWidget } from "@/context";
 import { useEffect, useState } from "react";
 import DataTable, { TableColumn } from "react-data-table-component";
 import { Wrapper, WrapperContent, WrapperSearch } from "./_daftarHadirPage";
@@ -12,9 +13,13 @@ function DaftarHadirPage() {
   const [displayModal, setDisplayModal] = useState(false);
   const [modalData, setModalData] = useState({});
 
+  const { setLoading } = useWidget();
+
   useEffect(() => {
+    setLoading(true);
+
     if (rawData.length === 0) {
-      const func = { setDisplayModal, setModalData, setRawData };
+      const func = { setDisplayModal, setModalData, setRawData, setLoading };
       fetch(func);
     }
   }, []);
@@ -81,17 +86,33 @@ function DaftarHadirPage() {
         type="secondary"
         display={displayModal}
         onClose={() => {
+          setLoading(true);
+
           setDisplayModal(false);
           setModalData({});
-          const func = { setDisplayModal, setModalData, setRawData };
+          const func = {
+            setDisplayModal,
+            setModalData,
+            setRawData,
+            setLoading,
+          };
           fetch(func);
         }}
       >
         <TambahDaftarHadir
           data={modalData}
           onClose={() => {
+            setLoading(true);
+
             setDisplayModal(false);
             setModalData({});
+            const func = {
+              setDisplayModal,
+              setModalData,
+              setRawData,
+              setLoading,
+            };
+            fetch(func);
           }}
         />
       </Modal>

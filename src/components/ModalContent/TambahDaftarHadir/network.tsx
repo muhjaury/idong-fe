@@ -10,6 +10,7 @@ export const saveData = (func: any, data: any) => {
     setFile,
     setError,
     setSuccess,
+    setLoading,
   } = func;
   const { id, kelas, jurusan, tahunAjar, file } = data;
 
@@ -36,5 +37,7 @@ export const saveData = (func: any, data: any) => {
     } else {
       setError("Data gagal ditambahkan");
     }
+
+    setLoading(false);
   });
 };

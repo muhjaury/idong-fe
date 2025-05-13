@@ -1,5 +1,6 @@
 import { Button, FieldWrapper, InputText } from "@/components";
 import FileUpload from "@/components/FileUpload";
+import { useWidget } from "@/context";
 import { generateOneFileDataFromBase64 } from "@/utils/fileManipulation";
 import { useEffect, useState } from "react";
 import {
@@ -18,6 +19,8 @@ function TambahDaftarHadir(props: any) {
   const [file, setFile] = useState<any>([]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const { setLoading } = useWidget();
 
   //Prefill
   useEffect(() => {
@@ -67,6 +70,8 @@ function TambahDaftarHadir(props: any) {
 
   const handleAddClick = () => {
     if (kelas && jurusan && tahunAjar && file.length > 0) {
+      setLoading(true);
+
       const data = { id, kelas, jurusan, tahunAjar, file };
       const func = {
         setId,
@@ -76,6 +81,7 @@ function TambahDaftarHadir(props: any) {
         setFile,
         setError,
         setSuccess,
+        setLoading,
       };
       saveData(func, data);
     } else {
