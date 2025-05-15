@@ -49,7 +49,7 @@ function Home() {
   const [fotoKepsek, setFotoKepsek] = useState("");
   const [berita, setBerita] = useState<any>([]);
 
-  const { setListFetchAPI } = useWidget();
+  const { setListFetchAPI, setLoading } = useWidget();
   const router = useRouter();
 
   useEffect(() => {
@@ -74,6 +74,7 @@ function Home() {
   }, []);
 
   const handleBeritaClick = (idx: number) => {
+    setLoading(true);
     router.push(urls.PORTAL_BERITA + `?i=${idx}`);
   };
 
