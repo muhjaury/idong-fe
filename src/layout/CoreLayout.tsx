@@ -8,9 +8,8 @@ import { Content, Wrapper } from "./_coreLayout";
 
 function CoreLayout(props: any) {
   const [initLoading, setInitLoading] = useState<string>("Y");
-  const [loading, setLoading] = useState<boolean>(false);
 
-  const { listFetchAPI } = useWidget();
+  const { listFetchAPI, loading, setLoading } = useWidget();
 
   useEffect(() => {
     setTimeout(() => setInitLoading("N"), 500);
