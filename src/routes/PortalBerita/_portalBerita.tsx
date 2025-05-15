@@ -1,4 +1,5 @@
 import { color } from "@/constant/color";
+import { Interface_Img } from "@/interface";
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
@@ -22,4 +23,40 @@ export const CardDesc = styled.span`
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+`;
+
+export const BackButtonWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: start;
+`;
+
+export const NewsImage = styled.img<Interface_Img>`
+  margin-top: 16px;
+  border-radius: 16px;
+  width: 100%;
+
+  @media all and (min-width: 1024px) {
+    width: 50%;
+  }
+`;
+
+export const NewsWrapper = styled.div`
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+export const NewsTitle = styled.div`
+  font-size: 32px;
+  font-weight: 600;
+`;
+
+export const NewsDesc = styled.div`
+  text-align: justify;
+  font-size: 20px;
+  line-height: 28px;
+  white-space: pre-line;
 `;

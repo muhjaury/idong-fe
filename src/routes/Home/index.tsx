@@ -1,8 +1,10 @@
 "use client";
 
 import { Card, Section } from "@/components";
+import { urls } from "@/constant/path";
 import { useWidget } from "@/context";
 import CoreLayout from "@/layout/CoreLayout";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import "swiper/css";
@@ -48,6 +50,7 @@ function Home() {
   const [berita, setBerita] = useState<any>([]);
 
   const { setListFetchAPI } = useWidget();
+  const router = useRouter();
 
   useEffect(() => {
     setListFetchAPI((prev: any) => {
@@ -69,6 +72,10 @@ function Home() {
     const func = { setBerita, setListFetchAPI };
     fetchBerita(func);
   }, []);
+
+  const handleBeritaClick = (idx: number) => {
+    router.push(urls.PORTAL_BERITA + `?i=${idx}`);
+  };
 
   return (
     <CoreLayout>
@@ -279,6 +286,7 @@ function Home() {
                         </CardDesc>
                       </>
                     }
+                    onClick={() => handleBeritaClick(index)}
                   />
                 );
               })}
