@@ -28,7 +28,7 @@ export const InfoWrapper = styled.div`
   flex-direction: column;
   gap: 16px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     gap: 8px;
   }
 `;
@@ -39,7 +39,7 @@ export const DetailWrapper = styled.div`
   flex-direction: column;
   gap: 8px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     gap: 32px;
     flex-direction: row;
   }
@@ -50,7 +50,7 @@ export const DetailTitle = styled.div`
   font-size: 24px;
   font-weight: 600;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     width: 240px;
   }
 `;

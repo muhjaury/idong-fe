@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
   height: 100px;
   background: ${color.a3};
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     padding: 32px 120px;
   }
 `;
@@ -21,7 +21,7 @@ export const Menu = styled.img<Interface_Img>`
   width: 40px;
   cursor: pointer;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: none;
   }
 `;
@@ -30,7 +30,7 @@ export const Title = styled.span`
   display: none;
   color: ${color.a1};
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: block;
   }
 `;

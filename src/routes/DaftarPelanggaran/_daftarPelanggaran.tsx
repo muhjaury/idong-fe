@@ -18,7 +18,7 @@ export const WrapperInput = styled.div`
   flex-direction: column;
   gap: 8px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     width: 320px;
   }
 `;
@@ -33,7 +33,7 @@ export const WrapperSearch = styled.div`
   align-items: center;
   justify-content: end;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: flex;
   }
 `;

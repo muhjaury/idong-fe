@@ -16,7 +16,7 @@ export const WrapperDetails = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     width: 640px;
   }
 `;

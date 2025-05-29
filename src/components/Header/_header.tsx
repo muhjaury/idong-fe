@@ -15,7 +15,7 @@ export const Wrapper = styled.div<Interface_Components>`
   align-items: center;
   transition: 0.3s background;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     padding: 32px 120px;
   }
 `;
@@ -37,7 +37,7 @@ export const WrapperRight = styled.div`
   align-items: center;
   gap: 24px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     gap: 48px;
   }
 `;
@@ -45,7 +45,7 @@ export const WrapperRight = styled.div`
 export const NavWrapper = styled.div`
   display: none;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: block;
     position: relative;
     display: flex;
@@ -129,7 +129,7 @@ export const Menu = styled.img<Interface_Img>`
   width: 40px;
   cursor: pointer;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: none;
   }
 `;
@@ -162,7 +162,7 @@ export const SideBarWrapper = styled.div<Interface_Img>`
   bottom: 0;
   left: 0;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: none;
   }
 `;
@@ -193,7 +193,7 @@ export const SideBar = styled.div<Interface_Img>`
     display: none;
   }
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: none;
   }
 `;
@@ -242,7 +242,7 @@ export const SideBarDropWrapper = styled.div<Interface_Img>`
   align-items: start;
   justify-content: center;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: none;
   }
 `;

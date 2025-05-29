@@ -21,7 +21,7 @@ export const Close = styled.img<Interface_Components>`
   top: calc((100vh - 464px) / 2);
   cursor: pointer;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     right: calc(
       (100vw - ${({ type }) => (type === "secondary" ? "408px" : "942px")}) / 2
     );
@@ -46,7 +46,7 @@ export const Content = styled.div<Interface_Components>`
   margin-left: calc((100vw - 360px) / 2);
   margin-top: calc((100vh - 480px) / 2);
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     width: ${({ type }) => (type === "secondary" ? "440px" : "960px")};
     height: 480px;
     margin-left: calc(

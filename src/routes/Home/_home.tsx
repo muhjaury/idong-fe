@@ -12,7 +12,7 @@ export const Video = styled.video`
   height: 204px;
   background: ${color.a6};
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     left: calc((100% - 960px) / 2);
     width: 960px;
     height: 540px;
@@ -26,7 +26,7 @@ export const Content2Wrapper = styled.div`
   justify-content: center;
   gap: 32px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     gap: 80px;
     height: 100%;
     flex-direction: row;
@@ -40,7 +40,7 @@ export const Content2WrapperColumn = styled.div`
   flex-direction: column;
   gap: 32px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     width: 33%;
   }
 `;
@@ -98,7 +98,7 @@ export const WrapperGreeting = styled.div`
 export const WelcomeText = styled.div`
   font-size: 20px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     font-size: 28px;
   }
 `;
@@ -108,7 +108,7 @@ export const SchoolName = styled.div`
   text-align: center;
   font-weight: 600;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     font-size: 72px;
   }
 `;
@@ -121,7 +121,7 @@ export const Content3Wrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     align-items: start;
     gap: 56px;
     flex-direction: row;
@@ -134,7 +134,7 @@ export const HeadmasterPic = styled.img<Interface_Img>`
   min-width: 240px;
   height: 360px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     min-width: 424px;
     height: 520px;
   }
@@ -158,7 +158,7 @@ export const HeadmasterTitle = styled.div`
   font-weight: 600;
   color: ${color.a2};
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     font-size: 40px;
   }
 `;
@@ -170,7 +170,7 @@ export const HeadmasterDesc = styled.div`
   color: ${color.a7};
   white-space: pre-line;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     font-size: 22px;
     line-height: 36px;
   }
@@ -192,7 +192,7 @@ export const ProgramWrapper = styled.div`
   justify-content: center;
   gap: 56px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     flex-direction: row;
   }
 `;
@@ -201,7 +201,7 @@ export const ProgramContentWrapper = styled.div`
   display: flex;
   gap: 32px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     width: 50%;
   }
 `;
@@ -251,7 +251,7 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   gap: 120px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     flex-direction: row;
   }
 `;

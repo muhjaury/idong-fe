@@ -13,7 +13,7 @@ export const WrapperTop = styled.div`
   background: ${color.a3};
   color: ${color.a1};
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     padding: 32px 120px 16px;
     flex-direction: row;
   }
@@ -32,7 +32,7 @@ export const WrapperBottom = styled.div`
   font-weight: 600;
   font-size: 12px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     padding: 0 120px;
     flex-direction: row;
     align-items: center;
@@ -44,7 +44,7 @@ export const WrapperBottom = styled.div`
 export const Logo = styled.img<Interface_Img>`
   display: none;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: block;
     height: 160px;
     width: 160px;
@@ -67,7 +67,7 @@ export const DescriptionWrapper = styled.div`
   flex-direction: column;
   gap: 8px;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     gap: 12px;
   }
 `;

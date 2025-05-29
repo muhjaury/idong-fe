@@ -13,7 +13,7 @@ export const Wrapper = styled.div<Interface_Components>`
   background: ${color.a2};
   color: ${color.a1};
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     padding: 56px 120px;
   }
 `;

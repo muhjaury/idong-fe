@@ -36,7 +36,7 @@ export const SideBar = styled.div<Interface_Components>`
   transition: 0.5s cubic-bezier(0.36, -0.01, 0, 0.77);
   z-index: 2;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     transition: unset;
     margin-left: 0;
     z-index: unset;
@@ -121,7 +121,7 @@ export const Content = styled.div<Interface_Components>`
     background: ${color.a2};
   }
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     left: 300px;
     transition: unset;
   }
@@ -139,7 +139,7 @@ export const ContentOverlay = styled.div<Interface_Components>`
   background: rgba(26, 32, 38, 0.8);
   z-index: 1;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     display: none;
   }
 `;

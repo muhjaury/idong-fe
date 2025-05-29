@@ -18,7 +18,7 @@ export const Wrapper = styled.div<Interface_Components>`
       : color.a2};
   color: ${({ type }) => (type === "secondary" ? "black" : "white")};
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     padding: 56px 120px;
     > div {
       max-width: 1160px;

@@ -36,7 +36,7 @@ export const GalleryImage = styled.img<Interface_Img>`
   border-radius: 16px;
   width: 100%;
 
-  @media all and (min-width: 1024px) {
+  @media all and (min-width: 768px) {
     width: 50%;
   }
 `;
