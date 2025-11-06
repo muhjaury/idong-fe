@@ -88,6 +88,18 @@ function PetaSitusKontak() {
                           </LinkValue>
                         </DetailWrapper>
                       )}
+                    {item.youtube &&
+                      decryptData(item.youtube).includes("http") && (
+                        <DetailWrapper>
+                          <DetailTitle>Youtube</DetailTitle>
+                          <LinkValue
+                            target="_blank"
+                            href={decryptData(item.youtube)}
+                          >
+                            {decryptData(item.youtube)}
+                          </LinkValue>
+                        </DetailWrapper>
+                      )}
                   </InfoWrapper>
                 </React.Fragment>
               );
