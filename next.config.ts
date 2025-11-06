@@ -6,6 +6,9 @@ const nextConfig = {
   reactStrictMode: false,
   // output: "export",
   assetPrefix: ASSET_PREFIX,
+  compiler: {
+    styledComponents: true,
+  },
   webpack: (config: any) => {
     const fileLoaderRule = config.module.rules?.find(
       (rule: any) =>

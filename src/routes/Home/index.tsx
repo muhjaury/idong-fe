@@ -45,11 +45,11 @@ import { fetchBerita, fetchKepalaSekolah } from "./network";
 import ICON1 from "./../../assets/img/icon1.png";
 import ICON2 from "./../../assets/img/icon2.png";
 import ICON3 from "./../../assets/img/icon3.png";
-import ATPH from "./../../assets/img/ATPH.png";
-import TSM from "./../../assets/img/TSM.png";
-import TKR from "./../../assets/img/TKR.png";
-import DPIB from "./../../assets/img/DPIB.png";
-import TKJ from "./../../assets/img/TKJ.png";
+import ATPH from "./../../assets/img/atph.png";
+import TSM from "./../../assets/img/tsm.png";
+import TKR from "./../../assets/img/tkr.png";
+import DPIB from "./../../assets/img/dpib.png";
+import TKJ from "./../../assets/img/tkj.png";
 
 function Home() {
   const [namaKepsek, setNamaKepsek] = useState("");
