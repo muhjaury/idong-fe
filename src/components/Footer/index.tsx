@@ -1,6 +1,5 @@
 import { urls } from "@/constant/path";
 import { useWidget } from "@/context";
-import { PENDAFTARAN_SISWA_BARU } from "@/document/pendaftaran";
 import { Interface_Components } from "@/interface";
 import { decryptData } from "@/utils/dataManipulation";
 import { base64ToBlob } from "@/utils/fileManipulation";
@@ -10,6 +9,7 @@ import { Content } from "..";
 import FB from "./../../assets/img/fb.png";
 import IG from "./../../assets/img/ig.png";
 import SOPPENG from "./../../assets/img/soppeng.png";
+import YT from "./../../assets/img/yt.png";
 import {
   Copyright,
   Description,
@@ -85,6 +85,15 @@ function Footer({ displaynavigation = true }: Interface_Components) {
                       src={IG}
                       onClick={() =>
                         handleSocialMediaClick(decryptData(list[0].instagram))
+                      }
+                    />
+                  )}
+                {list[0]?.youtube &&
+                  decryptData(list[0].youtube).includes("http") && (
+                    <SocialMediaLogo
+                      src={YT}
+                      onClick={() =>
+                        handleSocialMediaClick(decryptData(list[0].youtube))
                       }
                     />
                   )}
