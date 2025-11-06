@@ -19,7 +19,9 @@ function TambahPetaStatusKontak(props: any) {
   const [email, setEmail] = useState("");
   const [instagram, setInstagram] = useState("");
   const [facebook, setFacebook] = useState("");
+  const [youtube, setYoutube] = useState("");
   const [maps, setMaps] = useState<any>([]);
+  const [pendaftaranSiswaBaru, setPendaftaranSiswaBaru] = useState<any>([]);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -34,7 +36,9 @@ function TambahPetaStatusKontak(props: any) {
       data?.email &&
       data?.instagram &&
       data?.facebook &&
-      data?.maps
+      data?.youtube &&
+      data?.maps &&
+      data?.pendaftaranSiswaBaru
     ) {
       if (data?.id) {
         setId(data?.id);
@@ -44,10 +48,16 @@ function TambahPetaStatusKontak(props: any) {
       setEmail(decryptData(data.email));
       setInstagram(decryptData(data.instagram));
       setFacebook(decryptData(data.facebook));
+      setYoutube(decryptData(data.youtube));
       generateOneFileDataFromBase64({
         fileName: "File_Foto",
         base64: data?.maps,
         setData: setMaps,
+      });
+      generateOneFileDataFromBase64({
+        fileName: "File_Foto",
+        base64: data?.pendaftaranSiswaBaru,
+        setData: setPendaftaranSiswaBaru,
       });
     }
   }, [props?.data]);
@@ -88,6 +98,10 @@ function TambahPetaStatusKontak(props: any) {
     setFacebook(e.target.value);
   };
 
+  const handleYoutubeChange = (e: any) => {
+    setYoutube(e.target.value);
+  };
+
   const handleAddClick = () => {
     if (
       lokasi &&
@@ -95,7 +109,9 @@ function TambahPetaStatusKontak(props: any) {
       email &&
       instagram &&
       facebook &&
-      maps.length > 0
+      youtube &&
+      maps.length > 0 &&
+      pendaftaranSiswaBaru.length > 0
     ) {
       setLoading(true);
 
@@ -106,7 +122,9 @@ function TambahPetaStatusKontak(props: any) {
         email,
         instagram,
         facebook,
+        youtube,
         maps,
+        pendaftaranSiswaBaru,
       };
       const func = {
         setId,
@@ -115,7 +133,9 @@ function TambahPetaStatusKontak(props: any) {
         setEmail,
         setInstagram,
         setFacebook,
+        setYoutube,
         setMaps,
+        setPendaftaranSiswaBaru,
         setError,
         setSuccess,
         onClose: props.onClose,
@@ -166,10 +186,25 @@ function TambahPetaStatusKontak(props: any) {
         />
       </FieldWrapper>
       <FieldWrapper>
+        <InputText
+          label="Youtube"
+          value={youtube}
+          onChange={(e) => handleYoutubeChange(e)}
+        />
+      </FieldWrapper>
+      <FieldWrapper>
         <FileUpload
           label="Maps"
           value={maps}
           onChange={(data) => setMaps(data)}
+          accept="img"
+        />
+      </FieldWrapper>
+      <FieldWrapper>
+        <FileUpload
+          label="Pendaftaran Siswa Baru"
+          value={pendaftaranSiswaBaru}
+          onChange={(data) => setPendaftaranSiswaBaru(data)}
           accept="img"
         />
       </FieldWrapper>

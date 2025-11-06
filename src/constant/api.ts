@@ -1,7 +1,7 @@
 const baseUrl = () => {
   let url;
   if (["local"].includes(process.env.NEXT_PUBLIC_TYPE!)) {
-    url = "https://smk-watansoppeng.duckdns.org/api/api/";
+    url = "http://localhost:3001/api/";
   } else {
     url = "https://smk-watansoppeng.duckdns.org/api/api/";
   }

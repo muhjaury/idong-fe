@@ -32,9 +32,15 @@ export const fetch = (func: any) => {
             email: decryptData(item.email),
             instagram: decryptData(item.instagram),
             facebook: decryptData(item.facebook),
+            youtube: decryptData(item.youtube),
             maps: (
               <ButtonWrapper>
                 <DisplayFile base64={item.maps} />
+              </ButtonWrapper>
+            ),
+            pendaftaranSiswaBaru: (
+              <ButtonWrapper>
+                <DisplayFile base64={item.pendaftaranSiswaBaru} />
               </ButtonWrapper>
             ),
             aksi: (

@@ -10,19 +10,32 @@ export const saveData = (func: any, data: any) => {
     setEmail,
     setInstagram,
     setFacebook,
+    setYoutube,
     setMaps,
+    setPendaftaranSiswaBaru,
     setError,
     setSuccess,
     onClose,
     setLoading,
   } = func;
-  const { id, lokasi, nomorTelepon, email, instagram, facebook, maps } = data;
+  const {
+    id,
+    lokasi,
+    nomorTelepon,
+    email,
+    instagram,
+    facebook,
+    youtube,
+    maps,
+    pendaftaranSiswaBaru,
+  } = data;
 
   const lokasiEnc = encryptData(lokasi);
   const nomorTeleponEnc = encryptData(nomorTelepon);
   const emailEnc = encryptData(email);
   const instagramEnc = encryptData(instagram);
   const facebookEnc = encryptData(facebook);
+  const youtubeEnc = encryptData(youtube);
 
   let bodyData: any = {
     lokasi: lokasiEnc,
@@ -30,7 +43,9 @@ export const saveData = (func: any, data: any) => {
     email: emailEnc,
     instagram: instagramEnc,
     facebook: facebookEnc,
+    youtube: youtubeEnc,
     maps: maps[0].base64,
+    pendaftaranSiswaBaru: pendaftaranSiswaBaru[0].base64,
   };
   if (id) {
     bodyData = { ...bodyData, id: id };
@@ -50,7 +65,9 @@ export const saveData = (func: any, data: any) => {
         setEmail("");
         setInstagram("");
         setFacebook("");
+        setYoutube("");
         setMaps([]);
+        setPendaftaranSiswaBaru([]);
         setSuccess("Berhasil menambahkan data");
         onClose();
       }

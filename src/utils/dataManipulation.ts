@@ -9,6 +9,7 @@ export const encryptData = (data: string) => {
 };
 
 export const decryptData = (data: string) => {
+  if (!data) return "";
   const result = Crypto.AES.decrypt(data, process.env.NEXT_PUBLIC_KEY!);
   return result.toString(Crypto.enc.Utf8);
 };

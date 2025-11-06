@@ -60,8 +60,18 @@ function PetaStatusKontakPage() {
       sortable: true,
     },
     {
+      name: "Youtube",
+      selector: (row) => row.youtube,
+      sortable: true,
+    },
+    {
       name: "Maps",
       selector: (row) => row.maps,
+      sortable: true,
+    },
+    {
+      name: "Pendaftaran Siswa Baru",
+      selector: (row) => row.pendaftaranSiswaBaru,
       sortable: true,
     },
     { name: "Aksi", selector: (row) => row.aksi, sortable: true },
@@ -76,7 +86,8 @@ function PetaStatusKontakPage() {
         row?.nomorTelepon?.toLowerCase().includes(value.toLowerCase()) ||
         row?.email?.toLowerCase().includes(value.toLowerCase()) ||
         row?.instagram?.toLowerCase().includes(value.toLowerCase()) ||
-        row?.facebook?.toLowerCase().includes(value.toLowerCase())
+        row?.facebook?.toLowerCase().includes(value.toLowerCase()) ||
+        row?.youtube?.toLowerCase().includes(value.toLowerCase())
     );
     setData(filterData);
   };

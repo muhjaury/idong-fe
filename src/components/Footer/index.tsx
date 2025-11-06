@@ -34,14 +34,6 @@ function Footer({ displaynavigation = true }: Interface_Components) {
   const { footerData, setListFetchAPI, setFooterData } = useWidget();
 
   useEffect(() => {
-    const getUrl = async () => {
-      const blob = await base64ToBlob(PENDAFTARAN_SISWA_BARU);
-      setUrl(URL.createObjectURL(blob));
-    };
-    getUrl();
-  }, []);
-
-  useEffect(() => {
     if (displaynavigation && footerData.length === 0) {
       setListFetchAPI((prev: any) => {
         return { ...prev, fetchFooter: true };
@@ -54,6 +46,11 @@ function Footer({ displaynavigation = true }: Interface_Components) {
   useEffect(() => {
     if (footerData.length > 0) {
       setList(footerData);
+      const getUrl = async () => {
+        const blob = await base64ToBlob(footerData[0]?.pendaftaranSiswaBaru);
+        setUrl(URL.createObjectURL(blob));
+      };
+      getUrl();
     }
   }, [footerData]);
 
