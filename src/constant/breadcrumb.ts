@@ -28,8 +28,8 @@ export const Breadcrumb = {
     value: "/tenaga-kependidikan",
   },
   tenagaPendidik: { label: "Tenaga Pendidik", value: "/tenaga-pendidik" },
-  tbsm: { label: "TBSM", value: "/tbsm" },
+  tbsm: { label: "TSM", value: "/tbsm" },
   tkj: { label: "TKJ", value: "/tkj" },
-  trko: { label: "TRKO", value: "/trko" },
+  trko: { label: "TKR", value: "/trko" },
   visiMisi: { label: "Visi - Misi", value: "/visi-misi" },
 };

@@ -84,6 +84,10 @@ export const Navigation = styled.div`
   cursor: pointer;
 `;
 
+export const TautanPenting = styled.a`
+  cursor: pointer;
+`;
+
 export const WrapperBottomNavigation = styled.div`
   display: flex;
   gap: 4px;

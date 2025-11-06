@@ -9,6 +9,7 @@ import {
   DetailValue,
   DetailWrapper,
   InfoWrapper,
+  LinkValue,
   Maps,
   Title,
   Wrapper,
@@ -67,18 +68,24 @@ function PetaSitusKontak() {
                       decryptData(item.instagram).includes("http") && (
                         <DetailWrapper>
                           <DetailTitle>Instagram</DetailTitle>
-                          <DetailValue>
+                          <LinkValue
+                            target="_blank"
+                            href={decryptData(item.instagram)}
+                          >
                             {decryptData(item.instagram)}
-                          </DetailValue>
+                          </LinkValue>
                         </DetailWrapper>
                       )}
                     {item.facebook &&
                       decryptData(item.facebook).includes("http") && (
                         <DetailWrapper>
                           <DetailTitle>Facebook</DetailTitle>
-                          <DetailValue>
+                          <LinkValue
+                            target="_blank"
+                            href={decryptData(item.facebook)}
+                          >
                             {decryptData(item.facebook)}
-                          </DetailValue>
+                          </LinkValue>
                         </DetailWrapper>
                       )}
                   </InfoWrapper>

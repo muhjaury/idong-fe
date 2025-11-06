@@ -30,15 +30,15 @@ function TBSM() {
 
   return (
     <CoreLayout>
-      <PageTitle title="TBSM" breadcrumb={breadcrumb} />
+      <PageTitle title="TSM" breadcrumb={breadcrumb} />
       <Section type="secondary">
         <Wrapper>
           <Paragraph>
-            &nbsp;&nbsp;&nbsp;Jurusan Teknik dan Bisnis Sepeda Motor (TBSM)
-            merupakan salah satu program keahlian di bidang Teknik Otomotif yang
-            mempelajari secara mendalam tentang teknologi sepeda motor, baik
-            dari sisi teknis (servis dan perawatan) maupun sisi bisnis
-            (manajemen dan kewirausahaan bengkel motor).
+            &nbsp;&nbsp;&nbsp;Jurusan Teknik Sepeda Motor (TSM) merupakan salah
+            satu program keahlian di bidang Teknik Otomotif yang mempelajari
+            secara mendalam tentang teknologi sepeda motor, baik dari sisi
+            teknis (servis dan perawatan) maupun sisi bisnis (manajemen dan
+            kewirausahaan bengkel motor).
           </Paragraph>
           <Paragraph>
             &nbsp;&nbsp;&nbsp;Jurusan ini bertujuan untuk mencetak lulusan yang

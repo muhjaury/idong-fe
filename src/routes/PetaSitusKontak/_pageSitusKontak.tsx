@@ -58,3 +58,9 @@ export const DetailTitle = styled.div`
 export const DetailValue = styled.div`
   font-size: 24px;
 `;
+
+export const LinkValue = styled.a`
+  font-size: 24px;
+  color: #006fef;
+  cursor: pointer;
+`;

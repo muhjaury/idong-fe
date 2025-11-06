@@ -218,13 +218,13 @@ function UserLayout(props: any) {
                   TKJ
                 </SideBarItem>
                 <SideBarItem onClick={() => handleClickMenu("TBSM")}>
-                  TBSM
+                  TSM
                 </SideBarItem>
                 <SideBarItem onClick={() => handleClickMenu("DPIB")}>
                   DPIB
                 </SideBarItem>
                 <SideBarItem onClick={() => handleClickMenu("TRKO")}>
-                  TRKO
+                  TKR
                 </SideBarItem>
                 <SideBarItem onClick={() => handleClickMenu("ATPH")}>
                   ATPH

@@ -63,9 +63,13 @@ export const FacilityWrapper = styled.div`
 
 export const FacilityLogo = styled.img<Interface_Img>`
   border-radius: 16px;
-  background: ${color.a5};
-  min-width: 67px;
-  height: 58px;
+  height: unset;
+  max-width: 88px;
+
+  @media all and (min-width: 1024px) {
+    max-width: unset;
+    height: 64px;
+  }
 `;
 
 export const FaciliyContentWrappper = styled.div`
@@ -199,18 +203,18 @@ export const ProgramWrapper = styled.div`
 
 export const ProgramContentWrapper = styled.div`
   display: flex;
-  gap: 32px;
+  gap: 16px;
 
   @media all and (min-width: 768px) {
+    gap: 32px;
     width: 50%;
   }
 `;
 
 export const ProgramLogo = styled.img<Interface_Img>`
   border-radius: 16px;
-  min-width: 96px;
-  height: 96px;
-  background: ${color.a5};
+  min-width: 104px;
+  height: 104px;
 `;
 
 export const ProgramColumn = styled.div`

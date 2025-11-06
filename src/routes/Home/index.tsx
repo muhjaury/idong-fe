@@ -42,6 +42,14 @@ import {
   WrapperGreeting,
 } from "./_home";
 import { fetchBerita, fetchKepalaSekolah } from "./network";
+import ICON1 from "./../../assets/img/icon1.png";
+import ICON2 from "./../../assets/img/icon2.png";
+import ICON3 from "./../../assets/img/icon3.png";
+import ATPH from "./../../assets/img/ATPH.png";
+import TSM from "./../../assets/img/TSM.png";
+import TKR from "./../../assets/img/TKR.png";
+import DPIB from "./../../assets/img/DPIB.png";
+import TKJ from "./../../assets/img/TKJ.png";
 
 function Home() {
   const [namaKepsek, setNamaKepsek] = useState("");
@@ -92,7 +100,7 @@ function Home() {
       </Section>
       <Section>
         <Video
-          src="/WaitingForTheEnd-LP.mp4"
+          src="/SMKS-KARYA-TEKNIK.mp4"
           autoPlay
           preload="none"
           muted
@@ -112,16 +120,16 @@ function Home() {
           </Content2WrapperColumn>
           <Content2WrapperColumn>
             <FacilityWrapper>
-              <FacilityLogo />
+              <FacilityLogo src={ICON3} />
               <FaciliyContentWrappper>
-                <FacilityTitle>Pengajar Kompeten</FacilityTitle>
+                <FacilityTitle>Fasilitas Lengkap</FacilityTitle>
                 <FacilityDesc>
-                  Guru yang up-to-date dengan perkembangan industri.
+                  Penunjang belajar dengan kualitas premium.
                 </FacilityDesc>
               </FaciliyContentWrappper>
             </FacilityWrapper>
             <FacilityWrapper>
-              <FacilityLogo />
+              <FacilityLogo src={ICON2} />
               <FaciliyContentWrappper>
                 <FacilityTitle>Lingkungan Nyaman</FacilityTitle>
                 <FacilityDesc>
@@ -132,11 +140,11 @@ function Home() {
           </Content2WrapperColumn>
           <Content2WrapperColumn>
             <FacilityWrapper>
-              <FacilityLogo />
+              <FacilityLogo src={ICON1} />
               <FaciliyContentWrappper>
-                <FacilityTitle>Fasilitas Lengkap</FacilityTitle>
+                <FacilityTitle>Pengajar Kompeten</FacilityTitle>
                 <FacilityDesc>
-                  Penunjang belajar dengan kualitas premium.
+                  Guru yang up-to-date dengan perkembangan industri.
                 </FacilityDesc>
               </FaciliyContentWrappper>
             </FacilityWrapper>
@@ -171,7 +179,7 @@ function Home() {
         </ProgramTitle>
         <ProgramWrapper>
           <ProgramContentWrapper>
-            <ProgramLogo />
+            <ProgramLogo src={TKJ} />
             <ProgramColumn>
               <ProgramContentTitle>TKJ</ProgramContentTitle>
               <ProgramContentDesc>
@@ -189,7 +197,7 @@ function Home() {
             </ProgramColumn>
           </ProgramContentWrapper>
           <ProgramContentWrapper>
-            <ProgramLogo />
+            <ProgramLogo src={DPIB} />
             <ProgramColumn>
               <ProgramContentTitle>DPIB</ProgramContentTitle>
               <ProgramContentDesc>
@@ -209,33 +217,33 @@ function Home() {
         </ProgramWrapper>
         <ProgramWrapper>
           <ProgramContentWrapper>
-            <ProgramLogo />
+            <ProgramLogo src={TSM} />
             <ProgramColumn>
-              <ProgramContentTitle>TBSM</ProgramContentTitle>
+              <ProgramContentTitle>TSM</ProgramContentTitle>
               <ProgramContentDesc>
-                Jurusan TBSM (Teknik dan Bisnis Sepeda Motor) adalah program
-                keahlian di SMK yang mempelajari cara merawat, memperbaiki, dan
-                menganalisis kerusakan sepeda motor, baik dari segi mesin,
-                kelistrikan, maupun sistem injeksi. Selain keterampilan teknis,
-                siswa juga dibekali dengan pengetahuan bisnis dan manajemen
-                bengkel, sehingga mampu bekerja di bengkel resmi, pabrik
-                otomotif, atau membuka usaha sendiri. Jurusan ini cocok bagi
-                siswa yang tertarik pada dunia otomotif dan ingin langsung
-                terjun ke dunia kerja atau wirausaha setelah lulus.
+                Jurusan TSM (Teknik Sepeda Motor) adalah program keahlian di SMK
+                yang mempelajari cara merawat, memperbaiki, dan menganalisis
+                kerusakan sepeda motor, baik dari segi mesin, kelistrikan,
+                maupun sistem injeksi. Selain keterampilan teknis, siswa juga
+                dibekali dengan pengetahuan bisnis dan manajemen bengkel,
+                sehingga mampu bekerja di bengkel resmi, pabrik otomotif, atau
+                membuka usaha sendiri. Jurusan ini cocok bagi siswa yang
+                tertarik pada dunia otomotif dan ingin langsung terjun ke dunia
+                kerja atau wirausaha setelah lulus.
               </ProgramContentDesc>
             </ProgramColumn>
           </ProgramContentWrapper>
           <ProgramContentWrapper>
-            <ProgramLogo />
+            <ProgramLogo src={TKR} />
             <ProgramColumn>
-              <ProgramContentTitle>TRKO</ProgramContentTitle>
+              <ProgramContentTitle>TKR</ProgramContentTitle>
               <ProgramContentDesc>
-                Jurusan TRKO (Teknik Rekayasa Konstruksi) adalah program
-                keahlian di SMK yang mempelajari tentang perencanaan,
-                pelaksanaan, dan pengawasan proyek konstruksi bangunan, seperti
-                rumah, gedung, dan infrastruktur lainnya. Siswa dibekali dengan
-                keterampilan menggambar teknik, menghitung struktur dan anggaran
-                biaya, memahami bahan bangunan, serta menggunakan alat ukur dan
+                Jurusan TKR (Teknik Kendaraan Ringan) adalah program keahlian di
+                SMK yang mempelajari tentang perencanaan, pelaksanaan, dan
+                pengawasan proyek konstruksi bangunan, seperti rumah, gedung,
+                dan infrastruktur lainnya. Siswa dibekali dengan keterampilan
+                menggambar teknik, menghitung struktur dan anggaran biaya,
+                memahami bahan bangunan, serta menggunakan alat ukur dan
                 perangkat lunak konstruksi. Jurusan ini cocok bagi siswa yang
                 tertarik pada dunia teknik sipil dan konstruksi, serta memiliki
                 peluang kerja sebagai drafter, teknisi konstruksi, estimator
@@ -247,7 +255,7 @@ function Home() {
         </ProgramWrapper>
         <ProgramWrapper>
           <ProgramContentWrapper>
-            <ProgramLogo />
+            <ProgramLogo src={ATPH} />
             <ProgramColumn>
               <ProgramContentTitle>ATPH</ProgramContentTitle>
               <ProgramContentDesc>

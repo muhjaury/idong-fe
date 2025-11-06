@@ -250,7 +250,7 @@ function Header() {
                   handleClickMenu(urls.TBSM);
                 }}
               >
-                TBSM
+                TSM
               </SideBarItem>
               <SideBarItem
                 onClick={() => {
@@ -264,7 +264,7 @@ function Header() {
                   handleClickMenu(urls.TRKO);
                 }}
               >
-                TRKO
+                TKR
               </SideBarItem>
               <SideBarItem
                 onClick={() => {
@@ -450,7 +450,7 @@ function Header() {
                   handleClickMenu(urls.TBSM);
                 }}
               >
-                TBSM
+                TSM
               </Dropdown>
               <Dropdown
                 onClick={() => {
@@ -464,7 +464,7 @@ function Header() {
                   handleClickMenu(urls.TRKO);
                 }}
               >
-                TRKO
+                TKR
               </Dropdown>
               <Dropdown
                 onClick={() => {

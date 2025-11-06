@@ -30,7 +30,7 @@ function TRKO() {
 
   return (
     <CoreLayout>
-      <PageTitle title="TRKO" breadcrumb={breadcrumb} />
+      <PageTitle title="TKR" breadcrumb={breadcrumb} />
       <Section type="secondary">
         <Wrapper>
           <Paragraph>

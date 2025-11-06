@@ -1,7 +1,9 @@
 import { urls } from "@/constant/path";
 import { useWidget } from "@/context";
+import { PENDAFTARAN_SISWA_BARU } from "@/document/pendaftaran";
 import { Interface_Components } from "@/interface";
 import { decryptData } from "@/utils/dataManipulation";
+import { base64ToBlob } from "@/utils/fileManipulation";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Content } from "..";
@@ -16,6 +18,7 @@ import {
   Navigation,
   SocialMediaLogo,
   SocialMediaWrapper,
+  TautanPenting,
   Title,
   WrapperBottom,
   WrapperColumn,
@@ -25,9 +28,18 @@ import { fetch } from "./network";
 
 function Footer({ displaynavigation = true }: Interface_Components) {
   const [list, setList] = useState<any>([]);
+  const [url, setUrl] = useState("");
 
   const router = useRouter();
   const { footerData, setListFetchAPI, setFooterData } = useWidget();
+
+  useEffect(() => {
+    const getUrl = async () => {
+      const blob = await base64ToBlob(PENDAFTARAN_SISWA_BARU);
+      setUrl(URL.createObjectURL(blob));
+    };
+    getUrl();
+  }, []);
 
   useEffect(() => {
     if (displaynavigation && footerData.length === 0) {
@@ -102,8 +114,15 @@ function Footer({ displaynavigation = true }: Interface_Components) {
             <WrapperColumn>
               <Title>Tautan Penting</Title>
               <DescriptionWrapper>
-                <Navigation>Kemendikbud</Navigation>
-                <Navigation>PPDB</Navigation>
+                <TautanPenting
+                  href="https://kemdiktisaintek.go.id/"
+                  target="_blank"
+                >
+                  Kemendikbud
+                </TautanPenting>
+                <TautanPenting href={url} target="_blank">
+                  Pendaftaran Siswa Baru
+                </TautanPenting>
               </DescriptionWrapper>
             </WrapperColumn>
           </Content>
