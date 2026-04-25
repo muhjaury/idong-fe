@@ -115,92 +115,100 @@ function UserLayout(props: any) {
                       Guru
                     </SideBarItem>
                   </SideBarDropWrapper>
+                  <SideBarItemWrapper
+                    onClick={() =>
+                      setSideDropUser2(sideDropUser2 === "Y" ? "N" : "Y")
+                    }
+                  >
+                    <SideBarItem>Profil</SideBarItem>
+                    <SideBarDropdown
+                      alt="down"
+                      src={DOWN}
+                      display={sideDropUser2}
+                    />
+                  </SideBarItemWrapper>
+                  <SideBarDropWrapper display={sideDropUser2}>
+                    <SideBarItem
+                      onClick={() => handleClickMenu("Profil-Sekolah")}
+                    >
+                      Profil Sekolah
+                    </SideBarItem>
+                    <SideBarItem
+                      onClick={() => handleClickMenu("Tenaga-Pendidik")}
+                    >
+                      Tenaga Pendidik
+                    </SideBarItem>
+                    <SideBarItem
+                      onClick={() => handleClickMenu("Tenaga-Kependidikan")}
+                    >
+                      Tenaga Kependidikan
+                    </SideBarItem>
+                    <SideBarItem
+                      onClick={() => handleClickMenu("Sarana-Prasarana")}
+                    >
+                      Sarana & Prasarana
+                    </SideBarItem>
+                    <SideBarItem
+                      onClick={() => handleClickMenu("Peta-Status-Kontak")}
+                    >
+                      Peta Status - Kontak
+                    </SideBarItem>
+                  </SideBarDropWrapper>
+                  <SideBarItemWrapper
+                    onClick={() =>
+                      setSideDropUser3(sideDropUser3 === "Y" ? "N" : "Y")
+                    }
+                  >
+                    <SideBarItem>Informasi</SideBarItem>
+                    <SideBarDropdown
+                      alt="down"
+                      src={DOWN}
+                      display={sideDropUser3}
+                    />
+                  </SideBarItemWrapper>
+                  <SideBarDropWrapper display={sideDropUser3}>
+                    <SideBarItem
+                      onClick={() => handleClickMenu("Portal-Berita")}
+                    >
+                      Portal Berita
+                    </SideBarItem>
+                    <SideBarItem onClick={() => handleClickMenu("Galeri")}>
+                      Galeri
+                    </SideBarItem>
+                    <SideBarItem onClick={() => handleClickMenu("Arsip")}>
+                      Arsip
+                    </SideBarItem>
+                  </SideBarDropWrapper>
+                  <SideBarItemWrapper
+                    onClick={() =>
+                      setSideDropUser4(sideDropUser4 === "Y" ? "N" : "Y")
+                    }
+                  >
+                    <SideBarItem>Kesiswaan</SideBarItem>
+                    <SideBarDropdown
+                      alt="down"
+                      src={DOWN}
+                      display={sideDropUser4}
+                    />
+                  </SideBarItemWrapper>
+                  <SideBarDropWrapper display={sideDropUser4}>
+                    <SideBarItem onClick={() => handleClickMenu("Siswa")}>
+                      Siswa
+                    </SideBarItem>
+                    <SideBarItem
+                      onClick={() => handleClickMenu("Daftar-Hadir")}
+                    >
+                      Daftar Hadir
+                    </SideBarItem>
+                    <SideBarItem onClick={() => handleClickMenu("Tata-Tertib")}>
+                      Tata Tertib
+                    </SideBarItem>
+                    <SideBarItem onClick={() => handleClickMenu("Pelanggaran")}>
+                      Pelanggaran
+                    </SideBarItem>
+                  </SideBarDropWrapper>
                 </>
               )}
-              <SideBarItemWrapper
-                onClick={() =>
-                  setSideDropUser2(sideDropUser2 === "Y" ? "N" : "Y")
-                }
-              >
-                <SideBarItem>Profil</SideBarItem>
-                <SideBarDropdown
-                  alt="down"
-                  src={DOWN}
-                  display={sideDropUser2}
-                />
-              </SideBarItemWrapper>
-              <SideBarDropWrapper display={sideDropUser2}>
-                <SideBarItem onClick={() => handleClickMenu("Profil-Sekolah")}>
-                  Profil Sekolah
-                </SideBarItem>
-                <SideBarItem onClick={() => handleClickMenu("Tenaga-Pendidik")}>
-                  Tenaga Pendidik
-                </SideBarItem>
-                <SideBarItem
-                  onClick={() => handleClickMenu("Tenaga-Kependidikan")}
-                >
-                  Tenaga Kependidikan
-                </SideBarItem>
-                <SideBarItem
-                  onClick={() => handleClickMenu("Sarana-Prasarana")}
-                >
-                  Sarana & Prasarana
-                </SideBarItem>
-                <SideBarItem
-                  onClick={() => handleClickMenu("Peta-Status-Kontak")}
-                >
-                  Peta Status - Kontak
-                </SideBarItem>
-              </SideBarDropWrapper>
-              <SideBarItemWrapper
-                onClick={() =>
-                  setSideDropUser3(sideDropUser3 === "Y" ? "N" : "Y")
-                }
-              >
-                <SideBarItem>Informasi</SideBarItem>
-                <SideBarDropdown
-                  alt="down"
-                  src={DOWN}
-                  display={sideDropUser3}
-                />
-              </SideBarItemWrapper>
-              <SideBarDropWrapper display={sideDropUser3}>
-                <SideBarItem onClick={() => handleClickMenu("Portal-Berita")}>
-                  Portal Berita
-                </SideBarItem>
-                <SideBarItem onClick={() => handleClickMenu("Galeri")}>
-                  Galeri
-                </SideBarItem>
-                <SideBarItem onClick={() => handleClickMenu("Arsip")}>
-                  Arsip
-                </SideBarItem>
-              </SideBarDropWrapper>
-              <SideBarItemWrapper
-                onClick={() =>
-                  setSideDropUser4(sideDropUser4 === "Y" ? "N" : "Y")
-                }
-              >
-                <SideBarItem>Kesiswaan</SideBarItem>
-                <SideBarDropdown
-                  alt="down"
-                  src={DOWN}
-                  display={sideDropUser4}
-                />
-              </SideBarItemWrapper>
-              <SideBarDropWrapper display={sideDropUser4}>
-                <SideBarItem onClick={() => handleClickMenu("Siswa")}>
-                  Siswa
-                </SideBarItem>
-                <SideBarItem onClick={() => handleClickMenu("Daftar-Hadir")}>
-                  Daftar Hadir
-                </SideBarItem>
-                <SideBarItem onClick={() => handleClickMenu("Tata-Tertib")}>
-                  Tata Tertib
-                </SideBarItem>
-                <SideBarItem onClick={() => handleClickMenu("Pelanggaran")}>
-                  Pelanggaran
-                </SideBarItem>
-              </SideBarDropWrapper>
               <SideBarItemWrapper
                 onClick={() =>
                   setSideDropUser5(sideDropUser5 === "Y" ? "N" : "Y")
