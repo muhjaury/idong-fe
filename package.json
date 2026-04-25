@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "env-cmd -e build:prod next build",
-    "build:dev": "env-cmd -e build:dev next build",
-    "build:prod": "env-cmd -e build:prod next build",
+    "build": "env-cmd -e build:prod next build --webpack",
+    "build:dev": "env-cmd -e build:dev next build --webpack",
+    "build:prod": "env-cmd -e build:prod next build --webpack",
     "start": "next start",
-    "start:dev": "env-cmd -e build:dev next dev",
-    "start:prod": "env-cmd -e build:prod next dev",
+    "start:dev": "env-cmd -e build:dev next dev --webpack",
+    "start:prod": "env-cmd -e build:prod next dev --webpack",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.1.6",
+    "next": "^16.2.4",
     "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
