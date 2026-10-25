@@ -31,17 +31,28 @@ function Footer({ displaynavigation = true }: Interface_Components) {
   const [url, setUrl] = useState("");
 
   const router = useRouter();
-  const { footerData, setListFetchAPI, setFooterData } = useWidget();
+  const {
+    footerData,
+    footerFetched,
+    setListFetchAPI,
+    setFooterData,
+    setFooterFetched,
+  } = useWidget();
 
   useEffect(() => {
-    if (displaynavigation && footerData.length === 0) {
+    if (displaynavigation && !footerFetched) {
       setListFetchAPI((prev: any) => {
         return { ...prev, fetchFooter: true };
       });
-      const func = { setList, setListFetchAPI, setFooterData };
+      const func = {
+        setList,
+        setListFetchAPI,
+        setFooterData,
+        setFooterFetched,
+      };
       fetch(func);
     }
-  }, [displaynavigation, footerData]);
+  }, [displaynavigation, footerFetched]);
 
   useEffect(() => {
     if (footerData.length > 0) {

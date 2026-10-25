@@ -100,7 +100,7 @@ function Home() {
       </Section>
       <Section>
         <Video
-          src="/SMKS-KARYA-TEKNIK.mp4"
+          src={`${process.env.NEXT_PUBLIC_PREFIX ?? ""}/SMKS-KARYA-TEKNIK.mp4`}
           autoPlay
           preload="none"
           muted

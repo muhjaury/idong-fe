@@ -1,14 +1,4 @@
-const baseUrl = () => {
-  let url;
-  if (["local"].includes(process.env.NEXT_PUBLIC_TYPE!)) {
-    url = "http://localhost:3001/api/";
-  } else {
-    url = "https://smk-watansoppeng.duckdns.org/api/api/";
-  }
-  return url;
-};
-
-const BASE_URL = baseUrl();
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL!;
 
 export const API_VERIFY = BASE_URL + "user/verify";
 export const API_REGISTER_ADMIN = BASE_URL + "user/registerUser";

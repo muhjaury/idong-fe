@@ -7,13 +7,16 @@ const useValue = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [urlChange, setUrlChange] = useState<string>("");
   const [footerData, setFooterData] = useState<any>([]);
+  const [footerFetched, setFooterFetched] = useState<boolean>(false);
 
   return {
     footerData,
+    footerFetched,
     listFetchAPI,
     loading,
     urlChange,
     setFooterData,
+    setFooterFetched,
     setListFetchAPI,
     setLoading,
     setUrlChange,

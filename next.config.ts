@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 
-const ASSET_PREFIX = process.env.NEXT_PUBLIC_PREFIX;
+const BASE_PATH = process.env.NEXT_PUBLIC_PREFIX || "";
 
 const nextConfig = {
   reactStrictMode: false,
-  // output: "export",
-  assetPrefix: ASSET_PREFIX,
+  output: "export",
+  basePath: BASE_PATH,
+  trailingSlash: true,
   compiler: {
     styledComponents: true,
   },
@@ -15,7 +16,7 @@ const nextConfig = {
         rule.test?.test?.(".svg") &&
         rule.test?.test?.(".jpg") &&
         rule.test?.test?.(".jpeg") &&
-        rule.test?.test?.(".png")
+        rule.test?.test?.(".png"),
     );
 
     config.module.rules.push(
@@ -29,7 +30,7 @@ const nextConfig = {
         issuer: /\.[jt]sx$/,
         resourceQuery: { not: /url/ },
         use: ["url-loader"],
-      }
+      },
     );
 
     fileLoaderRule.exclude = /\.(jpe?g|png|svg)$/;

@@ -1,4 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is the Next.js frontend for SMKS Karya Teknik Watangsoppeng.
+
+## Production Static Hosting
+
+The production build creates a static site configured for `/smks`:
+
+```bash
+npm run build:prod
+```
+
+Upload the **contents** of the generated `out` directory to the hosting directory that serves `https://your-domain.example/smks/` (for example, `public_html/smks/`). Keep the generated `_next` directory and all page directories in place. The export uses directory-style routes, so pages are served as paths such as `/smks/arsip/`. No Node.js process or `next start` is needed on the web host.
+
+The frontend calls the API configured by `NEXT_PUBLIC_API_URL` in `.env-cmdrc` at build time. The production profile currently uses `https://sahabatpenaforkesi.com/smks-api/`. Configure the backend to allow the deployed website's origin through CORS, including `OPTIONS` preflight requests where applicable. Since this is a static client-side app, the API URL and `NEXT_PUBLIC_KEY` are included in browser assets; do not put secrets in these variables.
 
 ## Getting Started
 
